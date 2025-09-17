@@ -1,0 +1,203 @@
+# -*- coding: utf-8 -*-
+import os, sys, json, re
+from datetime import datetime, timezone, timedelta
+
+AX_VERT = {'MC','IC'}
+AX_HOR  = {'ASC','DESC'}
+ASPS = '□☍△✶'
+ZODIAC_GLYPH = {
+  'ARIES':'♈','TAURUS':'♉','GEMINI':'♊','CANCER':'♋','LEO':'♌','VIRGO':'♍',
+  'LIBRA':'♎','SCORPIO':'♏','SAGITTARIUS':'♐','CAPRICORN':'♑','AQUARIUS':'♒','PISCES':'♓'
+}
+def sign_glyph(name: str):
+    if not name: return ''
+    return ZODIAC_GLYPH.get(name.upper(), name.title())
+
+def pdt(x, tzname='Europe/Moscow'):
+    if x is None: return None
+    if isinstance(x, dict):
+        x = x.get('dateTime') or x.get('date') or x
+    s=str(x).strip()
+    if not s: return None
+    s=s.replace('Z','+00:00')
+    for cand in (s, s.replace(' ','T')):
+        try:
+            d=datetime.fromisoformat(cand)
+            if d.tzinfo is None:
+                from zoneinfo import ZoneInfo
+                d=d.replace(tzinfo=ZoneInfo(tzname))
+            return d.astimezone(timezone.utc)
+        except Exception:
+            pass
+    return None
+
+def tstr(d): return d.isoformat().replace('+00:00','Z') if d else ''
+
+def transit_token(summary: str):
+    s = (summary or '').strip()
+    if not s: return ''
+    # формы: "☿ ℞ ..." или "☿ S ..." или просто "☿ ..."
+    if len(s) >= 2 and s[1] in (' ','℞','S'):
+        return s[:2].strip()
+    return s[0]
+
+RX = re.compile(r'^(?P<tr>(?:\S(?:\s[℞S])?))\s+(?P<asp>[%s])\s+(?P<tgt>IC|MC|ASC|DESC|[^\s]+)' % ASPS)
+
+def overlap(a0,a1,b0,b1, pad=timedelta(hours=6)):
+    if not a0 or not b0: return False
+    A0, A1 = (a0, a1 or a0); B0, B1 = (b0, b1 or b0)
+    return max(A0,B0) <= (min(A1,B1) + pad)
+
+def main(path_in, path_out=None, mode_axes=('VERT','HOR'), strict_shape=False, tzname='Europe/Moscow'):
+    p = os.path.expanduser(path_in)
+    d = json.load(open(p, encoding='utf-8'))
+    evs = d.get('events') if isinstance(d, dict) else d
+    keep = [True]*len(evs)
+
+    # Собираем мету по осевым событиям
+    groups = {}  # (axis, tok) -> [idx]
+    meta   = {}  # idx -> (axis, tok, asp, tgt, t0, t1, summary, event)
+    for i,e in enumerate(evs):
+        s = e.get('summary','') or ''
+        m = RX.match(s)
+        if not m: continue
+        tr = m.group('tr'); asp = m.group('asp'); tgt = m.group('tgt')
+        t0 = pdt(e.get('start') or e.get('when') or e.get('peak'), tzname)
+        t1 = pdt(e.get('end')   or e.get('when') or e.get('peak'), tzname)
+        tok = transit_token(s)
+        axis = 'VERT' if tgt in AX_VERT else ('HOR' if tgt in AX_HOR else None)
+        if axis and axis in mode_axes:
+            key = (axis, tok)
+            meta[i] = (axis, tok, asp, tgt, t0, t1, s, e)
+            groups.setdefault(key, []).append(i)
+
+    new_events = []
+    # По каждой группе строим кластеры перекрывающихся интервалов
+    for key, idxs in groups.items():
+        axis, tok = key
+        items = [meta[i] for i in idxs]
+        if len(set(x[3] for x in items)) < 2:
+            continue
+        items_sorted = sorted(items, key=lambda z: z[4] or datetime.max.replace(tzinfo=timezone.utc))
+        clusters = []
+        cur = []
+        for it in items_sorted:
+            if not cur:
+                cur = [it]; continue
+            a0,a1 = cur[-1][4], (cur[-1][5] or cur[-1][4])
+            b0,b1 = it[4], (it[5] or it[4])
+            if overlap(a0,a1,b0,b1):
+                cur.append(it)
+            else:
+                clusters.append(cur); cur=[it]
+        if cur: clusters.append(cur)
+
+        for cl in clusters:
+            if len(set(x[3] for x in cl)) < 2:
+                continue
+            if strict_shape and len(set(x[2] for x in cl)) > 1:
+                continue
+            c_t0 = min(x[4] for x in cl if x[4])
+            c_t1 = max((x[5] or x[4]) for x in cl if (x[5] or x[4]))
+            aspects = sorted(set(x[2] for x in cl), key=lambda z: ASPS.index(z))
+            tgtlist = sorted(set(x[3] for x in cl))
+            asp_str = aspects[0] if len(aspects)==1 else '/'.join(aspects)
+            axis_label = 'вертикали (MC/IC)' if axis=='VERT' else 'горизонтали (ASC/DESC)'
+
+            # Дома/Знаки: берём из полей houses/signs исходных событий
+            from collections import Counter
+            h_tr_vals=[]; nat_h_vals=set(); tr_sign_vals=[]; nat_sign_vals=set()
+            for x in cl:
+                e0=x[7]
+                h=e0.get('houses') or {}
+                s=e0.get('signs') or {}
+                if isinstance(h,dict):
+                    if h.get('tr') is not None: h_tr_vals.append(h.get('tr'))
+                    if h.get('nat') is not None: nat_h_vals.add(h.get('nat'))
+                if isinstance(s,dict):
+                    if s.get('tr'): tr_sign_vals.append(s.get('tr'))
+                    if s.get('nat'): nat_sign_vals.add(s.get('nat'))
+            h_tr = Counter(h_tr_vals).most_common(1)[0][0] if h_tr_vals else None
+            h_to = 'H10/H4' if axis=='VERT' else ('H1/H7' if axis=='HOR' else None)
+            tr_sign = Counter(tr_sign_vals).most_common(1)[0][0] if tr_sign_vals else None
+            nat_signs = sorted(set(nat_sign_vals))
+            homes = f"H{h_tr}" if h_tr is not None else None
+            signs = None
+            if tr_sign and nat_signs:
+                g_tr = sign_glyph(tr_sign)
+                g_nat = '/'.join(sign_glyph(z) for z in nat_signs)
+                signs = f"{g_tr}→{g_nat}"
+
+            # Summary с домом транзита
+            summary = f"{tok} {asp_str} к {axis_label}" + (f" (H{h_tr})" if h_tr is not None else "")
+
+            def fetch_desc(e):
+                return (e.get('description') or '').strip()
+
+            # Шапка со склейкой
+            desc_lines = [f"Склейка по {axis_label}:"] + [
+                f"• {x[2]} {x[3]}: {tstr(x[4])} → {tstr(x[5] or x[4])}"
+                for x in cl
+            ]
+            base_desc = ''
+            for x in cl:
+                d0 = fetch_desc(x[7])
+                if d0:
+                    base_desc = d0
+                    break
+
+            extra = []
+            if homes and h_to:
+                extra.append(f"Дома: {homes} → {h_to}")
+            if signs:
+                extra.append(f"Знаки: {signs}")
+
+            # Совет (если есть)
+            advice = None
+            for x in cl:
+                d0 = fetch_desc(x[7])
+                m = re.search(r'Совет:\s*[^\n]+', d0)
+                if m:
+                    advice = m.group(0)
+                    break
+
+            description = '\n'.join(desc_lines)
+            if base_desc:
+                description += '\n\n' + base_desc
+            if extra:
+                description += '\n' + '\n'.join(extra)
+            if advice:
+                description += '\n' + advice
+
+            new_e = {
+                'summary': summary,
+                'start': tstr(c_t0),
+                'end':   tstr(c_t1),
+                'description': description,
+                'extendedProperties': {'private': {
+                    'src':'geodac', 'axis_unify':'1', 'axis':axis,
+                    'targets': ','.join(tgtlist), 'aspects':asp_str
+                }},
+            }
+            new_events.append(new_e)
+            # помечаем исходники на удаление
+            for x in cl:
+                idx = None
+                for k,v in meta.items():
+                    if v is x:
+                        idx = k; break
+                if idx is not None:
+                    keep[idx] = False
+
+    out = [e for k,e in enumerate(evs) if keep[k]] + new_events
+    out.sort(key=lambda e: (e.get('peak') or e.get('start') or ''))
+    container = {"events": out} if isinstance(d, dict) else out
+    if not path_out: path_out = p
+    json.dump(container, open(path_out,'w',encoding='utf-8'), ensure_ascii=False, indent=2)
+    print(f"axis_unify: new={len(new_events)} removed={(len(evs)-sum(keep))} kept={sum(keep)} -> total={len(out)} in {os.path.basename(path_out)}")
+
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("Usage: python axis_unify.py FIX.json [OUT.json] [--strict-shape]"); sys.exit(1)
+    strict = '--strict-shape' in sys.argv[3:] or '--strict' in sys.argv[3:]
+    main(sys.argv[1], sys.argv[2] if len(sys.argv)>=3 and not sys.argv[2].startswith('--') else None, strict_shape=strict)

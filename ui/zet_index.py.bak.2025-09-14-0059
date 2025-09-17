@@ -1,0 +1,112 @@
+# -*- coding: utf-8 -*-
+import os, re, json, hashlib, subprocess, shlex
+from pathlib import Path
+from typing import List, Dict
+
+ASTRO = Path.home() / 'astro'
+STATE = ASTRO / '.state'
+CACHE = STATE / 'zet_index.json'
+VENV_PY = Path.home() / 'astroenv' / 'bin' / 'python'
+
+def _dm_to_deg(s: str) -> float:
+    s=(s or '').strip().upper()
+    m=re.match(r'^(\d+)\s*([NSWE])\s*(\d+)$', s) or re.match(r'^(\d+)([NSWE])(\d+)$', s)
+    if not m: raise ValueError(f"bad coord: {s}")
+    deg=int(m.group(1)); hemi=m.group(2); mins=int(m.group(3))
+    val=deg+mins/60.0
+    if hemi in ('S','W'): val=-val
+    return val
+
+def _tz_from_raw(tz_raw: str) -> str:
+    s=(tz_raw or '').strip()
+    if not s: return 'UTC'
+    if s.upper() in ('MSK','MSD','MOW','MOSCOW'): return 'Europe/Moscow'
+    m=re.match(r'^([+\-])\s*(\d{1,2})(?::?(\d{2}))?$', s)
+    if m:
+        sign,hh,mm=m.group(1),int(m.group(2)),int(m.group(3) or 0)
+        if mm==0: return f"Etc/GMT-{hh}" if sign=='+' else f"Etc/GMT+{hh}"
+        return f"UTC{sign}{hh:02d}:{mm:02d}"
+    return s
+
+def parse_zet_line(line: str) -> Dict:
+    raw=line.strip().strip(';').strip(',')
+    # авто-детектор разделителя: если запятых ≥ 7 — CSV, иначе — ';'
+    delim = ',' if raw.count(',') >= 7 else ';'
+    parts=[p.strip() for p in raw.split(delim)]
+    if len(parts)<8: raise ValueError("need: name; date; time; tz; place; lat; lon; hsys; ...")
+    name=parts[0]
+    m=re.match(r'^(\d{2})\.(\d{2})\.(\d{4})$', parts[1]); 
+    if not m: raise ValueError(f"bad date: {parts[1]}")
+    dd,mm,yy=m.groups(); date_iso=f"{yy}-{mm}-{dd}"
+    t=parts[2]; 
+    if t.count(':')==1: t+=':00'
+    tz=_tz_from_raw(parts[3]); place=parts[4]
+    lat=_dm_to_deg(parts[5]); lon=_dm_to_deg(parts[6])
+    hsys=(parts[7] or 'P').strip().upper()[:1]
+    tags=''; notes=''
+    if len(parts)>8:
+        rest=(delim+' ').join(parts[8:])
+        tags=';'.join(sorted(set(re.findall(r'!#\S+', rest))))
+        notes=rest
+    return {'name':name,'date':date_iso,'time':t,'tz':tz,
+            'lat':lat,'lon':lon,'hsys':hsys,'place':place,'tags':tags,'notes':notes}
+
+def _read_lines_guess(p: Path) -> List[str]:
+    for enc in ('cp1251','windows-1251','utf-8-sig','utf-8'):
+        try: return p.read_text(encoding=enc).splitlines()
+        except Exception: continue
+    return p.read_bytes().decode('cp1251', errors='ignore').splitlines()
+
+def scan_dir(root: str, pattern: str='*.zbs', save_cache: bool=True) -> List[Dict]:
+    base=Path(os.path.expanduser(root))
+    files=list(base.rglob(pattern)) if base.exists() else []
+    out=[]
+    for fp in files:
+        try: lines=_read_lines_guess(fp)
+        except Exception: continue
+        for i,ln in enumerate(lines,1):
+            if not ln.strip(): continue
+            if (',' not in ln) and (';' not in ln): continue
+            try:
+                row=parse_zet_line(ln)
+                rid=hashlib.sha1(f"{row['name']}|{row['date']}|{row['time']}|{row['lat']:.5f}|{row['lon']:.5f}".encode()).hexdigest()[:10]
+                rel = ''
+                folder = ''
+                file = fp.name
+                try:
+                    rel_path = fp.relative_to(base)
+                    rel = str(rel_path)
+                    folder = str(rel_path.parent) if str(rel_path.parent) != '.' else ''
+                    file = rel_path.name
+                except Exception:
+                    pass
+                row.update({'id':rid,'path':str(fp),'rel':rel,'folder':folder,'file':file,'line':i})
+                out.append(row)
+            except Exception:
+                continue
+    if save_cache:
+        STATE.mkdir(parents=True, exist_ok=True)
+        CACHE.write_text(json.dumps({'root':str(base),'records':out}, ensure_ascii=False, indent=2), encoding='utf-8')
+    return out
+
+def load_cache() -> Dict:
+    if CACHE.exists():
+        try: return json.loads(CACHE.read_text(encoding='utf-8'))
+        except Exception: return {'root':'','records':[]}
+    return {'root':'','records':[]}
+
+def set_active_record(rec: Dict) -> str:
+    ENV=ASTRO/'.state'/'natal_env.sh'
+    ENV.parent.mkdir(parents=True, exist_ok=True)
+    lines=[
+        f"export NATAL_DATE='{rec['date']}'",
+        f"export NATAL_TIME='{rec['time']}'",
+        f"export NATAL_TZ='{rec['tz']}'",
+        f"export NATAL_LAT='{rec['lat']}'",
+        f"export NATAL_LON='{rec['lon']}'",
+        f"export NATAL_HSYS='{rec['hsys']}'",
+    ]
+    ENV.write_text('\n'.join(lines)+'\n', encoding='utf-8')
+    cmd=f"{VENV_PY} {ASTRO/'compute_natal_frame.py'}"
+    subprocess.run(shlex.split(cmd), cwd=str(ASTRO), check=False)
+    return "OK"

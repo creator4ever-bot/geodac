@@ -1,0 +1,304 @@
+from nicegui import ui
+import json, yaml
+from pathlib import Path
+import sys
+sys.path.append(str(Path(__file__).resolve().parent))
+
+
+# наши помощники
+from pipeline import (
+    env_info, preview_mundane, preview_medium, preview_long, preview_lunar,
+    push, tail_log, snapshot
+)
+# локальная SQLite-база (не MySQL)
+from charts_db import (
+    ensure_db, list_charts, add_chart_from_zet,
+    update_chart, delete_chart, set_active, import_zet_dir
+)
+# чтение папки ZET (read-only)
+from zet_index import scan_dir, load_cache, set_active_record
+
+ASTRO = Path.home() / 'astro'
+CONFIG_PATH = ASTRO / 'config.yaml'
+CONF_RU_PATH = ASTRO / 'data' / 'configs' / 'configs_ru.yaml'
+
+ensure_db()
+
+with ui.header().classes('items-center'):
+    ui.label('GeoDAC — Control Panel').classes('text-h6')
+    ui.space()
+    ui.label('local UI')
+
+# вкладки
+with ui.tabs().classes('w-full') as tabs:
+    t_dash = ui.tab('Сводка')
+    t_mund = ui.tab('Mundane')
+    t_pers = ui.tab('Personal')
+    t_luna = ui.tab('Lunar')
+    t_conf = ui.tab('Config')
+    t_chrt = ui.tab('Гороскопы (SQL)')
+    t_zet  = ui.tab('ZET DBase')
+    t_logs = ui.tab('Логи')
+
+with ui.tab_panels(tabs, value=t_dash).classes('w-full'):
+
+    # 1) Сводка
+    with ui.tab_panel(t_dash):
+        with ui.card().classes('w-full'):
+            ui.label('Окружение').classes('text-subtitle1')
+            info = env_info()
+            ui.markdown(
+                f"- TZ: {info.get('TZ')}\n"
+                f"- EPHE: {info.get('EPHE')}\n"
+                f"- Natal frame: {'OK' if info.get('cusps_ok') else 'missing'}"
+            )
+            ui.button('Snapshot (git)',
+                      on_click=lambda: ui.notify(snapshot() or 'Done', close_button='OK'))
+
+    # 2) Mundane
+    with ui.tab_panel(t_mund):
+        with ui.card().classes('w-full'):
+            ui.label('Mundane: предпросмотр и пуш').classes('text-subtitle1')
+            with ui.row():
+                from_date = ui.input('From', value='2025-02-25')
+                to_date   = ui.input('To',   value='2026-04-01')
+                orb  = ui.input('ORB',     value='2').props('type=number')
+                step = ui.input('STEP_H',  value='12').props('type=number')
+            area = ui.textarea().props('rows=12').classes('w-full')
+            def do_prev_m():
+                r = preview_mundane(from_date.value, to_date.value, orb.value, step.value)
+                area.value = json.dumps(r, ensure_ascii=False, indent=2)
+            ui.button('Preview', on_click=do_prev_m).props('color=primary')
+            ui.button('Push (replace)',
+                      on_click=lambda: area.set_value(
+                          push('mundane', min_events=100, orb=orb.value, step_h=step.value)
+                      )).props('color=negative')
+
+    # 3) Personal (Medium / Long)
+    with ui.tab_panel(t_pers):
+        with ui.card().classes('w-full'):
+            ui.label('Personal: Medium / Long').classes('text-subtitle1')
+            out2 = ui.textarea().props('rows=12').classes('w-full')
+            with ui.row():
+                ui.button('Preview Medium',
+                          on_click=lambda: out2.set_value(json.dumps(preview_medium(), ensure_ascii=False, indent=2))
+                          ).props('color=primary')
+                ui.button('Preview Long',
+                          on_click=lambda: out2.set_value(json.dumps(preview_long(), ensure_ascii=False, indent=2))
+                          ).props('color=primary')
+            with ui.row():
+                ui.button('Push Medium',
+                          on_click=lambda: out2.set_value(push('medium', min_events=40))
+                          ).props('color=negative')
+                ui.button('Push Long',
+                          on_click=lambda: out2.set_value(push('long',   min_events=10))
+                          ).props('color=negative')
+
+    # 4) Lunar
+    with ui.tab_panel(t_luna):
+        with ui.card().classes('w-full'):
+            ui.label('Lunar Natal').classes('text-subtitle1')
+            out3 = ui.textarea().props('rows=12').classes('w-full')
+            ui.button('Preview Lunar',
+                      on_click=lambda: out3.set_value(json.dumps(preview_lunar(), ensure_ascii=False, indent=2))
+                      ).props('color=primary')
+            ui.button('Push Lunar',
+                      on_click=lambda: out3.set_value(push('lunar', min_events=10))
+                      ).props('color=negative')
+
+    # 5) Config (редакторы YAML)
+    with ui.tab_panel(t_conf):
+        with ui.card().classes('w-full'):
+            ui.label('config.yaml').classes('text-subtitle1')
+            cfg_area = ui.textarea(
+                value=CONFIG_PATH.read_text(encoding='utf-8') if CONFIG_PATH.exists() else ''
+            ).props('rows=14').classes('w-full')
+            def save_cfg():
+                try:
+                    yaml.safe_load(cfg_area.value)
+                except Exception as e:
+                    ui.notify(f"YAML error: {e}", color='negative'); return
+                CONFIG_PATH.write_text(cfg_area.value, encoding='utf-8')
+                ui.notify('config.yaml сохранён')
+            ui.button('Сохранить config.yaml', on_click=save_cfg).props('color=primary')
+
+        with ui.card().classes('w-full'):
+            ui.label('configs_ru.yaml').classes('text-subtitle1')
+            cr_path = CONF_RU_PATH; cr_path.parent.mkdir(parents=True, exist_ok=True)
+            cr_area = ui.textarea(
+                value=cr_path.read_text(encoding='utf-8') if cr_path.exists() else ''
+            ).props('rows=14').classes('w-full')
+            def save_conf_ru():
+                try:
+                    yaml.safe_load(cr_area.value)
+                except Exception as e:
+                    ui.notify(f"YAML error: {e}", color='negative'); return
+                cr_path.write_text(cr_area.value, encoding='utf-8')
+                ui.notify('configs_ru.yaml сохранён')
+            ui.button('Сохранить configs_ru.yaml', on_click=save_conf_ru).props('color=primary')
+
+    # 6) Гороскопы (локальная SQLite, не MySQL)
+    with ui.tab_panel(t_chrt):
+        with ui.card().classes('w-full'):
+            ui.label('Гороскопы (локальная база, SQLite)').classes('text-subtitle1')
+            q = ui.input('Поиск (имя/место/теги)').classes('w-1/2')
+            table_box = ui.column().classes('w-full')
+            selected = {'row': None}
+
+            def refresh_table():
+                rows = list_charts(q.value or '')
+                table_box.clear()
+                with table_box:
+                    cols = [
+                        {'name':'id','label':'ID','field':'id','sortable':True},
+                        {'name':'name','label':'Имя','field':'name','sortable':True},
+                        {'name':'date','label':'Дата','field':'date','sortable':True},
+                        {'name':'time','label':'Время','field':'time'},
+                        {'name':'tz','label':'TZ','field':'tz'},
+                        {'name':'lat','label':'Lat','field':'lat'},
+                        {'name':'lon','label':'Lon','field':'lon'},
+                        {'name':'hsys','label':'H','field':'hsys'},
+                        {'name':'place','label':'Место','field':'place'},
+                        {'name':'tags','label':'Теги','field':'tags'},
+                    ]
+                    t = ui.table(columns=cols, rows=rows, row_key='id', selection='single').classes('w-full')
+                    def on_select(e):
+                        sel = (e.args or {}).get('rows', [])
+                        selected['row'] = sel[0] if sel else None
+                    t.on('selection', on_select)
+                    with ui.row():
+                        ui.button('Сделать активным', on_click=lambda: do_set_active()).props('color=primary')
+                        ui.button('Редактировать',    on_click=lambda: do_edit()).props('color=secondary')
+                        ui.button('Удалить',          on_click=lambda: do_delete()).props('color=negative')
+                return rows
+
+            def do_set_active():
+                r = selected['row']
+                if not r: ui.notify('Не выбрана запись', color='warning'); return
+                ui.notify(set_active(r['id']))
+
+            def do_delete():
+                r = selected['row']
+                if not r: ui.notify('Не выбрана запись', color='warning'); return
+                delete_chart(r['id']); ui.notify('Удалено'); refresh_table()
+
+            def do_edit():
+                r = selected['row']
+                if not r: ui.notify('Не выбрана запись', color='warning'); return
+                with ui.dialog() as dlg, ui.card():
+                    ui.label(f"Редактировать #{r['id']}")
+                    name = ui.input('Имя',   value=r['name'])
+                    date = ui.input('Дата',  value=r['date'])
+                    time = ui.input('Время', value=r['time'])
+                    tz   = ui.input('TZ',    value=r['tz'])
+                    lat  = ui.input('Lat',   value=str(r['lat']))
+                    lon  = ui.input('Lon',   value=str(r['lon']))
+                    hsys = ui.input('Hsys',  value=r['hsys'])
+                    place= ui.input('Место', value=r['place'])
+                    tags = ui.input('Теги',  value=r['tags'])
+                    notes= ui.textarea('Заметки', value=r.get('notes','')).props('rows=4')
+                    def save_edit():
+                        update_chart(r['id'], {
+                            'name':name.value,'date':date.value,'time':time.value,'tz':tz.value,
+                            'lat':float(lat.value),'lon':float(lon.value),'hsys':hsys.value,
+                            'place':place.value,'tags':tags.value,'notes':notes.value
+                        })
+                        ui.notify('Сохранено'); dlg.close(); refresh_table()
+                    with ui.row():
+                        ui.button('Сохранить', on_click=save_edit).props('color=primary')
+                        ui.button('Отмена', on_click=dlg.close)
+                dlg.open()
+
+            with ui.row():
+                ui.button('Поиск', on_click=refresh_table).props('color=primary')
+            refresh_table()
+
+            # Импорт из строки ZET
+            with ui.card().classes('w-full'):
+                ui.label('Импорт строки ZET').classes('text-subtitle1')
+                imp = ui.textarea().props('rows=3').classes('w-full')
+                def do_import():
+                    try:
+                        rid = add_chart_from_zet(imp.value)
+                        ui.notify(f'Добавлено: id={rid}'); imp.value=''
+                        refresh_table()
+                    except Exception as e:
+                        ui.notify(f'Ошибка импорта: {e}', color='negative')
+                ui.button('Импортировать', on_click=do_import).props('color=primary')
+
+            # Импорт каталога в SQLite (опционально)
+            with ui.card().classes('w-full'):
+                ui.label('Импорт папки ZET в локальную базу (опционально)').classes('text-subtitle1')
+                zet_path = ui.input('Путь', value='/home/DAC/Zet9 GeoDAC/DBase/').classes('w-1/2')
+                patt = ui.input('Шаблон', value='*.txt').classes('w-1/6')
+                dry = ui.checkbox('Dry-run', value=True)
+                upd = ui.checkbox('Обновлять дубликаты', value=False)
+                rep = ui.textarea().props('rows=6').classes('w-full')
+                def do_import_dir():
+                    r = import_zet_dir(zet_path.value, pattern=patt.value or '*.txt',
+                                       dry_run=dry.value, update_existing=upd.value)
+                    rep.value = json.dumps(r, ensure_ascii=False, indent=2)
+                    ui.notify('Готово')
+                ui.button('Импортировать папку', on_click=do_import_dir).props('color=primary')
+
+    # 7) ZET DBase (read-only, без импорта)
+    with ui.tab_panel(t_zet):
+        with ui.card().classes('w-full'):
+            ui.label('ZET DBase (read-only)').classes('text-subtitle1')
+            path = ui.input('Путь к базе ZET', value='/home/DAC/Zet9 GeoDAC/DBase/').classes('w-2/3')
+            patt = ui.input('Шаблон', value='*.txt').classes('w-1/6')
+            info = ui.label('')
+            data_box = ui.column().classes('w-full')
+            selected = {'row': None}
+
+            def render_table(records):
+                data_box.clear()
+                with data_box:
+                    cols = [
+                        {'name':'id','label':'ID','field':'id','sortable':True},
+                        {'name':'name','label':'Имя','field':'name','sortable':True},
+                        {'name':'date','label':'Дата','field':'date','sortable':True},
+                        {'name':'time','label':'Время','field':'time'},
+                        {'name':'tz','label':'TZ','field':'tz'},
+                        {'name':'lat','label':'Lat','field':'lat'},
+                        {'name':'lon','label':'Lon','field':'lon'},
+                        {'name':'hsys','label':'H','field':'hsys'},
+                        {'name':'place','label':'Место','field':'place'},
+                        {'name':'tags','label':'Теги','field':'tags'},
+                    ]
+                    rows = records[:600]
+                    t = ui.table(columns=cols, rows=rows, row_key='id', selection='single', pagination=10).classes('w-full')
+                    def on_select(e):
+                        sel = (e.args or {}).get('rows', [])
+                        selected['row'] = sel[0] if sel else None
+                    t.on('selection', on_select)
+                    with ui.row():
+                        ui.button('Сделать активным', on_click=lambda: do_set_active()).props('color=primary')
+                        ui.button('Пересканировать', on_click=lambda: do_scan()).props('color=secondary')
+
+            def do_set_active():
+                r = selected['row']
+                if not r: ui.notify('Не выбрана запись', color='warning'); return
+                ui.notify(set_active_record(r))
+
+            def do_scan():
+                recs = scan_dir(path.value, patt.value or '*.txt', save_cache=True)
+                info.text = f"Найдено записей: {len(recs)}"
+                render_table(recs)
+
+            cache = load_cache()
+            if cache.get('records'):
+                info.text = f"Кэш: {len(cache['records'])} записей из {cache.get('root','')}"
+                render_table(cache['records'])
+            else:
+                info.text = "Кэш не найден. Нажмите «Пересканировать»."
+
+    # 8) Логи
+    with ui.tab_panel(t_logs):
+        with ui.card().classes('w-full'):
+            ui.label('Логи').classes('text-subtitle1')
+            sel = ui.select(['mundane','medium','long','lunar'], value='mundane', label='Log')
+            ta  = ui.textarea().props('rows=18').classes('w-full')
+            ui.button('Refresh', on_click=lambda: ta.set_value(tail_log(sel.value, 300)))
+
+ui.run(host='127.0.0.1', port=8080, title='GeoDAC Control', reload=False)

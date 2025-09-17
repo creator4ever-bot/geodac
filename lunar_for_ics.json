@@ -1,0 +1,30 @@
+{
+  "events": [
+    {
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "summary": "Moon ☌ 16° Рыб",
+      "start": "2025-09-20 20:39",
+      "peak": "2025-09-20 21:39",
+      "end": "2025-09-20 22:39",
+      "description": "",
+      "category": "Lunar",
+      "alarm": "-PT20M",
+      "privacy": "private"
+    },
+    {
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "summary": "Moon ☌ 29° Девы",
+      "start": "2025-09-21 21:44",
+      "peak": "2025-09-21 22:44",
+      "end": "2025-09-21 23:44",
+      "description": "",
+      "category": "Lunar",
+      "alarm": "-PT20M",
+      "privacy": "private"
+    }
+  ]
+}

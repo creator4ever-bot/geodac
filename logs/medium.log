@@ -1,0 +1,429 @@
+Upsert done: inserted=29, updated=33, total=62
+Replace mode: deleted=0
+Upsert done: inserted=57, updated=0, total=57
+Pruned older than 30d: 2
+Upsert done: inserted=57, updated=0, total=57
+Pruned older than 30d: 0
+Upsert done: inserted=11, updated=35, total=46
+Pruned older than 30d: 0
+Upsert done: inserted=11, updated=35, total=46
+Pruned older than 30d: 0
+Upsert done: inserted=7, updated=39, total=46
+Replace mode: deleted=40
+Upsert done: inserted=0, updated=46, total=46
+Replace mode: deleted=0
+Upsert done: inserted=0, updated=46, total=46
+Replace mode: deleted=0
+Upsert done: inserted=0, updated=46, total=46
+Replace mode: deleted=0
+Upsert done: inserted=0, updated=46, total=46
+Replace mode: deleted=0
+Upsert done: inserted=4, updated=46, total=50
+Replace mode: deleted=0
+[2025-09-12 16:57:05] medium start FROM=2025-08-13 TO=2025-10-12 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250912-1657.json count: 50
+[calc] RAW written: 23676 bytes
+OK: wrote 62 events -> /home/DAC/astro/transits_medium_for_ics.json
+[post] Rx/S annotated
+[validate] events: 62
+Upsert done: inserted=44, updated=18, total=62
+Replace mode: deleted=32
+[2025-09-12 16:58:00] medium done
+[2025-09-12 17:04:24] medium start FROM=2025-08-13 TO=2025-10-12 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250912-1704.json count: 62
+[calc] RAW written: 23676 bytes
+OK: wrote 62 events -> /home/DAC/astro/transits_medium_for_ics.json
+[post] Rx/S annotated
+[validate] events: 62
+Upsert done: inserted=0, updated=62, total=62
+Replace mode: deleted=0
+[2025-09-12 17:04:58] medium done
+[2025-09-13 00:52:23] medium FROM=2025-08-14 TO=2025-10-13 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250913-0052.json count: 62
+OK: wrote 62 events -> /home/DAC/astro/transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 13
+[merge] FIX: 62 RICH: 13 => MERGED: 75
+[validate] events:, 75
+Upsert done: inserted=15, updated=60, total=75
+Replace mode: deleted=2
+[2025-09-13 00:53:10] medium done
+[2025-09-13 04:58:25] medium FROM=2025-08-14 TO=2025-10-13 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250913-0458.json count: 75
+OK: wrote 62 events -> /home/DAC/astro/transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 13
+[merge] FIX: 62 RICH: 13 => MERGED: 75
+[validate] events:, 75
+Upsert done: inserted=0, updated=75, total=75
+Replace mode: deleted=0
+[2025-09-13 04:59:08] medium done
+[2025-09-15 01:51:58] medium FROM=2025-08-16 TO=2025-10-15 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250915-0151.json count: 75
+OK: wrote 64 events -> /home/DAC/astro/transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 13
+[merge] FIX: 64 RICH: 13 => MERGED: 77
+[validate] events:, 77
+Traceback (most recent call last):
+  File "/home/DAC/astro/push_gcal.py", line 173, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/home/DAC/astro/push_gcal.py", line 146, in main
+    service.events().update(calendarId=cal_id, eventId=existing[eid], body=body).execute()
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 403 when requesting https://www.googleapis.com/calendar/v3/calendars/65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392%40group.calendar.google.com/events/a3d2je7i85njk3b01k4de68c0s?alt=json returned "Rate Limit Exceeded". Details: "[{'domain': 'usageLimits', 'reason': 'rateLimitExceeded', 'message': 'Rate Limit Exceeded'}]">
+[2025-09-15 01:54:32] medium FROM=2025-08-16 TO=2025-10-15 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250915-0154.json count: 77
+OK: wrote 64 events -> /home/DAC/astro/transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 13
+[merge] FIX: 64 RICH: 13 => MERGED: 77
+[validate] events:, 77
+Upsert done: inserted=2, updated=75, total=77
+Replace mode: deleted=2
+[2025-09-15 01:55:15] medium done
+[2025-09-15 03:30:01] medium FROM=2025-08-16 TO=2025-10-15 CAL=Astro — Medium (Managed)
+[2025-09-15 03:30:01] medium FROM=2025-08-16 TO=2025-10-15 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250915-0330.json count: 77
+[backup] saved: /home/DAC/astro/backups/Medium_20250915-0330.json count: 77
+OK: wrote 64 events -> /home/DAC/astro/transits_medium_for_ics.json
+OK: wrote 64 events -> /home/DAC/astro/transits_medium_for_ics.json
+[post] Rx/S done
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 13
+OK: /home/DAC/astro/experimental_configs_rich.json events: 13
+[merge] FIX: 64 RICH: 13 => MERGED: 77
+[merge] FIX: 64 RICH: 13 => MERGED: 77
+[validate] events:, 77
+[validate] events:, 77
+Upsert done: inserted=0, updated=77, total=77
+Replace mode: deleted=0
+Upsert done: inserted=0, updated=77, total=77
+Replace mode: deleted=0
+[2025-09-15 03:30:43] medium done
+[2025-09-15 03:30:43] medium done
+[2025-09-16 04:01:31] medium FROM=2025-08-17 TO=2025-10-16 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250916-0401.json count: 77
+OK: wrote 62 events -> /home/DAC/astro/transits_medium_for_ics.json
+axis_unify: new=8 removed=16 kept=46 -> total=54 in transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 4
+[merge] FIX: 54 RICH: 4 => MERGED: 57
+[validate] events:, 57
+[gcal] upsert start: total=57
+[gcal] upsert 1/57 (1%)
+[gcal] upsert 2/57 (3%)
+[gcal] upsert 4/57 (7%)
+[gcal] upsert 6/57 (10%)
+[gcal] upsert 8/57 (14%)
+[gcal] upsert 10/57 (17%)
+[gcal] upsert 12/57 (21%)
+[gcal] upsert 14/57 (24%)
+[gcal] upsert 16/57 (28%)
+[gcal] upsert 18/57 (31%)
+[gcal] upsert 20/57 (35%)
+[gcal] upsert 22/57 (38%)
+[gcal] upsert 24/57 (42%)
+[gcal] upsert 26/57 (45%)
+[gcal] upsert 28/57 (49%)
+[gcal] upsert 30/57 (52%)
+[gcal] upsert 32/57 (56%)
+[gcal] upsert 34/57 (59%)
+[gcal] upsert 36/57 (63%)
+[gcal] upsert 38/57 (66%)
+[gcal] upsert 40/57 (70%)
+[gcal] upsert 42/57 (73%)
+[gcal] upsert 44/57 (77%)
+[gcal] upsert 46/57 (80%)
+[gcal] upsert 48/57 (84%)
+[gcal] upsert 50/57 (87%)
+[gcal] upsert 52/57 (91%)
+[gcal] upsert 54/57 (94%)
+[gcal] upsert 56/57 (98%)
+[gcal] upsert 57/57 (100%)
+Upsert done: inserted=10, updated=47, skipped=0, total=57
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=30
+[2025-09-16 04:02:21] medium done
+[2025-09-16 04:11:43] medium FROM=2025-08-17 TO=2025-10-16 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250916-0411.json count: 57
+OK: wrote 62 events -> /home/DAC/astro/transits_medium_for_ics.json
+axis_unify: new=8 removed=16 kept=46 -> total=54 in transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 4
+[merge] FIX: 54 RICH: 4 => MERGED: 58
+[validate] events:, 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=8, updated=0, skipped=50, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=7
+[2025-09-16 04:11:56] medium done
+[2025-09-16 04:16:42] medium FROM=2025-08-17 TO=2025-10-16 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250916-0416.json count: 58
+OK: wrote 62 events -> /home/DAC/astro/transits_medium_for_ics.json
+axis_unify: new=8 removed=16 kept=46 -> total=54 in transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 4
+[merge] FIX: 54 RICH: 4 => MERGED: 58
+[validate] events:, 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=0, updated=8, skipped=50, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-16 04:16:51] medium done
+[2025-09-16 04:30:25] medium FROM=2025-08-17 TO=2025-10-16 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250916-0430.json count: 58
+OK: wrote 48 events -> /home/DAC/astro/transits_medium_for_ics.json
+axis_unify: new=0 removed=0 kept=48 -> total=48 in transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 0
+[merge] FIX: 48 RICH: 0 => MERGED: 48
+[validate] events:, 48
+[gcal] upsert start: total=48
+[gcal] upsert 1/48 (2%)
+[gcal] upsert 2/48 (4%)
+[gcal] upsert 4/48 (8%)
+[gcal] upsert 6/48 (12%)
+[gcal] upsert 8/48 (16%)
+[gcal] upsert 10/48 (20%)
+[gcal] upsert 12/48 (25%)
+[gcal] upsert 14/48 (29%)
+[gcal] upsert 16/48 (33%)
+[gcal] upsert 18/48 (37%)
+[gcal] upsert 20/48 (41%)
+[gcal] upsert 22/48 (45%)
+[gcal] upsert 24/48 (50%)
+[gcal] upsert 26/48 (54%)
+[gcal] upsert 28/48 (58%)
+[gcal] upsert 30/48 (62%)
+[gcal] upsert 32/48 (66%)
+[gcal] upsert 34/48 (70%)
+[gcal] upsert 36/48 (75%)
+[gcal] upsert 38/48 (79%)
+[gcal] upsert 40/48 (83%)
+[gcal] upsert 42/48 (87%)
+[gcal] upsert 44/48 (91%)
+[gcal] upsert 46/48 (95%)
+[gcal] upsert 48/48 (100%)
+Upsert done: inserted=6, updated=8, skipped=34, total=48
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=16
+[2025-09-16 04:30:45] medium done
+[2025-09-16 05:56:22] medium FROM=2025-08-17 TO=2025-10-16 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250916-0556.json count: 48
+OK: wrote 48 events -> /home/DAC/astro/transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 0
+[merge] FIX: 48 RICH: 0 => MERGED: 48
+[validate] events:, 48
+[gcal] upsert start: total=48
+[gcal] upsert 1/48 (2%)
+[gcal] upsert 2/48 (4%)
+[gcal] upsert 4/48 (8%)
+[gcal] upsert 6/48 (12%)
+[gcal] upsert 8/48 (16%)
+[gcal] upsert 10/48 (20%)
+[gcal] upsert 12/48 (25%)
+[gcal] upsert 14/48 (29%)
+[gcal] upsert 16/48 (33%)
+[gcal] upsert 18/48 (37%)
+[gcal] upsert 20/48 (41%)
+[gcal] upsert 22/48 (45%)
+[gcal] upsert 24/48 (50%)
+[gcal] upsert 26/48 (54%)
+[gcal] upsert 28/48 (58%)
+[gcal] upsert 30/48 (62%)
+[gcal] upsert 32/48 (66%)
+[gcal] upsert 34/48 (70%)
+[gcal] upsert 36/48 (75%)
+[gcal] upsert 38/48 (79%)
+[gcal] upsert 40/48 (83%)
+[gcal] upsert 42/48 (87%)
+[gcal] upsert 44/48 (91%)
+[gcal] upsert 46/48 (95%)
+[gcal] upsert 48/48 (100%)
+Upsert done: inserted=0, updated=34, skipped=14, total=48
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-16 05:56:45] medium done
+[2025-09-16 06:07:02] medium FROM=2025-08-17 TO=2025-10-16 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250916-0607.json count: 48
+OK: wrote 48 events -> /home/DAC/astro/transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 0
+[merge] FIX: 48 RICH: 0 => MERGED: 48
+[validate] events:, 48
+[gcal] upsert start: total=48
+[gcal] upsert 1/48 (2%)
+[gcal] upsert 2/48 (4%)
+[gcal] upsert 4/48 (8%)
+[gcal] upsert 6/48 (12%)
+[gcal] upsert 8/48 (16%)
+[gcal] upsert 10/48 (20%)
+[gcal] upsert 12/48 (25%)
+[gcal] upsert 14/48 (29%)
+[gcal] upsert 16/48 (33%)
+[gcal] upsert 18/48 (37%)
+[gcal] upsert 20/48 (41%)
+[gcal] upsert 22/48 (45%)
+[gcal] upsert 24/48 (50%)
+[gcal] upsert 26/48 (54%)
+[gcal] upsert 28/48 (58%)
+[gcal] upsert 30/48 (62%)
+[gcal] upsert 32/48 (66%)
+[gcal] upsert 34/48 (70%)
+[gcal] upsert 36/48 (75%)
+[gcal] upsert 38/48 (79%)
+[gcal] upsert 40/48 (83%)
+[gcal] upsert 42/48 (87%)
+[gcal] upsert 44/48 (91%)
+[gcal] upsert 46/48 (95%)
+[gcal] upsert 48/48 (100%)
+Upsert done: inserted=0, updated=0, skipped=48, total=48
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-16 06:07:08] medium done
+[2025-09-17 01:49:40] medium FROM=2025-08-18 TO=2025-10-17 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250917-0149.json count: 48
+  File "/home/DAC/astro/render_for_ics.py", line 40
+    def pair_fallback(ev, asp_sym):
+    ^^^
+SyntaxError: invalid syntax
+[2025-09-17 01:57:34] medium FROM=2025-08-18 TO=2025-10-17 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250917-0157.json count: 48
+OK: wrote 46 events -> /home/DAC/astro/transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 0
+[merge] FIX: 46 RICH: 0 => MERGED: 46
+[validate] events:, 46
+[gcal] upsert start: total=46
+[gcal] upsert 1/46 (2%)
+[gcal] upsert 2/46 (4%)
+[gcal] upsert 4/46 (8%)
+[gcal] upsert 6/46 (13%)
+[gcal] upsert 8/46 (17%)
+[gcal] upsert 10/46 (21%)
+[gcal] upsert 12/46 (26%)
+[gcal] upsert 14/46 (30%)
+[gcal] upsert 16/46 (34%)
+[gcal] upsert 18/46 (39%)
+[gcal] upsert 20/46 (43%)
+[gcal] upsert 22/46 (47%)
+[gcal] upsert 24/46 (52%)
+[gcal] upsert 26/46 (56%)
+[gcal] upsert 28/46 (60%)
+[gcal] upsert 30/46 (65%)
+[gcal] upsert 32/46 (69%)
+[gcal] upsert 34/46 (73%)
+[gcal] upsert 36/46 (78%)
+[gcal] upsert 38/46 (82%)
+[gcal] upsert 40/46 (86%)
+[gcal] upsert 42/46 (91%)
+[gcal] upsert 44/46 (95%)
+[gcal] upsert 46/46 (100%)
+Upsert done: inserted=1, updated=7, skipped=38, total=46
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=3
+[2025-09-17 01:57:45] medium done
+[2025-09-17 02:12:27] medium FROM=2025-08-18 TO=2025-10-17 CAL=Astro — Medium (Managed)
+[backup] saved: /home/DAC/astro/backups/Medium_20250917-0212.json count: 46
+OK: wrote 46 events -> /home/DAC/astro/transits_medium_for_ics.json
+[post-enrich] changed=31 -> /home/DAC/astro/transits_medium_for_ics.json
+[post] Rx/S done
+OK: /home/DAC/astro/experimental_configs_rich.json events: 0
+[merge] FIX: 46 RICH: 0 => MERGED: 46
+[validate] events:, 46
+[gcal] upsert start: total=46
+[gcal] upsert 1/46 (2%)
+[gcal] upsert 2/46 (4%)
+[gcal] upsert 4/46 (8%)
+[gcal] upsert 6/46 (13%)
+[gcal] upsert 8/46 (17%)
+[gcal] upsert 10/46 (21%)
+[gcal] upsert 12/46 (26%)
+[gcal] upsert 14/46 (30%)
+[gcal] upsert 16/46 (34%)
+[gcal] upsert 18/46 (39%)
+[gcal] upsert 20/46 (43%)
+[gcal] upsert 22/46 (47%)
+[gcal] upsert 24/46 (52%)
+[gcal] upsert 26/46 (56%)
+[gcal] upsert 28/46 (60%)
+[gcal] upsert 30/46 (65%)
+[gcal] upsert 32/46 (69%)
+[gcal] upsert 34/46 (73%)
+[gcal] upsert 36/46 (78%)
+[gcal] upsert 38/46 (82%)
+[gcal] upsert 40/46 (86%)
+[gcal] upsert 42/46 (91%)
+[gcal] upsert 44/46 (95%)
+[gcal] upsert 46/46 (100%)
+Upsert done: inserted=0, updated=31, skipped=15, total=46
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-17 02:12:49] medium done

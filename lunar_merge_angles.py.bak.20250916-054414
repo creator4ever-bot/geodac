@@ -1,0 +1,123 @@
+# -*- coding: utf-8 -*-
+# Склейка Луны к парам осей в одну запись (горизонт: ASC/DSC; вертикаль: MC/IC)
+import os, json, hashlib
+from collections import defaultdict
+
+AXIS_GROUPS = [
+  ({"ASC","DSC"}, "к горизонту"),
+  ({"MC","IC"},   "к вертикали"),
+]
+
+def norm_t(t): return (t or '').upper()
+
+def sym_aspect(ev):
+    a = ev.get('aspect') or ''
+    a_low = a.lower()
+    if a in ('□',) or a_low in ('sqr', 'square'): return '□'
+    if a in ('△',) or a_low in ('tri', 'trine'):  return '△'
+    if a in ('✶',) or a_low in ('sex', 'sextile'):return '✶'
+    if a in ('☌',) or a_low in ('conj', 'conjunction'): return '☌'
+    if a in ('☍',) or a_low in ('opp', 'opposition'):   return '☍'
+    # пробуем по summary
+    s = (ev.get('summary') or '')
+    for ch in ['□','△','✶','☌','☍']:
+        if ch in s: return ch
+    return a or a_low
+
+def merge(in_path, out_path):
+    in_path = os.path.expanduser(in_path)
+    out_path = os.path.expanduser(out_path)
+    data = json.load(open(in_path, 'r', encoding='utf-8'))
+    events = data.get('events', []) if isinstance(data, dict) else data
+
+    by_min = defaultdict(list)
+    for e in events:
+        is_moon = ((e.get('transit') or '').upper() == 'MOON') or ((e.get('summary') or '').startswith('☽'))
+        if is_moon:
+            k = (e.get('peak') or e.get('start') or '')[:16]  # до минут
+            by_min[k].append(e)
+
+    keep = []
+    consumed = set()
+
+    for e in events:
+        is_moon = ((e.get('transit') or '').upper() == 'MOON') or ((e.get('summary') or '').startswith('☽'))
+        k = (e.get('peak') or e.get('start') or '')[:16]
+        if not is_moon:
+            keep.append(e)
+            continue
+        if k in consumed:
+            continue
+
+        group = by_min.get(k, [])
+        axes_by_asp = defaultdict(set)  # аспект -> {targets}
+        for g in group:
+            axes_by_asp[sym_aspect(g)].add(norm_t(g.get('target')))
+
+        merged = False
+        # 1) одинаковые аспекты к паре осей
+        for axes, label in AXIS_GROUPS:
+            for asp, tgset in list(axes_by_asp.items()):
+                if axes <= tgset:
+                    parts = [g for g in group if norm_t(g.get('target')) in axes and sym_aspect(g) == asp]
+                    base = parts[0] if parts else e
+                    summ = f"☽ {asp} {label}"
+                    desc = " \n".join(p.get('description','') for p in parts if p.get('description')) or "Эффект по оси становится заметным."
+                    desc = desc.replace('выходит на лицо','становится заметным')
+                    gid  = "gd"+hashlib.sha1((summ+"|"+(base.get('peak') or base.get('start') or '')).encode()).hexdigest()
+                    keep.append({
+                        "type": base.get('type') or 'ASPECT',
+                        "summary": summ,
+                        "description": desc,
+                        "category": base.get('category') or 'Lunar',
+                        "alarm": base.get('alarm',''),
+                        "start": base.get('start'), "end": base.get('end'), "peak": base.get('peak'),
+                        "gd_id": gid
+                    })
+                    consumed.add(k); merged = True; break
+            if merged: break
+        if merged:
+            continue
+        # 2) трин + секстиль к паре осей
+        for axes, label in AXIS_GROUPS:
+            if axes <= (axes_by_asp.get('△', set()) | axes_by_asp.get('✶', set())):
+                parts = [g for g in group if norm_t(g.get('target')) in axes and sym_aspect(g) in ('△','✶')]
+                base  = parts[0] if parts else e
+                summ  = f"☽ △/✶ {label}"
+                desc  = " \n".join(p.get('description','') for p in parts if p.get('description')) or "Мягкий выход по оси; закрепляйте шаги."
+                desc  = desc.replace('выходит на лицо','становится заметным')
+                gid   = "gd"+hashlib.sha1((summ+"|"+(base.get('peak') or base.get('start') or '')).encode()).hexdigest()
+                keep.append({
+                    "type": base.get('type') or 'ASPECT',
+                    "summary": summ,
+                    "description": desc,
+                    "category": base.get('category') or 'Lunar',
+                    "alarm": base.get('alarm',''),
+                    "start": base.get('start'), "end": base.get('end'), "peak": base.get('peak'),
+                    "gd_id": gid
+                })
+                consumed.add(k); merged = True; break
+        if merged:
+            continue
+
+        # иначе — оставляем одиночное лунное событие
+        keep.append(e); consumed.add(k)
+
+    # плюс все не‑лунные, не попавшие в keep (на случай дубликатов)
+    seen = {e.get('gd_id') for e in keep}
+    for e in events:
+        is_moon = ((e.get('transit') or '').upper() == 'MOON') or ((e.get('summary') or '').startswith('☽'))
+        if is_moon: continue
+        if e.get('gd_id') not in seen:
+            keep.append(e)
+
+    keep = sorted(keep, key=lambda x: x.get('peak') or x.get('start') or '')
+    json.dump({"events": keep}, open(out_path, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+    print("OK:", out_path, "events:", len(keep))
+
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) < 3:
+        print("Usage: python lunar_merge_angles.py IN.json OUT.json")
+        sys.exit(1)
+    merge(sys.argv[1], sys.argv[2])

@@ -1,0 +1,114 @@
+from nicegui import ui
+import json
+from pathlib import Path
+from pipeline import env_info, preview_mundane, preview_medium, preview_long, preview_lunar, push, tail_log, snapshot
+
+ASTRO = Path.home() / 'astro'
+
+with ui.header().classes('items-center'):
+    ui.label('GeoDAC — Control Panel').classes('text-h6')
+    ui.space()
+    ui.label('local UI')
+
+with ui.row().classes('w-full'):
+    with ui.card():
+        ui.label('Environment').classes('text-subtitle1')
+        info = env_info()
+        ui.markdown(f"- TZ: {info.get('TZ')}\n- EPHE: {info.get('EPHE')}\n- Natal frame: {'OK' if info.get('cusps_ok') else 'missing'}")
+        ui.button('Snapshot (git)', on_click=lambda: ui.notify(snapshot() or 'Done', close_button='OK'))
+
+with ui.row().classes('w-full'):
+    with ui.card().classes('w-1/2'):
+        ui.label('Mundane').classes('text-subtitle1')
+        from_date = ui.input('From', value='2025-02-25')
+        to_date = ui.input('To', value='2026-04-01')
+        orb = ui.input('ORB', value='2')
+        step = ui.input('STEP_H', value='12')
+        area = ui.textarea().props('rows=12')
+        def do_prev_m():
+            r = preview_mundane(from_date.value, to_date.value, orb.value, step.value)
+            area.value = json.dumps(r, ensure_ascii=False, indent=2)
+        ui.button('Preview', on_click=do_prev_m).props('color=primary')
+        def do_push_m():
+            out = push('mundane', min_events=100, orb=orb.value, step_h=step.value)
+            area.value = out
+        ui.button('Push (replace)', on_click=do_push_m).props('color=negative')
+
+    with ui.card().classes('w-1/2'):
+        ui.label('Personal: Medium / Long / Lunar').classes('text-subtitle1')
+        out2 = ui.textarea().props('rows=12')
+        with ui.row():
+            ui.button('Preview Medium', on_click=lambda: out2.set_value(json.dumps(preview_medium(), ensure_ascii=False, indent=2))).props('color=primary')
+            ui.button('Preview Long',   on_click=lambda: out2.set_value(json.dumps(preview_long(),   ensure_ascii=False, indent=2))).props('color=primary')
+            ui.button('Preview Lunar',  on_click=lambda: out2.set_value(json.dumps(preview_lunar(),  ensure_ascii=False, indent=2))).props('color=primary')
+        with ui.row():
+            ui.button('Push Medium', on_click=lambda: out2.set_value(push('medium', min_events=40))).props('color=negative')
+            ui.button('Push Long',   on_click=lambda: out2.set_value(push('long',   min_events=10))).props('color=negative')
+            ui.button('Push Lunar',  on_click=lambda: out2.set_value(push('lunar',  min_events=10))).props('color=negative')
+
+with ui.row().classes('w-full'):
+    with ui.card().classes('w-full'):
+        ui.label('Logs').classes('text-subtitle1')
+        sel = ui.select(['mundane','medium','long','lunar'], value='mundane', label='Log')
+        ta  = ui.textarea().props('rows=18')
+        ui.button('Refresh', on_click=lambda: ta.set_value(tail_log(sel.value, 300)))
+
+ui.run(port=8080, title='GeoDAC Control', reload=False)
+
+
+    # ZET DBase (read-only)
+    with ui.tab_panel(t_zet):
+        with ui.card().classes('w-full'):
+            ui.label('ZET DBase (read-only)').classes('text-subtitle1')
+            path = ui.input('Путь к базе ZET', value='/home/DAC/Zet9 GeoDAC/DBase/').classes('w-2/3')
+            patt = ui.input('Шаблон', value='*.txt').classes('w-1/6')
+            info = ui.label('')
+            data_area = ui.element('div').classes('w-full')
+            selected = {'row': None}
+
+            def render_table(records):
+                data_area.clear()
+                with data_area:
+                    # Покажем первые 500 строк (для скорости)
+                    cols = [
+                        {'name':'id','label':'ID','field':'id','sortable':True},
+                        {'name':'name','label':'Имя','field':'name','sortable':True},
+                        {'name':'date','label':'Дата','field':'date','sortable':True},
+                        {'name':'time','label':'Время','field':'time'},
+                        {'name':'tz','label':'TZ','field':'tz'},
+                        {'name':'lat','label':'Lat','field':'lat'},
+                        {'name':'lon','label':'Lon','field':'lon'},
+                        {'name':'hsys','label':'H','field':'hsys'},
+                        {'name':'place','label':'Место','field':'place'},
+                        {'name':'tags','label':'Теги','field':'tags'},
+                    ]
+                    rows = records[:500]
+                    t = ui.table(columns=cols, rows=rows, row_key='id', pagination=10, selection='single').classes('w-full')
+                    def on_select(e):
+                        sel = (e.args or {}).get('rows', [])
+                        selected['row'] = sel[0] if sel else None
+                    t.on('selection', on_select)
+                    with ui.row():
+                        ui.button('Сделать активным', on_click=lambda: activate_selected()).props('color=primary')
+                        ui.button('Обновить индекс', on_click=lambda: do_scan()).props('color=secondary')
+
+            def activate_selected():
+                r = selected['row']
+                if not r:
+                    ui.notify('Не выбрана запись', color='warning'); return
+                msg = set_active_record(r)
+                ui.notify(f'Активирован: {r.get("name")} ({msg})')
+
+            def do_scan():
+                recs = scan_dir(path.value, patt.value or '*.txt', save_cache=True)
+                info.text = f"Найдено записей: {len(recs)}"
+                render_table(recs)
+
+            # Загрузим кэш, если есть
+            cache = load_cache()
+            if cache.get('records'):
+                info.text = f"Кэш: {len(cache['records'])} записей из {cache.get('root','')}"
+                render_table(cache['records'])
+            else:
+                info.text = "Кэш не найден. Нажмите «Обновить индекс»."
+

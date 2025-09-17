@@ -1,0 +1,204 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import os, sys, json, argparse, hashlib, re
+from datetime import datetime, timedelta, timezone
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+from dateutil import parser as duparser, tz as dutz
+
+SCOPES = ['https://www.googleapis.com/auth/calendar']
+
+def ensure_service(creds_dir):
+    os.makedirs(creds_dir, exist_ok=True)
+    cred_path = os.path.join(creds_dir, 'credentials.json')
+    token_path = os.path.join(creds_dir, 'token.json')
+    if not os.path.exists(cred_path):
+        print(f"ERROR: credentials.json not found at {cred_path}", file=sys.stderr); sys.exit(1)
+    creds = None
+    if os.path.exists(token_path):
+        creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(cred_path, SCOPES)
+            creds = flow.run_local_server(port=0)
+        with open(token_path, 'w', encoding='utf-8') as f:
+            f.write(creds.to_json())
+    return build('calendar', 'v3', credentials=creds)
+
+def get_or_create_calendar(service, summary, tzname):
+    pageToken = None
+    while True:
+        resp = service.calendarList().list(pageToken=pageToken, maxResults=250).execute()
+        for it in resp.get('items', []):
+            if it.get('summary') == summary:
+                return it['id']
+        pageToken = resp.get('nextPageToken')
+        if not pageToken: break
+    body = {'summary': summary, 'timeZone': tzname}
+    cal = service.calendars().insert(body=body).execute()
+    return cal['id']
+
+def parse_alarm_minutes(s):
+    if not s: return None
+    m = re.match(r'^-PT(\d+)M$', s)
+    if m: return int(m.group(1))
+    m = re.match(r'^-PT(\d+)H$', s)
+    if m: return int(m.group(1))*60
+    return None
+
+def to_dt_local(s, tzname):
+    """
+    Преобразует строки вида:
+      - 'YYYY-MM-DD HH:MM' / 'YYYY-MM-DDTHH:MM'
+      - 'YYYY-MM-DDTHH:MM:SSZ'
+      - 'YYYY-MM-DDTHH:MM[:SS]+03:00'
+    в локальное представление 'YYYY-MM-DDTHH:MM:SS' под указанный tzname.
+    В тело события добавляется поле timeZone, поэтому смещение не инлайнится.
+    """
+    if not s: return None
+    s = str(s).strip()
+    # Попытка парсинга "как есть"
+    try:
+        d = duparser.parse(s)
+    except Exception:
+        # fallback: нормализуем пробел/секунды
+        ss = s.replace(' ', 'T')
+        if re.search(r'T\d{2}:\d{2}$', ss): ss += ':00'
+        d = duparser.parse(ss)
+    # Приводим к локальной TZ и делаем naive (offset в поле timeZone)
+    tzinfo = dutz.gettz(tzname)
+    if d.tzinfo:
+        d = d.astimezone(tzinfo)
+    return d.replace(tzinfo=None).isoformat(timespec='seconds')
+
+def make_id(e):
+    # 1) если есть явный uid — используем его
+    if e.get('uid'):
+        base = str(e['uid'])
+    # 2) транзиты/натал: стабильная четвёрка
+    elif all(k in e for k in ('transit','aspect','target','peak')):
+        base = f"{e['transit']}|{e['aspect']}|{e['target']}|{e['peak']}"
+    # 3) fallback (старый вариант)
+    else:
+        base = f"{e.get('summary','')}|{e.get('start','')}|{e.get('end','')}"
+    return ("gd"+hashlib.sha1(base.encode('utf-8')).hexdigest()).lower()
+
+def build_event(e, tzname, eid=None):
+    alarm_min = parse_alarm_minutes(e.get('alarm'))
+    vis = 'private' if (e.get('privacy','').lower() == 'private') else 'default'
+    transparency = 'transparent' if e.get('busy','FREE') == 'FREE' else 'opaque'
+    start_dt = to_dt_local(e['start'], tzname)
+    end_dt   = to_dt_local(e['end'],   tzname)
+    body = {
+        'summary': (e['summary'] or '')[:250],
+        'description': (e.get('description','') or '')[:8192],
+        'start': {'dateTime': start_dt, 'timeZone': tzname},
+        'end':   {'dateTime': end_dt,   'timeZone': tzname},
+        'visibility': vis,
+        'transparency': transparency,
+        'extendedProperties': {'private': {'src':'geodac'}},
+        'reminders': {'useDefault': False}
+    }
+    if eid: body['extendedProperties']['private']['gd_id'] = eid
+    if alarm_min is not None:
+        body['reminders']['overrides'] = [{'method':'popup','minutes': alarm_min}]
+    return body
+
+def existing_map(service, cal_id):
+    mp = {}; pageToken = None
+    while True:
+        resp = service.events().list(calendarId=cal_id, maxResults=2500, singleEvents=True,
+                                     showDeleted=False, orderBy='startTime', pageToken=pageToken).execute()
+        for it in resp.get('items', []):
+            priv = (it.get('extendedProperties') or {}).get('private') or {}
+            gid = priv.get('gd_id')
+            if gid and it.get('id'): mp[gid] = it['id']
+        pageToken = resp.get('nextPageToken')
+        if not pageToken: break
+    return mp
+
+def prune_before_days(service, cal_id, days):
+    if days <= 0: return 0
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=days)).isoformat(timespec='seconds').replace('+00:00','Z')
+    pageToken = None; del_cnt = 0
+    while True:
+        resp = service.events().list(calendarId=cal_id, maxResults=2500, singleEvents=True,
+                                     showDeleted=False, orderBy='startTime', timeMax=cutoff,
+                                     pageToken=pageToken).execute()
+        for it in resp.get('items', []):
+            priv = (it.get('extendedProperties') or {}).get('private') or {}
+            if priv.get('src') == 'geodac':
+                try:
+                    service.events().delete(calendarId=cal_id, eventId=it['id']).execute()
+                    del_cnt += 1
+                except HttpError:
+                    pass
+        pageToken = resp.get('nextPageToken')
+        if not pageToken: break
+    return del_cnt
+
+def main():
+    ap = argparse.ArgumentParser(description="GeoDAC → Google Calendar writer (upsert + prune)")
+    ap.add_argument('--json', required=True)
+    ap.add_argument('--calendar', required=True)
+    ap.add_argument('--tz', default='Europe/Moscow')
+    ap.add_argument('--creds', default=os.path.expanduser('~/astro/.gcal'))
+    ap.add_argument('--replace', action='store_true')
+    ap.add_argument('--prune-before-days', type=int, default=0)
+    args = ap.parse_args()
+
+    service = ensure_service(args.creds)
+    cal_id = get_or_create_calendar(service, args.calendar, args.tz)
+
+    data = json.load(open(args.json, 'r', encoding='utf-8'))
+    evs = data.get('events', [])
+    if not evs: print("No events in JSON"); sys.exit(0)
+
+    desired = {}
+    for e in evs:
+        if not (e.get('summary') and e.get('start') and e.get('end')): continue
+        eid = make_id(e)
+        desired[eid] = build_event(e, args.tz, eid=eid)
+
+    existing = existing_map(service, cal_id)
+    ins = upd = 0
+    total = len(desired)
+    for idx, (eid, body) in enumerate(desired.items(), 1):
+        try:
+            if eid in existing:
+                service.events().update(calendarId=cal_id, eventId=existing[eid], body=body).execute()
+                upd += 1
+            else:
+                service.events().insert(calendarId=cal_id, body=body).execute()
+                ins += 1
+        except HttpError as err:
+            print(f"[gcal] ERROR eid={eid} idx={idx}/{total}: {err}", file=sys.stderr)
+            raise
+    print(f"Upsert done: inserted={ins}, updated={upd}, total={len(desired)}")
+
+    if args.replace:
+        # полная синхронизация по текущему JSON
+        pageToken = None; del_cnt=0
+        while True:
+            resp = service.events().list(calendarId=cal_id, maxResults=2500, singleEvents=True,
+                                         showDeleted=False, orderBy='startTime', pageToken=pageToken).execute()
+            for it in resp.get('items', []):
+                priv = (it.get('extendedProperties') or {}).get('private') or {}
+                gid = priv.get('gd_id')
+                if gid and gid not in desired:
+                    try: service.events().delete(calendarId=cal_id, eventId=it['id']).execute(); del_cnt+=1
+                    except HttpError: pass
+            pageToken = resp.get('nextPageToken')
+            if not pageToken: break
+        print(f"Replace mode: deleted={del_cnt}")
+
+    if args.prune_before_days > 0:
+        pruned = prune_before_days(service, cal_id, args.prune_before_days)
+        print(f"Pruned older than {args.prune_before_days}d: {pruned}")
+
+if __name__ == '__main__': main()

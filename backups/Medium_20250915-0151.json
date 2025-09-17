@@ -1,0 +1,3004 @@
+{
+  "items": [
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457425498782\"",
+      "id": "42cvao0f9c5oukp5pfu1ia92g4",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NDJjdmFvMGY5YzVvdWtwNXBmdTFpYTkyZzQgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:30.000Z",
+      "updated": "2025-09-13T01:58:32.749Z",
+      "summary": "Парус к {axis_dat} — {tr_gl}",
+      "description": "Поддержка: Марс держит трин к ASC и секстиль к DSC — «выход» есть, но его надо запустить.\n • Марс △ ASC: Энергии в меру; продуктивный темп. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир. [Совет: Закончите одно дело до конца.] (H9→H1; LIBRA→AQUARIUS)\n • Марс ✶ DSC: Лёгкая активность вдвоём. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения. [Совет: Сделайте короткую общую задачу.] (H9→H7; LIBRA→LEO)\nСовет: Сделайте первый шаг через зону трине; секстиль намекает на шаги с вашей стороны.\n[work] В работе — используйте союз/связку (трин); по секстилю — сделайте первый шаг.\n[health] В здоровье — мягкий «выход» через режим/сон/дыхание; трин — естественный путь, по секстилю — сделать шаг.\n[finance] Финансы — используйте естественную поддержку (трин): то, что уже получается. По секстилю — сделайте первый шаг.\n[relationships] Отношения — используйте сильную сторону трина (зона согласия); по секстилю — сделайте первый шаг к сближению.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-13T16:13:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-13T16:13:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "42cvao0f9c5oukp5pfu1ia92g4@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gda1396773af5d25340b65f0e8d52d93e7fb4a80aa"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442664958990\"",
+      "id": "38vkbai5nupqn9553qe22inm30",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Mzh2a2JhaTVudXBxbjk1NTNxZTIyaW5tMzAgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:13.000Z",
+      "updated": "2025-09-12T21:52:31.690Z",
+      "summary": "☉ ☍ ♀ (H9→H1)",
+      "description": "Взаимодействие без уточнений. Стиль — через лидерство, сцену и творчество фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов.\nДома: H9→H1; Знаки: LEO→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-14T00:00:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-17T14:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "38vkbai5nupqn9553qe22inm30@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd57640c40fb5ebe4ef7ce7b730e0f3f226b85d5d4"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457424316638\"",
+      "id": "9cut32fus0vrqeuo0p1fn8eoi8",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OWN1dDMyZnVzMHZycWV1bzBwMWZuOGVvaTggNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:30.000Z",
+      "updated": "2025-09-13T01:58:32.158Z",
+      "summary": "♂ △ ASC (H9→H1)",
+      "description": "Энергии в меру; продуктивный темп. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир.\nСовет: Закончите одно дело до конца.\nДома: H9→H1; Знаки: LIBRA→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-14T00:00:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-16T20:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "9cut32fus0vrqeuo0p1fn8eoi8@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gde5c64661f344a9cfc0870f1598c004994b1b2c4f"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442661588766\"",
+      "id": "cccnft7euqnjo3e8f0l2l09gg0",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Y2NjbmZ0N2V1cW5qbzNlOGYwbDJsMDlnZzAgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:29.000Z",
+      "updated": "2025-09-12T21:52:30.016Z",
+      "summary": "♂ ✶ DSC (H9→H7)",
+      "description": "Лёгкая активность вдвоём. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения.\nСовет: Сделайте короткую общую задачу.\nДома: H9→H7; Знаки: LIBRA→LEO",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-14T00:00:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-16T01:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "cccnft7euqnjo3e8f0l2l09gg0@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdc0e685488d0bb3c612d39dd24950aa613992171c"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457421167710\"",
+      "id": "nuetci2ml7je0kppskdj45hb1c",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bnVldGNpMm1sN2plMGtwcHNrZGo0NWhiMWMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:10.000Z",
+      "updated": "2025-09-13T01:58:30.583Z",
+      "summary": "☿ S ☍ ASC (H10→H1)",
+      "description": "Диалог «я–мы»; согласование понимания. Стиль — через лидерство, сцену и творчество фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир.\nСовет: Слушать и уточнять; закрепить итог письменно.\nДома: H10→H1; Знаки: LEO→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-14T00:00:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-17T18:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "nuetci2ml7je0kppskdj45hb1c@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd7d8b61cea943375813a753784f0170dfcebdd080"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442660562030\"",
+      "id": "u0rn241nruon84chm53jfu11go",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dTBybjI0MW5ydW9uODRjaG01M2pmdTExZ28gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:11.000Z",
+      "updated": "2025-09-12T21:52:29.491Z",
+      "summary": "☿ S ☌ DSC (H10→H7)",
+      "description": "Переговоры и договорённости; медиация. Стиль — через лидерство, сцену и творчество фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения.\nСовет: Повестка и тайминг; пропишите условия.\nДома: H10→H7; Знаки: LEO→LEO",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-14T00:00:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-17T18:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "u0rn241nruon84chm53jfu11go@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdf33ad87e5e3636f4e86a2959c8282c1a695cbaca"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442665920622\"",
+      "id": "19f7h8hos7gm0avkk6v6p5nsqo",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MTlmN2g4aG9zN2dtMGF2a2s2djZwNW5zcW8gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:13.000Z",
+      "updated": "2025-09-12T21:52:32.207Z",
+      "summary": "♂ □ ☿ (H12→H11)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на уединении, завершении, скрытых процессах и исцелении. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nДома: H12→H11; Знаки: LIBRA→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-14T01:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-18T19:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "19f7h8hos7gm0avkk6v6p5nsqo@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd3721283e98d7a2de14d8a586c45a25de0b0b3bd7"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442666960590\"",
+      "id": "fpls8jv44esn3cj7p86sdajo4c",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZnBsczhqdjQ0ZXNuM2NqN3A4NnNkYWpvNGMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:14.000Z",
+      "updated": "2025-09-12T21:52:32.733Z",
+      "summary": "♀ ☍ ☉ (H9→H12)",
+      "description": "Взаимодействие без уточнений. Стиль — через заботу, дом и эмоциональную близость фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nДома: H9→H12; Знаки: CANCER→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-15T18:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-19T03:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "fpls8jv44esn3cj7p86sdajo4c@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd4a0e34323c196c615b72d9975e0e91441889197b"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442669011966\"",
+      "id": "7qhn44t1b2gv7mjqdfp0gk1rac",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=N3FobjQ0dDFiMmd2N21qcWRmcDBnazFyYWMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:15.000Z",
+      "updated": "2025-09-12T21:52:33.795Z",
+      "summary": "☿ △ MC (H10→H10)",
+      "description": "Лёгкий апдейт роли/PR. Стиль — через лидерство, сцену и творчество фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Отправьте письмо/пост; попросите фидбек.\nДома: H10→H10; Знаки: LEO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-17T13:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-22T13:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "7qhn44t1b2gv7mjqdfp0gk1rac@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gde9014b3e29e314175e8c6fd3789a1c26390c3fb6"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442672079982\"",
+      "id": "nppk3oqm3cv3rgr6gn6f4i4f6k",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bnBwazNvcW0zY3YzcmdyNmduNmY0aTRmNmsgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:16.000Z",
+      "updated": "2025-09-12T21:52:35.504Z",
+      "summary": "♂ △ IC (H1→H4)",
+      "description": "Энергия в быту с пользой. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на личности, теле, имидже и стартах. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Короткий спринт; финализируйте.\nДома: H1→H4; Знаки: LIBRA→GEMINI",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-18T04:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-24T11:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "nppk3oqm3cv3rgr6gn6f4i4f6k@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd5f10afa2ca63b593ccf6e0fb8e2eed5563ce6f47"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442668011502\"",
+      "id": "qbd85fbhrutl876ibb5co61vs4",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=cWJkODVmYmhydXRsODc2aWJiNWNvNjF2czQgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:14.000Z",
+      "updated": "2025-09-12T21:52:33.278Z",
+      "summary": "☿ ✶ IC (H10→H4)",
+      "description": "Удачная мелочь дома/с семьёй. Стиль — через лидерство, сцену и творчество фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Сделайте короткое семейное обсуждение.\nДома: H10→H4; Знаки: LEO→GEMINI",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-18T05:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-22T03:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "qbd85fbhrutl876ibb5co61vs4@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd590c8a048485fdf18c53ddd53b1cfbdb99fd9e08"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442671009310\"",
+      "id": "kfmf2u1o39s219qf75i1jvlptk",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=a2ZtZjJ1MW8zOXMyMTlxZjc1aTFqdmxwdGsgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:15.000Z",
+      "updated": "2025-09-12T21:52:34.873Z",
+      "summary": "♂ ✶ MC (H1→H10)",
+      "description": "Шанс на короткий рывок. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на личности, теле, имидже и стартах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Сделайте 1–2 дела; не наращивайте фронт.\nДома: H1→H10; Знаки: LIBRA→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-18T23:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-23T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "kfmf2u1o39s219qf75i1jvlptk@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdfe579d1dfbad84f9bb8d8420c7f54e95778e62b2"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442674219838\"",
+      "id": "ie648lfp2se82rfsg3vif9ok8c",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aWU2NDhsZnAyc2U4MnJmc2czdmlmOW9rOGMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:16.000Z",
+      "updated": "2025-09-12T21:52:36.673Z",
+      "summary": "☿ △ ☽ (H9→H10)",
+      "description": "Взаимодействие без уточнений. Стиль — через лидерство, сцену и творчество фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nДома: H9→H10; Знаки: LEO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-19T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-23T04:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "ie648lfp2se82rfsg3vif9ok8c@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdf347d08c3f4e1b697d80ddb748d7bdac348d812d"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442670012302\"",
+      "id": "k87dqor855ihrvfsut3pdkrrm0",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=azg3ZHFvcjg1NWlocnZmc3V0M3Bka3JybTAgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:34.000Z",
+      "updated": "2025-09-12T21:52:34.335Z",
+      "summary": "Парус к {axis_dat} — {tr_gl}",
+      "description": "Поддержка: Меркурий держит трин к MC и секстиль к IC — «выход» есть, но его надо запустить.\n • Меркурий △ MC: Лёгкий апдейт роли/PR. Стиль — через лидерство, сцену и творчество фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста. [Совет: Отправьте письмо/пост; попросите фидбек.] (H10→H10; LEO→SAGITTARIUS)\n • Меркурий ✶ IC: Удачная мелочь дома/с семьёй. Стиль — через лидерство, сцену и творчество фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора. [Совет: Сделайте короткое семейное обсуждение.] (H10→H4; LEO→GEMINI)\nСовет: Сделайте первый шаг через зону трине; секстиль намекает на шаги с вашей стороны.\n[work] В работе — используйте союз/связку (трин); по секстилю — сделайте первый шаг.\n[health] В здоровье — мягкий «выход» через режим/сон/дыхание; трин — естественный путь, по секстилю — сделать шаг.\n[finance] Финансы — используйте естественную поддержку (трин): то, что уже получается. По секстилю — сделайте первый шаг.\n[relationships] Отношения — используйте сильную сторону трина (зона согласия); по секстилю — сделайте первый шаг к сближению.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-20T09:21:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-20T09:21:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "k87dqor855ihrvfsut3pdkrrm0@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd75e67f7bbae72fa8de25c803df806bd239b97aff"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442673179278\"",
+      "id": "sunggfoqup4rferc255eodape8",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=c3VuZ2dmb3F1cDRyZmVyYzI1NWVvZGFwZTggNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:35.000Z",
+      "updated": "2025-09-12T21:52:36.097Z",
+      "summary": "Парус к {axis_dat} — {tr_gl}",
+      "description": "Поддержка: Марс держит трин к IC и секстиль к MC — «выход» есть, но его надо запустить.\n • Марс ✶ MC: Шанс на короткий рывок. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на личности, теле, имидже и стартах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста. [Совет: Сделайте 1–2 дела; не наращивайте фронт.] (H1→H10; LIBRA→SAGITTARIUS)\n • Марс △ IC: Энергия в быту с пользой. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на личности, теле, имидже и стартах. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора. [Совет: Короткий спринт; финализируйте.] (H1→H4; LIBRA→GEMINI)\nСовет: Сделайте первый шаг через зону трине; секстиль намекает на шаги с вашей стороны.\n[work] В работе — используйте союз/связку (трин); по секстилю — сделайте первый шаг.\n[health] В здоровье — мягкий «выход» через режим/сон/дыхание; трин — естественный путь, по секстилю — сделать шаг.\n[finance] Финансы — используйте естественную поддержку (трин): то, что уже получается. По секстилю — сделайте первый шаг.\n[relationships] Отношения — используйте сильную сторону трина (зона согласия); по секстилю — сделайте первый шаг к сближению.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-21T08:02:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-21T08:02:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "sunggfoqup4rferc255eodape8@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdd2a3b0028fda4f993cdd98470a5f67764768255a"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442675194430\"",
+      "id": "be26719noh9q1sq45cmplsa5p0",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YmUyNjcxOW5vaDlxMXNxNDVjbXBsc2E1cDAgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:17.000Z",
+      "updated": "2025-09-12T21:52:37.194Z",
+      "summary": "♂ ✶ ☽ (H1→H10)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на личности, теле, имидже и стартах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nДома: H1→H10; Знаки: LIBRA→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-21T19:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-24T22:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "be26719noh9q1sq45cmplsa5p0@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd136d6bf7776fcaf19ad863960890f981fb5a09be"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442676177118\"",
+      "id": "370ba0iegr3n66olpq9gs7gopo",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MzcwYmEwaWVncjNuNjZvbHBxOWdzN2dvcG8gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:18.000Z",
+      "updated": "2025-09-12T21:52:37.707Z",
+      "summary": "♀ ☍ ♂ (H9→H12)",
+      "description": "Взаимодействие без уточнений. Стиль — через заботу, дом и эмоциональную близость фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nДома: H9→H12; Знаки: CANCER→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-22T19:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-26T04:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "370ba0iegr3n66olpq9gs7gopo@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd31d5ddcc6a1b7472ca6e11e37bac0d38028a251f"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457438173406\"",
+      "id": "kdpipbc428k9j7o9h2ess91t4c",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=a2RwaXBiYzQyOGs5ajdvOWgyZXNzOTF0NGMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:18.000Z",
+      "updated": "2025-09-13T01:58:39.086Z",
+      "summary": "☉ △ ☿ (H3→H11)",
+      "description": "Взаимодействие без уточнений. Стиль — через детали, служение, анализ и улучшения фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nДома: H3→H11; Знаки: VIRGO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-26T23:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-31T02:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "kdpipbc428k9j7o9h2ess91t4c@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd6aa90311f9c2fc0e599955fa27c2d5190639f134"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457439330206\"",
+      "id": "5dreo8ccf2h1mtu3jva9ck8abo",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NWRyZW84Y2NmMmgxbXR1M2p2YTljazhhYm8gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:19.000Z",
+      "updated": "2025-09-13T01:58:39.665Z",
+      "summary": "♀ ☍ ASC (H11→H1)",
+      "description": "Я–мы: баланс симпатий и границ. Стиль — через лидерство, сцену и творчество фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир.\nСовет: Комплимент и ясные рамки.\nДома: H11→H1; Знаки: LEO→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-27T03:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-31T08:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "5dreo8ccf2h1mtu3jva9ck8abo@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdc6e42a7c161e27c881042c18e7972c3e18b39805"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442679536830\"",
+      "id": "hvl5ngbc5ospkn1cm2mrrllca8",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aHZsNW5nYmM1b3Nwa24xY20ybXJybGxjYTggNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:19.000Z",
+      "updated": "2025-09-12T21:52:39.390Z",
+      "summary": "♀ ☌ DSC (H11→H7)",
+      "description": "Тяга к согласию/комфорту в союзе. Стиль — через лидерство, сцену и творчество фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения.\nСовет: Согласуйте ожидания; маленький жест.\nДома: H11→H7; Знаки: LEO→LEO",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-27T03:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-31T08:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "hvl5ngbc5ospkn1cm2mrrllca8@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd4d092126c893deebccfdf378ae3f7fff48c68c0a"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442680425390\"",
+      "id": "ff3njc7oc2lm6jp88i9jv7vn2k",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZmYzbmpjN29jMmxtNmpwODhpOWp2N3ZuMmsgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:20.000Z",
+      "updated": "2025-09-12T21:52:39.950Z",
+      "summary": "☿ ☍ ♀ (H6→H1)",
+      "description": "Взаимодействие без уточнений. Стиль — через лидерство, сцену и творчество фокус — на рутине, службе, здоровье и эффективности. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов.\nДома: H6→H1; Знаки: LEO→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-28T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-08-30T22:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "ff3njc7oc2lm6jp88i9jv7vn2k@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd2f7e7b50f31e401677951baad50e653b7c73357f"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457443037662\"",
+      "id": "9dn4lksbpsg22ppjcqhgtu9v0o",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OWRuNGxrc2Jwc2cyMnBwamNxaGd0dTl2MG8gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:21.000Z",
+      "updated": "2025-09-13T01:58:41.518Z",
+      "summary": "☉ □ IC (H12→H4)",
+      "description": "Лишняя суета дома. Стиль — через детали, служение, анализ и улучшения фокус — на уединении, завершении, скрытых процессах и исцелении. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Опростить процессы; одна полка/угол за раз.\nДома: H12→H4; Знаки: VIRGO→GEMINI",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-29T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-03T20:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "9dn4lksbpsg22ppjcqhgtu9v0o@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd85ae12685b3f60709e45cd56dd2142a6fcf49140"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457442057726\"",
+      "id": "dt5inq1l0rkpths38jbdp0s9c8",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZHQ1aW5xMWwwcmtwdGhzMzhqYmRwMHM5YzggNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:20.000Z",
+      "updated": "2025-09-13T01:58:41.028Z",
+      "summary": "☉ □ MC (H12→H10)",
+      "description": "Бюрократия/шум мешают видимости. Стиль — через детали, служение, анализ и улучшения фокус — на уединении, завершении, скрытых процессах и исцелении. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Фильтр входящих; приоритизация 1–3 задач.\nДома: H12→H10; Знаки: VIRGO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-29T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-03T20:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "dt5inq1l0rkpths38jbdp0s9c8@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd3a8a9b122d8547eaa508058cf16e35aecb070d28"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442685685614\"",
+      "id": "ebh4etha8gqf6d5poopgtbl16k",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZWJoNGV0aGE4Z3FmNmQ1cG9vcGd0YmwxNmsgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:22.000Z",
+      "updated": "2025-09-12T21:52:42.674Z",
+      "summary": "♀ △ MC (H11→H10)",
+      "description": "Лёгкий PR; доброжелательность. Стиль — через лидерство, сцену и творчество фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Попросите рекомендацию/отзыв.\nДома: H11→H10; Знаки: LEO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-31T05:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-04T09:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "ebh4etha8gqf6d5poopgtbl16k@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdfb4e0331a6193632a6a3f3d39d397ed57191c82d"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457447951070\"",
+      "id": "ms70p5qnqfc1eorlfel6in4bsk",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bXM3MHA1cW5xZmMxZW9ybGZlbDZpbjRic2sgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:23.000Z",
+      "updated": "2025-09-13T01:58:43.975Z",
+      "summary": "☉ □ ☽ (H8→H10)",
+      "description": "Взаимодействие без уточнений. Стиль — через детали, служение, анализ и улучшения фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nДома: H8→H10; Знаки: VIRGO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-31T13:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-04T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "ms70p5qnqfc1eorlfel6in4bsk@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdf33dff365b2d88b9e3689dab44d4e53804a9379e"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442684696990\"",
+      "id": "sb528sinjhikuq9aobn2vhbi0o",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=c2I1MjhzaW5qaGlrdXE5YW9ibjJ2aGJpMG8gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:22.000Z",
+      "updated": "2025-09-12T21:52:42.154Z",
+      "summary": "♀ ✶ IC (H11→H4)",
+      "description": "Небольшая радость в быту. Стиль — через лидерство, сцену и творчество фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Маленькая покупка/украшение.\nДома: H11→H4; Знаки: LEO→GEMINI",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-08-31T15:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-03T23:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "sb528sinjhikuq9aobn2vhbi0o@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdcfdd1478dcb110d76ae10801cd7654ca7300906a"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457444131582\"",
+      "id": "d0kf43bp02r0ftgklvv61iji4s",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZDBrZjQzYnAwMnIwZnRna2x2djYxaWppNHMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:41.000Z",
+      "updated": "2025-09-13T01:58:42.065Z",
+      "summary": "T‑квадрат к {axis_dat} — {tr_gl}",
+      "description": "Напряжение: Солнце в квадрате к MC и IC (ось дом–карьера). Две «ноги» требуют действия; энергия ищет выход.\n • Солнце □ MC: Бюрократия/шум мешают видимости. Стиль — через детали, служение, анализ и улучшения фокус — на уединении, завершении, скрытых процессах и исцелении. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста. [Совет: Фильтр входящих; приоритизация 1–3 задач.] (H12→H10; VIRGO→SAGITTARIUS)\n • Солнце □ IC: Лишняя суета дома. Стиль — через детали, служение, анализ и улучшения фокус — на уединении, завершении, скрытых процессах и исцелении. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора. [Совет: Опростить процессы; одна полка/угол за раз.] (H12→H4; VIRGO→GEMINI)\nСовет: Сфокусируйтесь на одной точке приложения силы; не распыляйтесь. Начните с участка дома 12.\n[work] В работе — сузить фронт; выбрать ключевую связку и додавить. Не хватайтесь за всё сразу.\n[health] В здоровье — избегайте перегрузок; «снятие напряжения» через дозированную активность в зоне дома 12.\n[finance] Финансы — не дергаться за всё сразу; один канал в фокусе. Накачайте «узкий» дом 12, уберите утечки.\n[relationships] Отношения — не срывайтесь на обе «ноги» конфликта; выберите один фокус разговора, остальное отложите.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-01T06:26:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-01T06:26:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "d0kf43bp02r0ftgklvv61iji4s@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdf148d14ed8e77bebe96a6dc9824a4f5d5407de24"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442688783886\"",
+      "id": "v93n40btiiq7kjpj85ps9mkj94",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=djkzbjQwYnRpaXE3a2pwajg1cHM5bWtqOTQgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:23.000Z",
+      "updated": "2025-09-12T21:52:44.383Z",
+      "summary": "♀ △ ☽ (H10→H10)",
+      "description": "Взаимодействие без уточнений. Стиль — через лидерство, сцену и творчество фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nДома: H10→H10; Знаки: LEO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-01T17:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-05T01:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "v93n40btiiq7kjpj85ps9mkj94@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd61ebc251d83e30841b1a20f5f9d99509381d7e8a"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442686775214\"",
+      "id": "25t5o92ucln81gmp5d7f05qi0s",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MjV0NW85MnVjbG44MWdtcDVkN2YwNXFpMHMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:42.000Z",
+      "updated": "2025-09-12T21:52:43.298Z",
+      "summary": "Парус к {axis_dat} — {tr_gl}",
+      "description": "Поддержка: Венера держит трин к MC и секстиль к IC — «выход» есть, но его надо запустить.\n • Венера △ MC: Лёгкий PR; доброжелательность. Стиль — через лидерство, сцену и творчество фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста. [Совет: Попросите рекомендацию/отзыв.] (H11→H10; LEO→SAGITTARIUS)\n • Венера ✶ IC: Небольшая радость в быту. Стиль — через лидерство, сцену и творчество фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора. [Совет: Маленькая покупка/украшение.] (H11→H4; LEO→GEMINI)\nСовет: Сделайте первый шаг через зону трине; секстиль намекает на шаги с вашей стороны.\n[work] В работе — используйте союз/связку (трин); по секстилю — сделайте первый шаг.\n[health] В здоровье — мягкий «выход» через режим/сон/дыхание; трин — естественный путь, по секстилю — сделать шаг.\n[finance] Финансы — используйте естественную поддержку (трин): то, что уже получается. По секстилю — сделайте первый шаг.\n[relationships] Отношения — используйте сильную сторону трина (зона согласия); по секстилю — сделайте первый шаг к сближению.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-02T07:09:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-02T07:09:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "25t5o92ucln81gmp5d7f05qi0s@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gde788ff57baf912f6619dd174b8466ed80f3de6e3"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457449910942\"",
+      "id": "jcdmkmv6db59hr1au15av5nt9g",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=amNkbWttdjZkYjU5aHIxYXUxNWF2NW50OWcgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:24.000Z",
+      "updated": "2025-09-13T01:58:44.955Z",
+      "summary": "☿ △ ☿ (H7→H11)",
+      "description": "Взаимодействие без уточнений. Стиль — через детали, служение, анализ и улучшения фокус — на партнёрстве, контрактах и переговорах. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nДома: H7→H11; Знаки: VIRGO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-04T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-06T18:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "jcdmkmv6db59hr1au15av5nt9g@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd798ef54d0d65bb607c189e3173f4456f346075ca"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442694318142\"",
+      "id": "kqdg232bsi84v5od9ustckok1o",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=a3FkZzIzMmJzaTg0djVvZDl1c3Rja29rMW8gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:25.000Z",
+      "updated": "2025-09-12T21:52:47.106Z",
+      "summary": "♂ □ ☉ (H11→H12)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nДома: H11→H12; Знаки: LIBRA→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-05T04:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-09T18:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "kqdg232bsi84v5od9ustckok1o@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd12f6ef31414fabe902b7e7dc53db3aae77484c36"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457450926334\"",
+      "id": "ceot1lue45l1rpblr4ejnbs59k",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Y2VvdDFsdWU0NWwxcnBibHI0ZWpuYnM1OWsgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:24.000Z",
+      "updated": "2025-09-13T01:58:45.463Z",
+      "summary": "☿ □ MC (H11→H10)",
+      "description": "Ошибки/бюрократия; шум во входящих. Стиль — через детали, служение, анализ и улучшения фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Проверка информации; фильтр входящих; расставьте приоритеты.\nДома: H11→H10; Знаки: VIRGO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-06T00:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-08T14:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "ceot1lue45l1rpblr4ejnbs59k@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd3569b6758765ebc6d45d9f9e4e17803b8b9d2bae"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457452207934\"",
+      "id": "tjvp4lhiqmna30o92q97hq9ec0",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dGp2cDRsaGlxbW5hMzBvOTJxOTdocTllYzAgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:25.000Z",
+      "updated": "2025-09-13T01:58:46.103Z",
+      "summary": "☿ □ IC (H11→H4)",
+      "description": "Суета в быту/нестыковки. Стиль — через детали, служение, анализ и улучшения фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Упростите процессы; один канал связи.\nДома: H11→H4; Знаки: VIRGO→GEMINI",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-06T00:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-08T14:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "tjvp4lhiqmna30o92q97hq9ec0@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gda4b5dd9ac9d57d611d1c5271e91b95a5deda80fc"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457455641374\"",
+      "id": "jhdpip1g2qjqh9gr0klep3ehqk",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=amhkcGlwMWcycWpxaDlncjBrbGVwM2VocWsgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:26.000Z",
+      "updated": "2025-09-13T01:58:47.820Z",
+      "summary": "☿ □ ☽ (H4→H10)",
+      "description": "Взаимодействие без уточнений. Стиль — через детали, служение, анализ и улучшения фокус — на доме, семье, основе и безопасности. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nДома: H4→H10; Знаки: VIRGO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-06T23:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-09T00:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "jhdpip1g2qjqh9gr0klep3ehqk@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdb1946318a47e65c0105dc12189a874b5e45985f7"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457453470462\"",
+      "id": "l72n16o1aqkqpbarkfmn33v1g8",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bDcybjE2bzFhcWtxcGJhcmtmbW4zM3YxZzggNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:46.000Z",
+      "updated": "2025-09-13T01:58:46.735Z",
+      "summary": "T‑квадрат к {axis_dat} — {tr_gl}",
+      "description": "Напряжение: Меркурий в квадрате к MC и IC (ось дом–карьера). Две «ноги» требуют действия; энергия ищет выход.\n • Меркурий □ MC: Ошибки/бюрократия; шум во входящих. Стиль — через детали, служение, анализ и улучшения фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста. [Совет: Проверка информации; фильтр входящих; расставьте приоритеты.] (H11→H10; VIRGO→SAGITTARIUS)\n • Меркурий □ IC: Суета в быту/нестыковки. Стиль — через детали, служение, анализ и улучшения фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора. [Совет: Упростите процессы; один канал связи.] (H11→H4; VIRGO→GEMINI)\nСовет: Сфокусируйтесь на одной точке приложения силы; не распыляйтесь. Начните с участка дома 11.\n[work] В работе — сузить фронт; выбрать ключевую связку и додавить. Не хватайтесь за всё сразу.\n[health] В здоровье — избегайте перегрузок; «снятие напряжения» через дозированную активность в зоне дома 11.\n[finance] Финансы — не дергаться за всё сразу; один канал в фокусе. Накачайте «узкий» дом 11, уберите утечки.\n[relationships] Отношения — не срывайтесь на обе «ноги» конфликта; выберите один фокус разговора, остальное отложите.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-07T07:46:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-07T07:46:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "l72n16o1aqkqpbarkfmn33v1g8@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd1dce82c3708d9717c0e1e22b39c93b092a61d14a"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442696394446\"",
+      "id": "kberedug21gtak6qsk064at1tg",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=a2JlcmVkdWcyMWd0YWs2cXNrMDY0YXQxdGcgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:26.000Z",
+      "updated": "2025-09-12T21:52:48.084Z",
+      "summary": "♂ △ ♀ (H8→H1)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов.\nДома: H8→H1; Знаки: LIBRA→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-09T09:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-13T22:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "kberedug21gtak6qsk064at1tg@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd27b6b76f572d1a23cbfee4620d20cf3517900fce"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457457637790\"",
+      "id": "gscptrd9m0agsu4d5o0hr0fj88",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Z3NjcHRyZDltMGFnc3U0ZDVvMGhyMGZqODggNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:32.000Z",
+      "updated": "2025-09-13T01:58:48.818Z",
+      "summary": "☉ △ ☉ (H7→H12)",
+      "description": "Лёгкое продвижение; дела идут проще. Стиль — через детали, служение, анализ и улучшения фокус — на партнёрстве, контрактах и переговорах. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nСовет: Закрепите шаг публично/в команде.\nДома: H7→H12; Знаки: VIRGO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-10T15:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-14T18:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "gscptrd9m0agsu4d5o0hr0fj88@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdb7655a144c62f66ff8b54c6fca4e84ed4c050659"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457458757470\"",
+      "id": "vimh9358imrn9dpcj520qmn1q8",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dmltaDkzNThpbXJuOWRwY2o1MjBxbW4xcTggNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:33.000Z",
+      "updated": "2025-09-13T01:58:49.378Z",
+      "summary": "☿ △ ☉ (H2→H12)",
+      "description": "Взаимодействие без уточнений. Стиль — через детали, служение, анализ и улучшения фокус — на доходах, ресурсах, ценностях и самооценке. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nДома: H2→H12; Знаки: VIRGO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-12T01:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-14T04:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "vimh9358imrn9dpcj520qmn1q8@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdb88895853e1360749a526018e5a6e82cd0945aa9"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442699408654\"",
+      "id": "74m1dgj1bae42i5a3m3dsj60g8",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NzRtMWRnajFiYWU0Mmk1YTNtM2RzajYwZzggNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:33.000Z",
+      "updated": "2025-09-12T21:52:49.596Z",
+      "summary": "♀ ☍ ♀ (H6→H1)",
+      "description": "Взаимодействие без уточнений. Стиль — через лидерство, сцену и творчество фокус — на рутине, службе, здоровье и эффективности. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов.\nДома: H6→H1; Знаки: LEO→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-12T02:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-15T09:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "74m1dgj1bae42i5a3m3dsj60g8@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd5bdf7419f1ab777876f24a9354abbc48330f89b2"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457460811166\"",
+      "id": "24q705ga309anotqm5lksqgu84",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MjRxNzA1Z2EzMDlhbm90cW01bGtzcWd1ODQgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:34.000Z",
+      "updated": "2025-09-13T01:58:50.405Z",
+      "summary": "☿ △ ♂ (H8→H12)",
+      "description": "Взаимодействие без уточнений. Стиль — через детали, служение, анализ и улучшения фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nДома: H8→H12; Знаки: VIRGO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-16T13:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-18T19:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "24q705ga309anotqm5lksqgu84@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd3a9005c251b95409d4b9920ae00b9bef5737df1a"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442701528830\"",
+      "id": "hf9f5lae4np81fek0c585p35co",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aGY5ZjVsYWU0bnA4MWZlazBjNTg1cDM1Y28gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:34.000Z",
+      "updated": "2025-09-12T21:52:50.648Z",
+      "summary": "♂ □ ♂ (H3→H12)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nДома: H3→H12; Знаки: LIBRA→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-17T21:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-22T09:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "hf9f5lae4np81fek0c585p35co@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdc2a467567db971380fb010217ca8c0c9c3229154"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457466050142\"",
+      "id": "i3kam0bc4tumf4ns112ohf1noc",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aTNrYW0wYmM0dHVtZjRuczExMm9oZjFub2MgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:36.000Z",
+      "updated": "2025-09-13T01:58:53.025Z",
+      "summary": "☉ △ ♂ (H12→H12)",
+      "description": "Взаимодействие без уточнений. Стиль — через детали, служение, анализ и улучшения фокус — на уединении, завершении, скрытых процессах и исцелении. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nДома: H12→H12; Знаки: VIRGO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-19T06:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-23T08:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "i3kam0bc4tumf4ns112ohf1noc@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd8f221ddb76968f0c3f9d928acd61cbc003e5d58e"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457463695646\"",
+      "id": "a3d2je7i85njk3b01k4de68c0s",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YTNkMmplN2k4NW5qazNiMDFrNGRlNjhjMHMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:30.000Z",
+      "updated": "2025-09-13T01:58:51.847Z",
+      "summary": "☿ △ ASC (H5→H1)",
+      "description": "Лёгкая самопрезентация; удачные контакты. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на творчестве, игре, сцене, удовольствиях и детях. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир.\nСовет: Назначьте встречу/питч; зафиксируйте следующий шаг.\nДома: H5→H1; Знаки: LIBRA→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-19T10:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-22T07:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "a3d2je7i85njk3b01k4de68c0s@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gda12c7f07e9b06dd4851ed17ec9aaf6fd6be3f185"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442702457774\"",
+      "id": "7s2on9g75t10sei250g10j4duc",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=N3Myb245Zzc1dDEwc2VpMjUwZzEwajRkdWMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:30.000Z",
+      "updated": "2025-09-12T21:52:51.148Z",
+      "summary": "☿ ✶ DSC (H5→H7)",
+      "description": "Небольшой компромисс/услуга. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на творчестве, игре, сцене, удовольствиях и детях. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения.\nСовет: Согласуйте детали и ответственность.\nДома: H5→H7; Знаки: LIBRA→LEO",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-19T17:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-22T00:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "7s2on9g75t10sei250g10j4duc@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdd7df37400082d59495acd35dc963efc967dd5594"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442706709518\"",
+      "id": "56tpkikckcai9njs4uk87ebeeo",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NTZ0cGtpa2NrY2FpOW5qczR1azg3ZWJlZW8gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:36.000Z",
+      "updated": "2025-09-12T21:52:53.247Z",
+      "summary": "☿ □ ☿ (H5→H11)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на творчестве, игре, сцене, удовольствиях и детях. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nДома: H5→H11; Знаки: LIBRA→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-20T17:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-23T00:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "56tpkikckcai9njs4uk87ebeeo@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gda242e87217a255586b7346abd2286d1bc6c574a9"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457464879870\"",
+      "id": "3jg2hcne78ge2obmmp8jg9s800",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=M2pnMmhjbmU3OGdlMm9ibW1wOGpnOXM4MDAgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:51.000Z",
+      "updated": "2025-09-13T01:58:52.439Z",
+      "summary": "Парус к {axis_dat} — {tr_gl}",
+      "description": "Поддержка: Меркурий держит трин к ASC и секстиль к DSC — «выход» есть, но его надо запустить.\n • Меркурий △ ASC: Лёгкая самопрезентация; удачные контакты. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на творчестве, игре, сцене, удовольствиях и детях. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир. [Совет: Назначьте встречу/питч; зафиксируйте следующий шаг.] (H5→H1; LIBRA→AQUARIUS)\n • Меркурий ✶ DSC: Небольшой компромисс/услуга. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на творчестве, игре, сцене, удовольствиях и детях. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения. [Совет: Согласуйте детали и ответственность.] (H5→H7; LIBRA→LEO)\nСовет: Сделайте первый шаг через зону трине; секстиль намекает на шаги с вашей стороны.\n[work] В работе — используйте союз/связку (трин); по секстилю — сделайте первый шаг.\n[health] В здоровье — мягкий «выход» через режим/сон/дыхание; трин — естественный путь, по секстилю — сделать шаг.\n[finance] Финансы — используйте естественную поддержку (трин): то, что уже получается. По секстилю — сделайте первый шаг.\n[relationships] Отношения — используйте сильную сторону трина (зона согласия); по секстилю — сделайте первый шаг к сближению.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-20T20:58:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-20T20:58:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "3jg2hcne78ge2obmmp8jg9s800@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd50746cc72b48af62714277342c28e309dfc458f5"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442708652350\"",
+      "id": "9sn4ds3jehmnq92onsbuful6fs",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OXNuNGRzM2plaG1ucTkyb25zYnVmdWw2ZnMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:32.000Z",
+      "updated": "2025-09-12T21:52:54.329Z",
+      "summary": "☿ △ IC (H8→H4)",
+      "description": "Лёгкое решение бытовых вопросов. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Закройте 1–2 мелкие задачи.\nДома: H8→H4; Знаки: LIBRA→GEMINI",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-22T05:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-25T04:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "9sn4ds3jehmnq92onsbuful6fs@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd25bae92dd2d89214e05b0f102a879b72a42de9d7"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442707665886\"",
+      "id": "nedskjp8i8to224apapv70qd6k",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bmVkc2tqcDhpOHRvMjI0YXBhcHY3MHFkNmsgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:32.000Z",
+      "updated": "2025-09-12T21:52:53.778Z",
+      "summary": "☿ ✶ MC (H8→H10)",
+      "description": "Небольшая публичная возможность. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Дайте короткий апдейт; зафиксируйте KPI.\nДома: H8→H10; Знаки: LIBRA→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-22T12:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-24T20:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "nedskjp8i8to224apapv70qd6k@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd58dfa3435038cf117542dc865c96cf9b5969eadb"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457470702078\"",
+      "id": "a3i2b08gb876l114h1q2dud108",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YTNpMmIwOGdiODc2bDExNGgxcTJkdWQxMDggNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:38.000Z",
+      "updated": "2025-09-13T01:58:55.351Z",
+      "summary": "♀ △ ☿ (H10→H11)",
+      "description": "Взаимодействие без уточнений. Стиль — через детали, служение, анализ и улучшения фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nДома: H10→H11; Знаки: VIRGO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-22T19:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-26T01:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "a3i2b08gb876l114h1q2dud108@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd8e626a28ac280b6d1c333af1caef3ccd706e7cbf"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442711704078\"",
+      "id": "g974ltjlp3omuunpmnta1onqsg",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Zzk3NGx0amxwM29tdXVucG1udGExb25xc2cgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:39.000Z",
+      "updated": "2025-09-12T21:52:55.901Z",
+      "summary": "☿ ✶ ☽ (H10→H10)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nДома: H10→H10; Знаки: LIBRA→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-23T13:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-25T08:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "g974ltjlp3omuunpmnta1onqsg@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdf4c1b8fef444cae8b6e576d2441150d3f3d9b3d4"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442709641934\"",
+      "id": "2v8on16i0gjtg0rhad1jp267b0",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MnY4b24xNmkwZ2p0ZzByaGFkMWpwMjY3YjAgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:54.000Z",
+      "updated": "2025-09-12T21:52:54.835Z",
+      "summary": "Парус к {axis_dat} — {tr_gl}",
+      "description": "Поддержка: Меркурий держит трин к IC и секстиль к MC — «выход» есть, но его надо запустить.\n • Меркурий ✶ MC: Небольшая публичная возможность. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста. [Совет: Дайте короткий апдейт; зафиксируйте KPI.] (H8→H10; LIBRA→SAGITTARIUS)\n • Меркурий △ IC: Лёгкое решение бытовых вопросов. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора. [Совет: Закройте 1–2 мелкие задачи.] (H8→H4; LIBRA→GEMINI)\nСовет: Сделайте первый шаг через зону трине; секстиль намекает на шаги с вашей стороны.\n[work] В работе — используйте союз/связку (трин); по секстилю — сделайте первый шаг.\n[health] В здоровье — мягкий «выход» через режим/сон/дыхание; трин — естественный путь, по секстилю — сделать шаг.\n[finance] Финансы — используйте естественную поддержку (трин): то, что уже получается. По секстилю — сделайте первый шаг.\n[relationships] Отношения — используйте сильную сторону трина (зона согласия); по секстилю — сделайте первый шаг к сближению.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-23T16:31:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-23T16:31:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "2v8on16i0gjtg0rhad1jp267b0@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd058ac1be419695044bdbab217ef4092e4c0959ce"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457477117662\"",
+      "id": "5tnh97hhfreq4pheoc4mgcfoq0",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NXRuaDk3aGhmcmVxNHBoZW9jNG1nY2ZvcTAgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:36.000Z",
+      "updated": "2025-09-13T01:58:58.558Z",
+      "summary": "☉ △ ASC (H3→H1)",
+      "description": "Лёгкая харизма; люди воспринимают проще. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир.\nСовет: Сделайте 1–2 контактных шага; закрепите.\nДома: H3→H1; Знаки: LIBRA→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-24T12:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-29T15:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "5tnh97hhfreq4pheoc4mgcfoq0@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd414f9b5f1ea265d6ed3336703bdbc2ce1c95fb05"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457474053438\"",
+      "id": "j2quh56842rf7208piskv00brg",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ajJxdWg1Njg0MnJmNzIwOHBpc2t2MDBicmcgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:35.000Z",
+      "updated": "2025-09-13T01:58:57.026Z",
+      "summary": "♀ □ IC (H3→H4)",
+      "description": "Дискомфорт/лишние траты. Стиль — через детали, служение, анализ и улучшения фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Оставьте минимализм; лимит бюджета.\nДома: H3→H4; Знаки: VIRGO→GEMINI",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-24T22:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-29T00:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "j2quh56842rf7208piskv00brg@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd195ae66ab2cbd576ea937e99cc65a519644b9152"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457472694974\"",
+      "id": "n7udf4nbp4mvmihpmnvq7hq5ls",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bjd1ZGY0bmJwNG12bWlocG1udnE3aHE1bHMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:34.000Z",
+      "updated": "2025-09-13T01:58:56.347Z",
+      "summary": "♀ □ MC (H3→H10)",
+      "description": "Комфорт vs имидж; риск косметики вместо сути. Стиль — через детали, служение, анализ и улучшения фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Ставьте качество > блеск.\nДома: H3→H10; Знаки: VIRGO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-24T22:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-29T00:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "n7udf4nbp4mvmihpmnvq7hq5ls@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdbd17b3ceb92b245b5f51fbb33db5ea3c5ece05d0"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442716125342\"",
+      "id": "0tih9vorlgf4g2vblvu1hbcq8c",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MHRpaDl2b3JsZ2Y0ZzJ2Ymx2dTFoYmNxOGMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:35.000Z",
+      "updated": "2025-09-12T21:52:58.087Z",
+      "summary": "☉ ✶ DSC (H3→H7)",
+      "description": "Малый компромисс/услуга. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения.\nСовет: Предложите/примите шаг навстречу.\nДома: H3→H7; Знаки: LIBRA→LEO",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-25T01:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-29T03:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "0tih9vorlgf4g2vblvu1hbcq8c@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdd1ce29fe8a4abcc522e14957d1d46cb787273671"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442721321182\"",
+      "id": "ahophnre34mgsiu02u94048cho",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YWhvcGhucmUzNG1nc2l1MDJ1OTQwNDhjaG8gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:37.000Z",
+      "updated": "2025-09-12T21:53:00.784Z",
+      "summary": "♂ □ DSC (H10→H7)",
+      "description": "Спор/силомер. Стиль — через глубину, честность, концентрацию и трансформацию фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения.\nСовет: Тайм‑аут; медиатор/правила встречи.\nДома: H10→H7; Знаки: SCORPIO→LEO",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-25T14:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-01T11:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "ahophnre34mgsiu02u94048cho@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd370ba6b9a8d714eaea690ac0ef41a273d73f7c02"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457480220478\"",
+      "id": "mt8vk4mqvelclkqttk6np9vg3o",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bXQ4dms0bXF2ZWxjbGtxdHRrNm5wOXZnM28gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:37.000Z",
+      "updated": "2025-09-13T01:59:00.110Z",
+      "summary": "♂ □ ASC (H10→H1)",
+      "description": "Раздражение/острые углы. Стиль — через глубину, честность, концентрацию и трансформацию фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир.\nСовет: Сгоните в движение; не спорьте на эмоциях.\nДома: H10→H1; Знаки: SCORPIO→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-25T14:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-01T11:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "mt8vk4mqvelclkqttk6np9vg3o@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdb20c70397e7381acb3ceb144025e0e1e6f74dc21"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457479181598\"",
+      "id": "u79f3teikdr58lg7ipe62045ls",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dTc5ZjN0ZWlrZHI1OGxnN2lwZTYyMDQ1bHMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:41.000Z",
+      "updated": "2025-09-13T01:58:59.590Z",
+      "summary": "♀ □ ☽ (H2→H10)",
+      "description": "Взаимодействие без уточнений. Стиль — через детали, служение, анализ и улучшения фокус — на доходах, ресурсах, ценностях и самооценке. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nДома: H2→H10; Знаки: VIRGO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-26T09:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-29T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "u79f3teikdr58lg7ipe62045ls@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd32bc100cc087d621ebfe3f9d3026cc7c15e9f63c"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442723397518\"",
+      "id": "ihrmljhb1e8jeqh6e1ipeoh5oc",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aWhybWxqaGIxZThqZXFoNmUxaXBlb2g1b2MgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:43.000Z",
+      "updated": "2025-09-12T21:53:01.967Z",
+      "summary": "☉ □ ☿ (H5→H11)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на творчестве, игре, сцене, удовольствиях и детях. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nДома: H5→H11; Знаки: LIBRA→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-26T19:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-30T21:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "ihrmljhb1e8jeqh6e1ipeoh5oc@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdadb730ebf0049f538c389ebe43fd1c573ee317da"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457475162974\"",
+      "id": "4j547ep55shq6ns0prr9j1j444",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NGo1NDdlcDU1c2hxNm5zMHBycjlqMWo0NDQgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:57.000Z",
+      "updated": "2025-09-13T01:58:57.581Z",
+      "summary": "T‑квадрат к {axis_dat} — {tr_gl}",
+      "description": "Напряжение: Венера в квадрате к MC и IC (ось дом–карьера). Две «ноги» требуют действия; энергия ищет выход.\n • Венера □ MC: Комфорт vs имидж; риск косметики вместо сути. Стиль — через детали, служение, анализ и улучшения фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста. [Совет: Ставьте качество > блеск.] (H3→H10; VIRGO→SAGITTARIUS)\n • Венера □ IC: Дискомфорт/лишние траты. Стиль — через детали, служение, анализ и улучшения фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора. [Совет: Оставьте минимализм; лимит бюджета.] (H3→H4; VIRGO→GEMINI)\nСовет: Сфокусируйтесь на одной точке приложения силы; не распыляйтесь. Начните с участка дома 3.\n[work] В работе — сузить фронт; выбрать ключевую связку и додавить. Не хватайтесь за всё сразу.\n[health] В здоровье — избегайте перегрузок; «снятие напряжения» через дозированную активность в зоне дома 3.\n[finance] Финансы — не дергаться за всё сразу; один канал в фокусе. Накачайте «узкий» дом 3, уберите утечки.\n[relationships] Отношения — не срывайтесь на обе «ноги» конфликта; выберите один фокус разговора, остальное отложите.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-26T23:25:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-26T23:25:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "4j547ep55shq6ns0prr9j1j444@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd19b0290dd9cd09769ceb5ca6cbd4d23bedede43c"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457478149566\"",
+      "id": "o2dgvkecjhhndceeec3so04ct4",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bzJkZ3ZrZWNqaGhuZGNlZWVjM3NvMDRjdDQgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:52:58.000Z",
+      "updated": "2025-09-13T01:58:59.074Z",
+      "summary": "Парус к {axis_dat} — {tr_gl}",
+      "description": "Поддержка: Солнце держит трин к ASC и секстиль к DSC — «выход» есть, но его надо запустить.\n • Солнце △ ASC: Лёгкая харизма; люди воспринимают проще. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир. [Совет: Сделайте 1–2 контактных шага; закрепите.] (H3→H1; LIBRA→AQUARIUS)\n • Солнце ✶ DSC: Малый компромисс/услуга. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения. [Совет: Предложите/примите шаг навстречу.] (H3→H7; LIBRA→LEO)\nСовет: Сделайте первый шаг через зону трине; секстиль намекает на шаги с вашей стороны.\n[work] В работе — используйте союз/связку (трин); по секстилю — сделайте первый шаг.\n[health] В здоровье — мягкий «выход» через режим/сон/дыхание; трин — естественный путь, по секстилю — сделать шаг.\n[finance] Финансы — используйте естественную поддержку (трин): то, что уже получается. По секстилю — сделайте первый шаг.\n[relationships] Отношения — используйте сильную сторону трина (зона согласия); по секстилю — сделайте первый шаг к сближению.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-27T02:07:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-27T02:07:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "o2dgvkecjhhndceeec3so04ct4@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd49061471a477306d9224d94968e39c791bf46274"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457481860286\"",
+      "id": "fphpu7oavhghfmp7pv3vfi5rcg",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZnBocHU3b2F2aGdoZm1wN3B2M3ZmaTVyY2cgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:53:01.000Z",
+      "updated": "2025-09-13T01:59:00.930Z",
+      "summary": "T‑квадрат к {axis_dat} — {tr_gl}",
+      "description": "Напряжение: Марс в квадрате к ASC и DSC (ось отношений). Две «ноги» требуют действия; энергия ищет выход.\n • Марс □ ASC: Раздражение/острые углы. Стиль — через глубину, честность, концентрацию и трансформацию фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир. [Совет: Сгоните в движение; не спорьте на эмоциях.] (H10→H1; SCORPIO→AQUARIUS)\n • Марс □ DSC: Спор/силомер. Стиль — через глубину, честность, концентрацию и трансформацию фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения. [Совет: Тайм‑аут; медиатор/правила встречи.] (H10→H7; SCORPIO→LEO)\nСовет: Сфокусируйтесь на одной точке приложения силы; не распыляйтесь. Начните с участка дома 10.\n[work] В работе — сузить фронт; выбрать ключевую связку и додавить. Не хватайтесь за всё сразу.\n[health] В здоровье — избегайте перегрузок; «снятие напряжения» через дозированную активность в зоне дома 10.\n[finance] Финансы — не дергаться за всё сразу; один канал в фокусе. Накачайте «узкий» дом 10, уберите утечки.\n[relationships] Отношения — не срывайтесь на обе «ноги» конфликта; выберите один фокус разговора, остальное отложите.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-28T13:13:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-28T13:13:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "fphpu7oavhghfmp7pv3vfi5rcg@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdcd912c009ffbdedf2ca9dc28756c366193ec0a59"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442724401246\"",
+      "id": "cmem3h7djnmckc9kti2n0o3u7g",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Y21lbTNoN2Rqbm1ja2M5a3RpMm4wbzN1N2cgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:44.000Z",
+      "updated": "2025-09-12T21:53:02.495Z",
+      "summary": "☿ □ ☉ (H11→H12)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nДома: H11→H12; Знаки: LIBRA→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-29T04:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-01T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "cmem3h7djnmckc9kti2n0o3u7g@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd9fa38dee48fa3bc26d1428ffc513bc78a80c22b4"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442727460446\"",
+      "id": "hkubic207aeb2n25goj22o2590",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aGt1YmljMjA3YWViMm4yNWdvajIybzI1OTAgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:40.000Z",
+      "updated": "2025-09-12T21:53:04.176Z",
+      "summary": "☉ △ IC (H3→H4)",
+      "description": "Комфорт и поддержка близких. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Небольшой семейный ритуал/ужин.\nДома: H3→H4; Знаки: LIBRA→GEMINI",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-29T11:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-04T13:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "hkubic207aeb2n25goj22o2590@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd60d974d4b1fafa112f20101ef87e9903506bf016"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442725415790\"",
+      "id": "76098rpndq1n616p5evhphrojo",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NzYwOThycG5kcTFuNjE2cDVldmhwaHJvam8gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:44.000Z",
+      "updated": "2025-09-12T21:53:03.062Z",
+      "summary": "♂ ✶ ☿ (H3→H11)",
+      "description": "Взаимодействие без уточнений. Стиль — через глубину, честность, концентрацию и трансформацию фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nДома: H3→H11; Знаки: SCORPIO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-29T15:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-02T13:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "76098rpndq1n616p5evhphrojo@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdee9b5c9617d3806d3e834f940cb8be82a743cae6"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442726448414\"",
+      "id": "68o0fi95vr5ucegj1e9v2uvplg",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NjhvMGZpOTV2cjV1Y2VnajFlOXYydXZwbGcgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:39.000Z",
+      "updated": "2025-09-12T21:53:03.606Z",
+      "summary": "☉ ✶ MC (H3→H10)",
+      "description": "Маленькая публичная возможность. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Подайте короткую заявку/апдейт.\nДома: H3→H10; Знаки: LIBRA→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-29T23:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-04T01:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "68o0fi95vr5ucegj1e9v2uvplg@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd875b676f42adfa67641ff277473bb6eaad2914a5"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442729355246\"",
+      "id": "jfgjiu32qdvgc9iro72nnqjkjk",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=amZnaml1MzJxZHZnYzlpcm83Mm5ucWpramsgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:46.000Z",
+      "updated": "2025-09-12T21:53:05.209Z",
+      "summary": "☿ △ ♀ (H2→H1)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на доходах, ресурсах, ценностях и самооценке. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов.\nДома: H2→H1; Знаки: LIBRA→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-30T21:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-03T10:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "jfgjiu32qdvgc9iro72nnqjkjk@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdb57b7d38f72bfb578e75d1a773a2b975c565cbf6"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442730310318\"",
+      "id": "b1d1vorbc5nd86otn50ph648h0",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YjFkMXZvcmJjNW5kODZvdG41MHBoNjQ4aDAgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:46.000Z",
+      "updated": "2025-09-12T21:53:05.773Z",
+      "summary": "☉ ✶ ☽ (H11→H10)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nДома: H11→H10; Знаки: LIBRA→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-10-01T20:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-04T21:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "b1d1vorbc5nd86otn50ph648h0@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gddf7c288eda8344006f1f8831b9026b52b16f07a1"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442728376622\"",
+      "id": "r6umsh8ktouenci470udhmtd8o",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=cjZ1bXNoOGt0b3VlbmNpNDcwdWRobXRkOG8gNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:53:04.000Z",
+      "updated": "2025-09-12T21:53:04.737Z",
+      "summary": "Парус к {axis_dat} — {tr_gl}",
+      "description": "Поддержка: Солнце держит трин к IC и секстиль к MC — «выход» есть, но его надо запустить.\n • Солнце ✶ MC: Маленькая публичная возможность. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста. [Совет: Подайте короткую заявку/апдейт.] (H3→H10; LIBRA→SAGITTARIUS)\n • Солнце △ IC: Комфорт и поддержка близких. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора. [Совет: Небольшой семейный ритуал/ужин.] (H3→H4; LIBRA→GEMINI)\nСовет: Сделайте первый шаг через зону трине; секстиль намекает на шаги с вашей стороны.\n[work] В работе — используйте союз/связку (трин); по секстилю — сделайте первый шаг.\n[health] В здоровье — мягкий «выход» через режим/сон/дыхание; трин — естественный путь, по секстилю — сделать шаг.\n[finance] Финансы — используйте естественную поддержку (трин): то, что уже получается. По секстилю — сделайте первый шаг.\n[relationships] Отношения — используйте сильную сторону трина (зона согласия); по секстилю — сделайте первый шаг к сближению.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-10-02T00:42:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-02T00:42:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "r6umsh8ktouenci470udhmtd8o@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd529bfcbc88b4f8b0acc8bd40483a9f5c1afd669e"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457491131774\"",
+      "id": "4850q7b9r9ovqegh7s6k7krsqk",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NDg1MHE3YjlyOW92cWVnaDdzNms3a3JzcWsgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:47.000Z",
+      "updated": "2025-09-13T01:59:05.565Z",
+      "summary": "♀ △ ☉ (H3→H12)",
+      "description": "Взаимодействие без уточнений. Стиль — через детали, служение, анализ и улучшения фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nДома: H3→H12; Знаки: VIRGO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-10-04T08:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-07T14:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "4850q7b9r9ovqegh7s6k7krsqk@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd3d90a0b77fb84a1488aab15990376de23f006134"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442731177934\"",
+      "id": "vl7o04kvihhqb3iuktie1noif0",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dmw3bzA0a3ZpaGhxYjNpdWt0aWUxbm9pZjAgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:47.000Z",
+      "updated": "2025-09-12T21:53:06.164Z",
+      "summary": "☿ □ ♂ (H6→H12)",
+      "description": "Взаимодействие без уточнений. Стиль — через дипломатию, баланс, эстетику и партнёрство фокус — на рутине, службе, здоровье и эффективности. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nДома: H6→H12; Знаки: LIBRA→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-10-04T11:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-07T02:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "vl7o04kvihhqb3iuktie1noif0@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd98c24838f0e8ccc4c38fb0b3be1105d524f5e049"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442734276174\"",
+      "id": "1g4ehngai545s0vgeildcsdm7c",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MWc0ZWhuZ2FpNTQ1czB2Z2VpbGRjc2RtN2MgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:43.000Z",
+      "updated": "2025-09-12T21:53:07.706Z",
+      "summary": "☿ □ DSC (H9→H7)",
+      "description": "Недомолвки/споры; расхождение ожиданий. Стиль — через глубину, честность, концентрацию и трансформацию фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения.\nСовет: Говорите фактами; ограничьте время встречи.\nДома: H9→H7; Знаки: SCORPIO→LEO",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-10-07T21:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-11T07:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "1g4ehngai545s0vgeildcsdm7c@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd88f538e500ff34e921777baada48be63d6fbd313"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457492220574\"",
+      "id": "n133pls9me88mc8jo0csgqtoms",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bjEzM3BsczltZTg4bWM4am8wY3NncXRvbXMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T13:57:43.000Z",
+      "updated": "2025-09-13T01:59:06.110Z",
+      "summary": "☿ □ ASC (H9→H1)",
+      "description": "Трения в речи/образе; риск ошибок. Стиль — через глубину, честность, концентрацию и трансформацию фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир.\nСовет: Двойная проверка формулировок/цифр; снизьте темп.\nДома: H9→H1; Знаки: SCORPIO→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-10-07T21:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-11T07:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "n133pls9me88mc8jo0csgqtoms@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd25eb5b2b1c9f9f522e350deb530c15c847f42bd6"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515457494279390\"",
+      "id": "cgr5u04rmm9q70fla9kjfjor24",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Y2dyNXUwNHJtbTlxNzBmbGE5a2pmam9yMjQgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T21:53:07.000Z",
+      "updated": "2025-09-13T01:59:07.139Z",
+      "summary": "T‑квадрат к {axis_dat} — {tr_gl}",
+      "description": "Напряжение: Меркурий в квадрате к ASC и DSC (ось отношений). Две «ноги» требуют действия; энергия ищет выход.\n • Меркурий □ ASC: Трения в речи/образе; риск ошибок. Стиль — через глубину, честность, концентрацию и трансформацию фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир. [Совет: Двойная проверка формулировок/цифр; снизьте темп.] (H9→H1; SCORPIO→AQUARIUS)\n • Меркурий □ DSC: Недомолвки/споры; расхождение ожиданий. Стиль — через глубину, честность, концентрацию и трансформацию фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения. [Совет: Говорите фактами; ограничьте время встречи.] (H9→H7; SCORPIO→LEO)\nСовет: Сфокусируйтесь на одной точке приложения силы; не распыляйтесь. Начните с участка дома 9.\n[work] В работе — сузить фронт; выбрать ключевую связку и додавить. Не хватайтесь за всё сразу.\n[health] В здоровье — избегайте перегрузок; «снятие напряжения» через дозированную активность в зоне дома 9.\n[finance] Финансы — не дергаться за всё сразу; один канал в фокусе. Накачайте «узкий» дом 9, уберите утечки.\n[relationships] Отношения — не срывайтесь на обе «ноги» конфликта; выберите один фокус разговора, остальное отложите.",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-10-09T13:57:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-09T13:57:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "cgr5u04rmm9q70fla9kjfjor24@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd0b366ebf8473822812c572c26a8f55a867be9b3f"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515442736450078\"",
+      "id": "sibvo8o2vlhso8qqrf3a9v3rnc",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=c2lidm84bzJ2bGhzbzhxcXJmM2E5djNybmMgNjVlNDAzZTk0YzFkNzY4MzA3NzA0MmMyOGM3ZDBkNGMwMmYxMjY4Y2Y5NGM4MGRmYWVkOWQzMDg2ZmNiZjM5MkBn",
+      "created": "2025-09-12T03:31:49.000Z",
+      "updated": "2025-09-12T21:53:08.819Z",
+      "summary": "☿ ✶ ☿ (H6→H11)",
+      "description": "Взаимодействие без уточнений. Стиль — через глубину, честность, концентрацию и трансформацию фокус — на рутине, службе, здоровье и эффективности. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nДома: H6→H11; Знаки: SCORPIO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "65e403e94c1d7683077042c28c7d0d4c02f1268cf94c80dfaed9d3086fcbf392@group.calendar.google.com",
+        "displayName": "Astro — Medium (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-10-09T17:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-10-11T19:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "sibvo8o2vlhso8qqrf3a9v3rnc@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdff540481005e80b958ed77e430abfa5062ccc261"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    }
+  ]
+}

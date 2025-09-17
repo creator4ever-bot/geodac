@@ -1,0 +1,90 @@
+#!/usr/bin/env python3
+import sys, json, hashlib, datetime as dt, pytz, argparse
+
+def build_ics(events, tzname="Europe/Moscow", alarm="-PT30M",
+              vclass="PRIVATE", busy="FREE", categories="Astrology",
+              add_msft_free=True):
+    TZ = pytz.timezone(tzname)
+    now = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    L = [
+        "BEGIN:VCALENDAR",
+        "PRODID:-//astrokit//SE-Topocentric-RU//RU",
+        "VERSION:2.0",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        "BEGIN:VTIMEZONE",
+        f"TZID:{tzname}",
+        f"X-LIC-LOCATION:{tzname}",
+        "BEGIN:STANDARD",
+        "TZOFFSETFROM:+0300",
+        "TZOFFSETTO:+0300",
+        "TZNAME:MSK",
+        "DTSTART:19700101T000000",
+        "END:STANDARD",
+        "END:VTIMEZONE"
+    ]
+    for e in events:
+        peak = e.get("peak")
+        if not peak: 
+            continue
+        # peak в формате "YYYY-MM-DD HH:MM" локального TZ
+        t = TZ.localize(dt.datetime.strptime(peak, "%Y-%m-%d %H:%M"))
+        dtstart = t.strftime("%Y%m%dT%H%M%S")
+        dtend   = (t + dt.timedelta(minutes=30)).strftime("%Y%m%dT%H%M%S")
+        tr, tg, asp = e.get("transit","?"), e.get("target","?"), e.get("aspect","?")
+        uid = hashlib.md5(f"{tr}-{tg}-{asp}-{peak}".encode("utf-8")).hexdigest()+"@astrokit"
+        summary = f"{tr} {asp} {tg} — пик"
+        houses = e.get("houses", {})
+        desc = f"Start: {e.get('start','?')}\nPeak: {peak}\nEnd: {e.get('end','?')}\nHouses: tr {houses.get('tr','?')}/nat {houses.get('nat','?')}"
+        # экранирование спецсимволов в DESCRIPTION по RFC 5545
+        esc_desc = desc.replace("\\", "\\\\").replace(",", "\\,").replace(";", "\\;").replace("\n", "\\n")
+
+        ev = [
+            "BEGIN:VEVENT",
+            f"UID:{uid}",
+            f"DTSTAMP:{now}",
+            f"CLASS:{vclass}",
+            "STATUS:CONFIRMED",
+            f"DTSTART;TZID={tzname}:{dtstart}",
+            f"DTEND;TZID={tzname}:{dtend}",
+            f"TRANSP:{'TRANSPARENT' if busy=='FREE' else 'OPAQUE'}",
+            f"CATEGORIES:{categories}",
+            f"SUMMARY:{summary}",
+            f"DESCRIPTION:{esc_desc}",
+            "BEGIN:VALARM",
+            f"TRIGGER:{alarm}",
+            "ACTION:DISPLAY",
+            "DESCRIPTION:Reminder",
+            "END:VALARM",
+        ]
+        if add_msft_free and busy == "FREE":
+            ev.append("X-MICROSOFT-CDO-BUSYSTATUS:FREE")
+        ev.append("END:VEVENT")
+        L.extend(ev)
+
+    L.append("END:VCALENDAR")
+    return "\r\n".join(L)
+
+if __name__ == "__main__":
+    ap = argparse.ArgumentParser()
+    ap.add_argument("json_in", help="Файл JSON с событиями (events[])")
+    ap.add_argument("ics_out", help="Куда сохранить .ics")
+    ap.add_argument("--tz", default="Europe/Moscow")
+    ap.add_argument("--alarm", default="-PT30M", help="TRIGGER, напр. -PT15M")
+    ap.add_argument("--class", dest="vclass", choices=["PUBLIC","PRIVATE"], default="PRIVATE")
+    ap.add_argument("--busy", choices=["FREE","BUSY"], default="FREE")
+    ap.add_argument("--categories", default="Astrology")
+    ap.add_argument("--no-msft-free", action="store_true")
+    args = ap.parse_args()
+
+    data = json.load(open(args.json_in, "r", encoding="utf-8"))
+    ics = build_ics(
+        data.get("events", []),
+        tzname=args.tz,
+        alarm=args.alarm,
+        vclass=args.vclass,
+        busy=args.busy,
+        categories=args.categories,
+        add_msft_free=(not args.no_msft_free),
+    )
+    open(args.ics_out, "w", encoding="utf-8", newline="\r\n").write(ics)

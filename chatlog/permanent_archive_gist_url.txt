@@ -1,0 +1,3 @@
+- Creating gist with multiple files
+✓ Created public gist ACTION_ON_CHAT_CRASH.md
+https://gist.github.com/creator4ever-bot/42480f0f0e89c7431fdad1435a8ae0ae

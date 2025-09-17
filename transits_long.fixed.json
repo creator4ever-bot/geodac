@@ -1,0 +1,212 @@
+{
+  "events": [
+    {
+      "transit": "Pluto",
+      "target": "ASC",
+      "aspect": "☌",
+      "aspect_deg": 0,
+      "orb_peak_deg": 0.297,
+      "signs": {
+        "tr": "AQUARIUS",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-03-13 00:00",
+      "peak": "2025-05-04 18:26",
+      "end": "2025-07-24 07:59"
+    },
+    {
+      "transit": "Pluto",
+      "target": "DSC",
+      "aspect": "☍",
+      "aspect_deg": 180,
+      "orb_peak_deg": 0.297,
+      "signs": {
+        "tr": "AQUARIUS",
+        "nat": "LEO"
+      },
+      "start": "2025-03-13 00:00",
+      "peak": "2025-05-04 18:26",
+      "end": "2025-07-24 07:59"
+    },
+    {
+      "transit": "Saturn",
+      "target": "Mars",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 1,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "PISCES",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-04-27 05:59",
+      "peak": "2025-05-07 05:13",
+      "end": "2025-05-18 08:59"
+    },
+    {
+      "transit": "Jupiter",
+      "target": "Venus",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 4,
+        "nat": 12
+      },
+      "signs": {
+        "tr": "GEMINI",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-04-30 22:59",
+      "peak": "2025-05-08 06:26",
+      "end": "2025-05-15 09:59"
+    },
+    {
+      "transit": "Uranus",
+      "target": "Mars",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 3,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "TAURUS",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-05-20 16:59",
+      "peak": "2025-06-07 02:50",
+      "end": "2025-06-25 20:59"
+    },
+    {
+      "transit": "Jupiter",
+      "target": "Mercury",
+      "aspect": "☍",
+      "aspect_deg": 180,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 4,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "CANCER",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-06-29 02:59",
+      "peak": "2025-07-05 16:54",
+      "end": "2025-07-12 08:59"
+    },
+    {
+      "transit": "NNode",
+      "target": "Sun",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 1,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "PISCES",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-07-07 00:59",
+      "peak": "2025-07-11 09:50",
+      "end": "2025-07-23 22:59"
+    },
+    {
+      "transit": "Jupiter",
+      "target": "Sun",
+      "aspect": "☍",
+      "aspect_deg": 180,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 5,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "CANCER",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-05 01:59",
+      "peak": "2025-09-14 02:16",
+      "end": "2025-09-24 05:59"
+    },
+    {
+      "transit": "Saturn",
+      "target": "Mars",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 1,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "PISCES",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-09 02:59",
+      "peak": "2025-09-22 03:33",
+      "end": "2025-10-05 06:59"
+    },
+    {
+      "transit": "Jupiter",
+      "target": "Sun",
+      "aspect": "☍",
+      "aspect_deg": 180,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 5,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "CANCER",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-12-30 12:59",
+      "peak": "2026-01-10 19:07",
+      "end": "2026-01-22 02:59"
+    },
+    {
+      "transit": "NNode",
+      "target": "Moon",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 1,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "PISCES",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-12-24 12:59",
+      "peak": "2026-01-12 13:47",
+      "end": "2026-01-29 19:59"
+    },
+    {
+      "transit": "Saturn",
+      "target": "Mars",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 1,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "PISCES",
+        "nat": "CAPRICORN"
+      },
+      "start": "2026-01-19 01:59",
+      "peak": "2026-01-30 03:43",
+      "end": "2026-02-09 00:59"
+    }
+  ]
+}

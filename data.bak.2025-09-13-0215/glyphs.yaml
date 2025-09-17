@@ -1,0 +1,26 @@
+bodies:
+  SUN: ☉
+  MOON: ☽
+  MERCURY: ☿
+  VENUS: ♀
+  MARS: ♂
+  JUPITER: ♃
+  SATURN: ♄
+  URANUS: ♅
+  NEPTUNE: ♆
+  PLUTO: ♇
+  NODE_N: ☊
+  NODE_S: ☋
+  CHIRON: ⚷
+angles:
+  ASC: ASC
+  MC:  MC
+  DSC: DSC
+  IC:  IC
+aspects:
+  conj: ☌
+  opp:  ☍
+  sqr:  □
+  tri:  △
+  sex:  ✶
+  qnx:  150°

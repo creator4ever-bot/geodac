@@ -1,0 +1,370 @@
+[2025-09-14 03:48:07] mundane FROM=2025-02-26 TO=2026-04-02 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250914-0348.json count: 358
+[feed] RAW size: 144415
+OK station enhance: dedup kept=524 (removed 0), sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 165 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 165 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 211476
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+Upsert done: inserted=0, updated=359, total=359
+Replace mode: deleted=0
+[2025-09-14 03:51:56] mundane done
+[2025-09-15 01:51:49] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-0151.json count: 358
+[feed] RAW size: 144870
+OK station enhance: dedup kept=524 (removed 0), sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 211476
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+Upsert done: inserted=0, updated=359, total=359
+Replace mode: deleted=0
+[2025-09-15 01:54:32] mundane done
+[2025-09-15 03:50:20] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-0350.json count: 358
+[feed] RAW size: 144870
+OK station enhance: dedup kept=524 (removed 0), sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 211476
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+[abort] few events (524 < 999999)
++ TZ=Europe/Moscow
++ PAST=200
++ FUTURE=200
+++ date -d '-200 days' +%F
++ FROM=2025-02-27
+++ date -d '+200 days' +%F
++ TO=2026-04-03
++ CAL_OK='Astro — Mundane (Managed)'
++ CAL_TEST='Astro — Mundane v2 (Managed)'
++ TARGET='Astro — Mundane (Managed)'
++ DO_REPLACE=1
++ RAW=/home/DAC/astro/mundane_feed.raw.json
++ FIX=/home/DAC/astro/mundane_feed.fixed.json
++ GT=/home/DAC/astro/grand_trine_span.json
++ MERGED=/home/DAC/astro/mundane_feed.merged.json
++ MIN_EVENTS=999999
++ GT_ORB=2
++ GT_STEP=12
++ GT_TRI='Jupiter,Saturn,Neptune; Jupiter,Saturn,Uranus; Saturn,Uranus,Neptune; Jupiter,Neptune,Pluto; Mars,Jupiter,Uranus'
+++ date '+%F %T'
++ echo '[2025-09-15 04:13:03] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1'
+[2025-09-15 04:13:03] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
++ '[' 1 -eq 1 ']'
++ /home/DAC/astroenv/bin/python -
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-0413.json count: 358
++ /home/DAC/astroenv/bin/python /home/DAC/astro/mundane_feed.py 2025-02-27 2026-04-03
+++ wc -c
++ echo '[feed] RAW size: 144870'
+[feed] RAW size: 144870
++ TZ_NAME=Europe/Moscow
++ /home/DAC/astroenv/bin/python /home/DAC/astro/mundane_postfix.py /home/DAC/astro/mundane_feed.raw.json /home/DAC/astro/mundane_feed.fixed.json
++ /home/DAC/astroenv/bin/python /home/DAC/astro/mundane_station_enhance.py /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), sorted
++ /home/DAC/astroenv/bin/python /home/DAC/astro/mundane_fill_post_desc.py /home/DAC/astro/mundane_feed.fixed.json
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
++ FROM=2025-02-27
++ TO=2026-04-03
++ /home/DAC/astro/eclipse_triggers_for_window.sh
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
++ ECL=/home/DAC/astro/eclipse_triggers_window.json
++ /home/DAC/astroenv/bin/python /home/DAC/astro/merge_json_events.py /home/DAC/astro/mundane_feed.fixed.json /home/DAC/astro/eclipse_triggers_window.json /home/DAC/astro/mundane_feed.fixed.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
++ /home/DAC/astroenv/bin/python /home/DAC/astro/mundane_station_enhance.py /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), sorted
++ /home/DAC/astroenv/bin/python /home/DAC/astro/mundane_fill_post_desc.py /home/DAC/astro/mundane_feed.fixed.json
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+++ wc -c
++ echo '[postfix] FIX size: 211476'
+[postfix] FIX size: 211476
++ ORB=2
++ STEP_H=12
++ /home/DAC/astroenv/bin/python /home/DAC/astro/mundane_grand_trine_scan.py 2025-02-27 2026-04-03 /home/DAC/astro/grand_trine_span.json 'Jupiter,Saturn,Neptune; Jupiter,Saturn,Uranus; Saturn,Uranus,Neptune; Jupiter,Neptune,Pluto; Mars,Jupiter,Uranus'
+OK: /home/DAC/astro/grand_trine_span.json events: 0
++ /home/DAC/astroenv/bin/python -
+[merge] FIX: 524 GT: 0 => MERGED: 524
+++ /home/DAC/astroenv/bin/python -c 'import json,os; print(len(json.load(open(os.path.expanduser("~/astro/mundane_feed.merged.json"),encoding="utf-8"))["events"]))'
++ CNT=524
++ echo '[validate] MERGED events: 524'
+[validate] MERGED events: 524
++ '[' 524 -lt 999999 ']'
++ echo '[abort] few events (524 < 999999)'
+[abort] few events (524 < 999999)
++ exit 3
+[2025-09-15 04:34:50] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-0434.json count: 358
+[feed] RAW size: 144870
+OK station enhance: dedup kept=524 (removed 0), stitched=10, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), stitched=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 211426
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+[abort] few events (524 < 999999)
+[2025-09-15 05:10:35] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-0510.json count: 358
+[feed] RAW size: 144870
+OK station enhance: dedup kept=524 (removed 0), stitched=0, dropped_dir=0, sorted
+OK post-fill: 10 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), stitched=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 212388
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+[abort] few events (524 < 999999)
+[2025-09-15 05:14:32] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-0514.json count: 358
+[feed] RAW size: 144870
+OK station enhance: dedup kept=524 (removed 0), stitched=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), stitched=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 212388
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+Traceback (most recent call last):
+  File "/home/DAC/astro/push_gcal.py", line 173, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/home/DAC/astro/push_gcal.py", line 149, in main
+    service.events().insert(calendarId=cal_id, body=body).execute()
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/googleapiclient/http.py", line 938, in execute
+    raise HttpError(resp, content, uri=self.uri)
+googleapiclient.errors.HttpError: <HttpError 400 when requesting https://www.googleapis.com/calendar/v3/calendars/9a0ef7b2d7ef8de6bca2696b0507e08e790892f1e5dae06e3e7703583f0f9644%40group.calendar.google.com/events?alt=json returned "Bad Request". Details: "[{'domain': 'global', 'reason': 'badRequest', 'message': 'Bad Request'}]">
+[2025-09-15 05:23:55] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-0523.json count: 358
+[feed] RAW size: 144870
+OK station enhance: dedup kept=524 (removed 0), stitched=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), stitched=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 212388
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+Upsert done: inserted=10, updated=349, total=359
+Replace mode: deleted=10
+[2025-09-15 05:26:44] mundane done
+[2025-09-15 05:53:20] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-0553.json count: 358
+[feed] RAW size: 144870
+OK station enhance: dedup kept=524 (removed 0), stitched=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), stitched=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 212388
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+[gcal] upsert start: total=359
+[gcal] upsert 1/359 (0%)
+[gcal] upsert 17/359 (4%)
+[gcal] upsert 34/359 (9%)
+[gcal] upsert 51/359 (14%)
+[gcal] upsert 68/359 (18%)
+[gcal] upsert 85/359 (23%)
+[gcal] upsert 102/359 (28%)
+[gcal] upsert 119/359 (33%)
+[gcal] upsert 136/359 (37%)
+[gcal] upsert 153/359 (42%)
+[gcal] upsert 170/359 (47%)
+[gcal] upsert 187/359 (52%)
+[gcal] upsert 204/359 (56%)
+[gcal] upsert 221/359 (61%)
+[gcal] upsert 238/359 (66%)
+[gcal] upsert 255/359 (71%)
+[gcal] upsert 272/359 (75%)
+[gcal] upsert 289/359 (80%)
+[gcal] upsert 306/359 (85%)
+[gcal] upsert 323/359 (89%)
+[gcal] upsert 340/359 (94%)
+[gcal] upsert 357/359 (99%)
+[gcal] upsert 359/359 (100%)
+Upsert done: inserted=0, updated=359, skipped=0, total=359
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-15 05:56:31] mundane done
+[2025-09-15 06:23:34] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-0623.json count: 358
+[feed] RAW size: 144870
+OK station enhance: dedup kept=524 (removed 0), stitched=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), stitched=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 212828
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+[abort] few events (524 < 999999)
+[2025-09-15 06:30:38] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-0630.json count: 358
+[feed] RAW size: 144870
+OK station enhance: dedup kept=524 (removed 0), stitched=10, collapsed=7, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), stitched=10, collapsed=7, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 212828
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+[abort] few events (524 < 999999)
+[2025-09-15 06:43:01] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-0643.json count: 358
+[feed] RAW size: 144870
+OK station enhance: dedup kept=524 (removed 0), stitched=10, collapsed=7, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), stitched=10, collapsed=7, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 212828
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+[gcal] upsert start: total=359
+[gcal] upsert 1/359 (0%)
+[gcal] upsert 17/359 (4%)
+[gcal] upsert 34/359 (9%)
+[gcal] upsert 51/359 (14%)
+[gcal] upsert 68/359 (18%)
+[gcal] upsert 85/359 (23%)
+[gcal] upsert 102/359 (28%)
+[gcal] upsert 119/359 (33%)
+[gcal] upsert 136/359 (37%)
+[gcal] upsert 153/359 (42%)
+[gcal] upsert 170/359 (47%)
+[gcal] upsert 187/359 (52%)
+[gcal] upsert 204/359 (56%)
+[gcal] upsert 221/359 (61%)
+[gcal] upsert 238/359 (66%)
+[gcal] upsert 255/359 (71%)
+[gcal] upsert 272/359 (75%)
+[gcal] upsert 289/359 (80%)
+[gcal] upsert 306/359 (85%)
+[gcal] upsert 323/359 (89%)
+[gcal] upsert 340/359 (94%)
+[gcal] upsert 357/359 (99%)
+[gcal] upsert 359/359 (100%)
+Upsert done: inserted=20, updated=0, skipped=339, total=359
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=20
+[2025-09-15 06:43:32] mundane done
+[2025-09-15 21:12:01] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[2025-09-15 21:12:01] mundane FROM=2025-02-27 TO=2026-04-03 TARGET=Astro — Mundane (Managed) replace=1
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-2112.json count: 358
+[backup] saved: /home/DAC/astro/backups/Astro_Mundane_Managed_20250915-2112.json count: 358
+[feed] RAW size: 144870
+[feed] RAW size: 144870
+OK station enhance: dedup kept=524 (removed 0), stitched=10, collapsed=0, dropped_dir=0, sorted
+OK station enhance: dedup kept=524 (removed 0), stitched=10, collapsed=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK triggers: 164 -> /home/DAC/astro/eclipse_triggers_window.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK merge: 524 + 164 -> 524 -> /home/DAC/astro/mundane_feed.fixed.json
+OK station enhance: dedup kept=524 (removed 0), stitched=10, collapsed=0, dropped_dir=0, sorted
+OK station enhance: dedup kept=524 (removed 0), stitched=10, collapsed=0, dropped_dir=0, sorted
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+OK post-fill: 0 updated in /home/DAC/astro/mundane_feed.fixed.json
+[postfix] FIX size: 212828
+[postfix] FIX size: 212828
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+OK: /home/DAC/astro/grand_trine_span.json events: 0
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[merge] FIX: 524 GT: 0 => MERGED: 524
+[validate] MERGED events: 524
+[validate] MERGED events: 524
+[gcal] upsert start: total=359
+[gcal] upsert 1/359 (0%)
+[gcal] upsert start: total=359
+[gcal] upsert 1/359 (0%)
+[gcal] upsert 17/359 (4%)
+[gcal] upsert 34/359 (9%)
+[gcal] upsert 17/359 (4%)
+[gcal] upsert 34/359 (9%)
+[gcal] upsert 51/359 (14%)
+[gcal] upsert 51/359 (14%)
+[gcal] upsert 68/359 (18%)
+[gcal] upsert 68/359 (18%)
+[gcal] upsert 85/359 (23%)
+[gcal] upsert 102/359 (28%)
+[gcal] upsert 85/359 (23%)
+[gcal] upsert 102/359 (28%)
+[gcal] upsert 119/359 (33%)
+[gcal] upsert 119/359 (33%)
+[gcal] upsert 136/359 (37%)
+[gcal] upsert 136/359 (37%)
+[gcal] upsert 153/359 (42%)
+[gcal] upsert 153/359 (42%)
+[gcal] upsert 170/359 (47%)
+[gcal] upsert 170/359 (47%)
+[gcal] upsert 187/359 (52%)
+[gcal] upsert 187/359 (52%)
+[gcal] upsert 204/359 (56%)
+[gcal] upsert 204/359 (56%)
+[gcal] upsert 221/359 (61%)
+[gcal] upsert 221/359 (61%)
+[gcal] upsert 238/359 (66%)
+[gcal] upsert 238/359 (66%)
+[gcal] upsert 255/359 (71%)
+[gcal] upsert 255/359 (71%)
+[gcal] upsert 272/359 (75%)
+[gcal] upsert 289/359 (80%)
+[gcal] upsert 306/359 (85%)
+[gcal] upsert 272/359 (75%)
+[gcal] upsert 289/359 (80%)
+[gcal] upsert 306/359 (85%)
+[gcal] upsert 323/359 (89%)
+[gcal] upsert 323/359 (89%)
+[gcal] upsert 340/359 (94%)
+[gcal] upsert 340/359 (94%)
+[gcal] upsert 357/359 (99%)
+[gcal] upsert 357/359 (99%)
+[gcal] upsert 359/359 (100%)
+[gcal] upsert 359/359 (100%)
+Upsert done: inserted=7, updated=0, skipped=352, total=359
+[gcal] replace: scanning and deleting extras...
+Upsert done: inserted=7, updated=0, skipped=352, total=359
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=7
+Replace mode: deleted=7
+[2025-09-15 21:12:20] mundane done
+[2025-09-15 21:12:20] mundane done

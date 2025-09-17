@@ -1,0 +1,480 @@
+{
+  "meta": {
+    "tz": "UTC+3",
+    "type": "Lunar triggers",
+    "targets": [
+      "16° Рыб",
+      "29° Девы"
+    ]
+  },
+  "events": [
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2025-09-20 20:39",
+      "peak": "2025-09-20 21:39",
+      "end": "2025-09-20 22:39"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2025-09-21 21:44",
+      "peak": "2025-09-21 22:44",
+      "end": "2025-09-21 23:44"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2025-10-05 07:31",
+      "peak": "2025-10-05 08:31",
+      "end": "2025-10-05 09:31"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2025-10-06 05:08",
+      "peak": "2025-10-06 06:08",
+      "end": "2025-10-06 07:08"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2025-10-18 02:43",
+      "peak": "2025-10-18 03:43",
+      "end": "2025-10-18 04:43"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2025-10-19 04:03",
+      "peak": "2025-10-19 05:03",
+      "end": "2025-10-19 06:03"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2025-11-01 17:55",
+      "peak": "2025-11-01 18:55",
+      "end": "2025-11-01 19:55"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2025-11-02 15:59",
+      "peak": "2025-11-02 16:59",
+      "end": "2025-11-02 17:59"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2025-11-14 08:21",
+      "peak": "2025-11-14 09:21",
+      "end": "2025-11-14 10:21"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2025-11-15 09:45",
+      "peak": "2025-11-15 10:45",
+      "end": "2025-11-15 11:45"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2025-11-29 02:31",
+      "peak": "2025-11-29 03:31",
+      "end": "2025-11-29 04:31"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2025-11-30 01:22",
+      "peak": "2025-11-30 02:22",
+      "end": "2025-11-30 03:22"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2025-12-11 15:06",
+      "peak": "2025-12-11 16:06",
+      "end": "2025-12-11 17:06"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2025-12-12 16:07",
+      "peak": "2025-12-12 17:07",
+      "end": "2025-12-12 18:07"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2025-12-26 08:45",
+      "peak": "2025-12-26 09:45",
+      "end": "2025-12-26 10:45"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2025-12-27 08:14",
+      "peak": "2025-12-27 09:14",
+      "end": "2025-12-27 10:14"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-01-07 23:51",
+      "peak": "2026-01-08 00:51",
+      "end": "2026-01-08 01:51"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-01-09 00:11",
+      "peak": "2026-01-09 01:11",
+      "end": "2026-01-09 02:11"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-01-22 14:10",
+      "peak": "2026-01-22 15:10",
+      "end": "2026-01-22 16:10"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-01-23 13:37",
+      "peak": "2026-01-23 14:37",
+      "end": "2026-01-23 15:37"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-02-04 09:49",
+      "peak": "2026-02-04 10:49",
+      "end": "2026-02-04 11:49"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-02-05 09:40",
+      "peak": "2026-02-05 10:40",
+      "end": "2026-02-05 11:40"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-02-18 20:55",
+      "peak": "2026-02-18 21:55",
+      "end": "2026-02-18 22:55"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-02-19 19:53",
+      "peak": "2026-02-19 20:53",
+      "end": "2026-02-19 21:53"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-03-03 19:14",
+      "peak": "2026-03-03 20:14",
+      "end": "2026-03-03 21:14"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-03-04 19:04",
+      "peak": "2026-03-04 20:04",
+      "end": "2026-03-04 21:04"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-03-18 05:46",
+      "peak": "2026-03-18 06:46",
+      "end": "2026-03-18 07:46"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-03-19 04:20",
+      "peak": "2026-03-19 05:20",
+      "end": "2026-03-19 06:20"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-03-31 02:48",
+      "peak": "2026-03-31 03:48",
+      "end": "2026-03-31 04:48"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-04-01 02:58",
+      "peak": "2026-04-01 03:58",
+      "end": "2026-04-01 04:58"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-04-14 15:44",
+      "peak": "2026-04-14 16:44",
+      "end": "2026-04-14 17:44"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-04-15 14:21",
+      "peak": "2026-04-15 15:21",
+      "end": "2026-04-15 16:21"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-04-27 08:37",
+      "peak": "2026-04-27 09:37",
+      "end": "2026-04-27 10:37"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-04-28 09:08",
+      "peak": "2026-04-28 10:08",
+      "end": "2026-04-28 11:08"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-05-12 01:11",
+      "peak": "2026-05-12 02:11",
+      "end": "2026-05-12 03:11"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-05-13 00:19",
+      "peak": "2026-05-13 01:19",
+      "end": "2026-05-13 02:19"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-05-24 14:12",
+      "peak": "2026-05-24 15:12",
+      "end": "2026-05-24 16:12"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-05-25 14:39",
+      "peak": "2026-05-25 15:39",
+      "end": "2026-05-25 16:39"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-06-08 08:57",
+      "peak": "2026-06-08 09:57",
+      "end": "2026-06-08 10:57"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-06-09 08:45",
+      "peak": "2026-06-09 09:45",
+      "end": "2026-06-09 10:45"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-06-20 21:05",
+      "peak": "2026-06-20 22:05",
+      "end": "2026-06-20 23:05"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-06-21 21:02",
+      "peak": "2026-06-21 22:02",
+      "end": "2026-06-21 23:02"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-07-05 15:03",
+      "peak": "2026-07-05 16:03",
+      "end": "2026-07-05 17:03"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-07-06 15:16",
+      "peak": "2026-07-06 16:16",
+      "end": "2026-07-06 17:16"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-07-18 05:49",
+      "peak": "2026-07-18 06:49",
+      "end": "2026-07-18 07:49"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-07-19 05:07",
+      "peak": "2026-07-19 06:07",
+      "end": "2026-07-19 07:07"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-08-01 20:35",
+      "peak": "2026-08-01 21:35",
+      "end": "2026-08-01 22:35"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-08-02 20:46",
+      "peak": "2026-08-02 21:46",
+      "end": "2026-08-02 22:46"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-08-14 15:39",
+      "peak": "2026-08-14 16:39",
+      "end": "2026-08-14 17:39"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-08-15 14:32",
+      "peak": "2026-08-15 15:32",
+      "end": "2026-08-15 16:32"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "16° Рыб",
+      "aspect": "☌",
+      "start": "2026-08-29 02:59",
+      "peak": "2026-08-29 03:59",
+      "end": "2026-08-29 04:59"
+    },
+    {
+      "category": "Lunar trigger",
+      "transit": "Moon",
+      "target": "29° Девы",
+      "aspect": "☌",
+      "start": "2026-08-30 02:49",
+      "peak": "2026-08-30 03:49",
+      "end": "2026-08-30 04:49"
+    }
+  ]
+}

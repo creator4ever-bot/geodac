@@ -1,0 +1,1059 @@
+[2025-09-12 16:58:04] lunar start FROM=2025-09-05 TO=2025-09-19 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250912-1658.json count: 30
+[calc] RAW written: 15413 bytes
+OK: wrote 40 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 40
+Upsert done: inserted=30, updated=10, total=40
+Replace mode: deleted=21
+[2025-09-12 16:58:40] lunar done
+[2025-09-13 00:53:29] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250913-0053.json count: 40
+[calc] RAW written: 15783 bytes
+OK: wrote 41 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 41
+Upsert done: inserted=4, updated=37, total=41
+Replace mode: deleted=3
+[2025-09-13 00:53:56] lunar done
+[2025-09-13 01:10:01] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)
+[2025-09-13 01:10:01] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250913-0110.json count: 41
+[backup] saved: /home/DAC/astro/backups/Lunar_20250913-0110.json count: 41
+[calc] RAW written: 15783 bytes
+[calc] RAW written: 15783 bytes
+OK: wrote 41 events -> /home/DAC/astro/lunar_natal_for_ics.json
+OK: wrote 41 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 41
+[validate] events: 41
+Upsert done: inserted=0, updated=41, total=41
+Replace mode: deleted=0
+Upsert done: inserted=0, updated=41, total=41
+Replace mode: deleted=0
+[2025-09-13 01:10:24] lunar done
+[2025-09-13 01:10:24] lunar done
+[2025-09-13 02:44:33] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250913-0244.json count: 41
+[calc] RAW written: 15783 bytes
+OK: wrote 41 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 41
+Traceback (most recent call last):
+  File "/home/DAC/astro/push_gcal.py", line 173, in <module>
+    if __name__ == '__main__': main()
+                               ^^^^^^
+  File "/home/DAC/astro/push_gcal.py", line 132, in main
+    data = json.load(open(args.json, 'r', encoding='utf-8'))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/DAC/astro/lunar_natal_merged.json'
+++ date -d '-7 days' +%F
++ FROM=2025-09-06
+++ date -d '+7 days' +%F
++ TO=2025-09-20
++ CAL='Astro — Lunar Natal (Managed)'
++ RAW=/home/DAC/astro/lunar_natal.json
++ FIX=/home/DAC/astro/lunar_natal_for_ics.json
+++ date '+%F %T'
++ echo '[2025-09-13 03:27:10] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)'
+[2025-09-13 03:27:10] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)
++ /home/DAC/astroenv/bin/python -
+[backup] saved: /home/DAC/astro/backups/Lunar_20250913-0327.json count: 41
++ /home/DAC/astroenv/bin/python /home/DAC/astro/transits_slow.py 2025-09-06 2025-09-20 --ephe '/home/DAC/Zet9 GeoDAC/Swiss' --bodies Moon,NNode
+++ wc -c
++ echo '[calc] RAW written: 15783 bytes'
+[calc] RAW written: 15783 bytes
++ /home/DAC/astroenv/bin/python /home/DAC/astro/render_for_ics.py /home/DAC/astro/lunar_natal.json /home/DAC/astro/lunar_natal_for_ics.json
+OK: wrote 41 events -> /home/DAC/astro/lunar_natal_for_ics.json
+++ /home/DAC/astroenv/bin/python -c 'import json,os; print(len(json.load(open(os.path.expanduser("~/astro/lunar_natal_for_ics.json"),encoding="utf-8"))["events"]))'
++ CNT=41
++ echo '[validate] events: 41'
+[validate] events: 41
++ '[' 41 -lt 10 ']'
++ /home/DAC/astroenv/bin/python /home/DAC/astro/lunar_merge_angles.py /home/DAC/astro/lunar_natal_for_ics.json /home/DAC/astro/lunar_natal_merged.json
+/home/DAC/astro/push_lunar_natal_managed.sh: строка 59: MERGED: не заданы границы переменной
+++ date -d '-7 days' +%F
++ FROM=2025-09-06
+++ date -d '+7 days' +%F
++ TO=2025-09-20
++ CAL='Astro — Lunar Natal (Managed)'
++ RAW=/home/DAC/astro/lunar_natal.json
++ FIX=/home/DAC/astro/lunar_natal_for_ics.json
+++ date '+%F %T'
++ echo '[2025-09-13 03:32:37] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)'
+[2025-09-13 03:32:37] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)
++ /home/DAC/astroenv/bin/python -
+[backup] saved: /home/DAC/astro/backups/Lunar_20250913-0332.json count: 41
++ /home/DAC/astroenv/bin/python /home/DAC/astro/transits_slow.py 2025-09-06 2025-09-20 --ephe '/home/DAC/Zet9 GeoDAC/Swiss' --bodies Moon,NNode
+++ wc -c
++ echo '[calc] RAW written: 15783 bytes'
+[calc] RAW written: 15783 bytes
++ /home/DAC/astroenv/bin/python /home/DAC/astro/render_for_ics.py /home/DAC/astro/lunar_natal.json /home/DAC/astro/lunar_natal_for_ics.json
+OK: wrote 41 events -> /home/DAC/astro/lunar_natal_for_ics.json
+++ /home/DAC/astroenv/bin/python -c 'import json,os; print(len(json.load(open(os.path.expanduser("~/astro/lunar_natal_for_ics.json"),encoding="utf-8"))["events"]))'
++ CNT=41
++ echo '[validate] events: 41'
+[validate] events: 41
++ '[' 41 -lt 10 ']'
++ /home/DAC/astroenv/bin/python /home/DAC/astro/lunar_merge_angles.py /home/DAC/astro/lunar_natal_for_ics.json /home/DAC/astro/lunar_natal_merged.json
+OK: /home/DAC/astro/lunar_natal_merged.json events: 32
+/home/DAC/astro/push_lunar_natal_managed.sh: строка 59: MERGED: не заданы границы переменной
+[2025-09-13 03:33:43] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250913-0333.json count: 41
+[calc] RAW written: 15783 bytes
+OK: wrote 41 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 41
+OK: /home/DAC/astro/lunar_natal_merged.json events: 32
+/home/DAC/astro/push_lunar_natal_managed.sh: строка 59: MERGED: не заданы границы переменной
+++ date -d '-7 days' +%F
++ FROM=2025-09-06
+++ date -d '+7 days' +%F
++ TO=2025-09-20
++ CAL='Astro — Lunar Natal (Managed)'
++ RAW=/home/DAC/astro/lunar_natal.json
++ FIX=/home/DAC/astro/lunar_natal_for_ics.json
++ MERGED=/home/DAC/astro/lunar_natal_merged.json
+++ date '+%F %T'
++ echo '[2025-09-13 03:37:07] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)'
+[2025-09-13 03:37:07] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)
++ /home/DAC/astroenv/bin/python -
+[backup] saved: /home/DAC/astro/backups/Lunar_20250913-0337.json count: 41
++ /home/DAC/astroenv/bin/python /home/DAC/astro/transits_slow.py 2025-09-06 2025-09-20 --ephe '/home/DAC/Zet9 GeoDAC/Swiss' --bodies Moon,NNode
+++ wc -c
++ echo '[calc] RAW written: 15783 bytes'
+[calc] RAW written: 15783 bytes
++ /home/DAC/astroenv/bin/python /home/DAC/astro/render_for_ics.py /home/DAC/astro/lunar_natal.json /home/DAC/astro/lunar_natal_for_ics.json
+OK: wrote 41 events -> /home/DAC/astro/lunar_natal_for_ics.json
+++ /home/DAC/astroenv/bin/python -c 'import json,os; print(len(json.load(open(os.path.expanduser("~/astro/lunar_natal_for_ics.json"),encoding="utf-8"))["events"]))'
++ CNT=41
++ echo '[validate] events: 41'
+[validate] events: 41
++ '[' 41 -lt 10 ']'
++ /home/DAC/astroenv/bin/python /home/DAC/astro/lunar_merge_angles.py /home/DAC/astro/lunar_natal_for_ics.json /home/DAC/astro/lunar_natal_merged.json
+OK: /home/DAC/astro/lunar_natal_merged.json events: 32
++ /home/DAC/astroenv/bin/python /home/DAC/astro/push_gcal.py --json /home/DAC/astro/lunar_natal_merged.json --tz Europe/Moscow --calendar 'Astro — Lunar Natal (Managed)' --replace
+Upsert done: inserted=7, updated=25, total=32
+Replace mode: deleted=16
++ date +%s
+++ date '+%F %T'
++ echo '[2025-09-13 03:37:35] lunar done'
+[2025-09-13 03:37:35] lunar done
+[2025-09-13 04:55:46] lunar start FROM=2025-09-06 TO=2025-09-20 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250913-0455.json count: 32
+[calc] RAW written: 15783 bytes
+OK: wrote 41 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 41
+OK: /home/DAC/astro/lunar_natal_merged.json events: 32
+Upsert done: inserted=0, updated=32, total=32
+Replace mode: deleted=0
+[2025-09-13 04:56:05] lunar done
+[2025-09-14 01:10:01] lunar start FROM=2025-09-07 TO=2025-09-21 CAL=Astro — Lunar Natal (Managed)
+[2025-09-14 01:10:01] lunar start FROM=2025-09-07 TO=2025-09-21 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250914-0110.json count: 32
+[backup] saved: /home/DAC/astro/backups/Lunar_20250914-0110.json count: 32
+[calc] RAW written: 15780 bytes
+[calc] RAW written: 15780 bytes
+OK: wrote 41 events -> /home/DAC/astro/lunar_natal_for_ics.json
+OK: wrote 41 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 41
+[validate] events: 41
+OK: /home/DAC/astro/lunar_natal_merged.json events: 32
+OK: /home/DAC/astro/lunar_natal_merged.json events: 32
+Upsert done: inserted=1, updated=31, total=32
+Replace mode: deleted=1
+Upsert done: inserted=1, updated=31, total=32
+Replace mode: deleted=1
+[2025-09-14 01:10:35] lunar done
+[2025-09-14 01:10:35] lunar done
+[2025-09-14 05:44:00] lunar start FROM=2025-09-07 TO=2025-09-21 CAL=Astro — Lunar Natal (Managed)
+Traceback (most recent call last):
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/httplib2/__init__.py", line 1369, in _conn_request
+    conn.connect()
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/httplib2/__init__.py", line 1145, in connect
+    address_info = socket.getaddrinfo(host, port, 0, socket.SOCK_STREAM)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/socket.py", line 962, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/google_auth_httplib2.py", line 119, in __call__
+    response, data = self.http.request(
+                     ^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/httplib2/__init__.py", line 1727, in request
+    (response, content) = self._request(
+                          ^^^^^^^^^^^^^^
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/httplib2/__init__.py", line 1447, in _request
+    (response, content) = self._conn_request(conn, request_uri, method, body, headers)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/httplib2/__init__.py", line 1376, in _conn_request
+    raise ServerNotFoundError("Unable to find the server at %s" % conn.host)
+httplib2.error.ServerNotFoundError: Unable to find the server at oauth2.googleapis.com
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/googleapiclient/_helpers.py", line 130, in positional_wrapper
+    return wrapped(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/googleapiclient/http.py", line 923, in execute
+    resp, content = _retry_request(
+                    ^^^^^^^^^^^^^^^
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/googleapiclient/http.py", line 191, in _retry_request
+    resp, content = http.request(uri, method, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/google_auth_httplib2.py", line 209, in request
+    self.credentials.before_request(self._request, method, uri, request_headers)
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/google/auth/credentials.py", line 239, in before_request
+    self._blocking_refresh(request)
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/google/auth/credentials.py", line 202, in _blocking_refresh
+    self.refresh(request)
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/google/oauth2/credentials.py", line 409, in refresh
+    ) = reauth.refresh_grant(
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/google/oauth2/reauth.py", line 333, in refresh_grant
+    response_status_ok, response_data, retryable_error = _client._token_endpoint_request_no_throw(
+                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/google/oauth2/_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+               ^^^^^^^^
+  File "/home/DAC/astroenv/lib/python3.11/site-packages/google_auth_httplib2.py", line 126, in __call__
+    raise exceptions.TransportError(exc)
+google.auth.exceptions.TransportError: Unable to find the server at oauth2.googleapis.com
+[2025-09-15 01:10:01] lunar start FROM=2025-09-08 TO=2025-09-22 CAL=Astro — Lunar Natal (Managed)
+[2025-09-15 01:10:01] lunar start FROM=2025-09-08 TO=2025-09-22 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250915-0110.json count: 32
+[backup] saved: /home/DAC/astro/backups/Lunar_20250915-0110.json count: 32
+[calc] RAW written: 16896 bytes
+[calc] RAW written: 16896 bytes
+OK: wrote 44 events -> /home/DAC/astro/lunar_natal_for_ics.json
+OK: wrote 44 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 44
+[validate] events: 44
+OK: /home/DAC/astro/lunar_natal_merged.json events: 34
+OK: /home/DAC/astro/lunar_natal_merged.json events: 34
+Upsert done: inserted=5, updated=29, total=34
+Replace mode: deleted=3
+Upsert done: inserted=5, updated=29, total=34
+Replace mode: deleted=3
+[2025-09-15 01:10:24] lunar done
+[2025-09-15 01:10:24] lunar done
+[2025-09-15 01:55:29] lunar start FROM=2025-09-08 TO=2025-09-22 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250915-0155.json count: 34
+[calc] RAW written: 16896 bytes
+OK: wrote 44 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 44
+OK: /home/DAC/astro/lunar_natal_merged.json events: 34
+Upsert done: inserted=0, updated=34, total=34
+Replace mode: deleted=0
+[2025-09-15 01:55:49] lunar done
+[2025-09-16 01:10:01] lunar start FROM=2025-09-09 TO=2025-09-23 CAL=Astro — Lunar Natal (Managed)
+[2025-09-16 01:10:01] lunar start FROM=2025-09-09 TO=2025-09-23 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250916-0110.json count: 34
+[backup] saved: /home/DAC/astro/backups/Lunar_20250916-0110.json count: 34
+[calc] RAW written: 16519 bytes
+[calc] RAW written: 16519 bytes
+OK: wrote 43 events -> /home/DAC/astro/lunar_natal_for_ics.json
+OK: wrote 43 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 43
+[validate] events: 43
+OK: /home/DAC/astro/lunar_natal_merged.json events: 33
+OK: /home/DAC/astro/lunar_natal_merged.json events: 33
+[gcal] upsert start: total=33
+[gcal] upsert start: total=33
+[gcal] upsert 1/33 (3%)
+[gcal] upsert 1/33 (3%)
+[gcal] upsert 2/33 (6%)
+[gcal] upsert 2/33 (6%)
+[gcal] upsert 3/33 (9%)
+[gcal] upsert 3/33 (9%)
+[gcal] upsert 4/33 (12%)
+[gcal] upsert 4/33 (12%)
+[gcal] upsert 5/33 (15%)
+[gcal] upsert 5/33 (15%)
+[gcal] upsert 6/33 (18%)
+[gcal] upsert 6/33 (18%)
+[gcal] upsert 7/33 (21%)
+[gcal] upsert 7/33 (21%)
+[gcal] upsert 8/33 (24%)
+[gcal] upsert 8/33 (24%)
+[gcal] upsert 9/33 (27%)
+[gcal] upsert 9/33 (27%)
+[gcal] upsert 10/33 (30%)
+[gcal] upsert 10/33 (30%)
+[gcal] upsert 11/33 (33%)
+[gcal] upsert 11/33 (33%)
+[gcal] upsert 12/33 (36%)
+[gcal] upsert 12/33 (36%)
+[gcal] upsert 13/33 (39%)
+[gcal] upsert 13/33 (39%)
+[gcal] upsert 14/33 (42%)
+[gcal] upsert 14/33 (42%)
+[gcal] upsert 15/33 (45%)
+[gcal] upsert 15/33 (45%)
+[gcal] upsert 16/33 (48%)
+[gcal] upsert 16/33 (48%)
+[gcal] upsert 17/33 (51%)
+[gcal] upsert 17/33 (51%)
+[gcal] upsert 18/33 (54%)
+[gcal] upsert 18/33 (54%)
+[gcal] upsert 19/33 (57%)
+[gcal] upsert 19/33 (57%)
+[gcal] upsert 20/33 (60%)
+[gcal] upsert 20/33 (60%)
+[gcal] upsert 21/33 (63%)
+[gcal] upsert 21/33 (63%)
+[gcal] upsert 22/33 (66%)
+[gcal] upsert 22/33 (66%)
+[gcal] upsert 23/33 (69%)
+[gcal] upsert 23/33 (69%)
+[gcal] upsert 24/33 (72%)
+[gcal] upsert 24/33 (72%)
+[gcal] upsert 25/33 (75%)
+[gcal] upsert 25/33 (75%)
+[gcal] upsert 26/33 (78%)
+[gcal] upsert 26/33 (78%)
+[gcal] upsert 27/33 (81%)
+[gcal] upsert 27/33 (81%)
+[gcal] upsert 28/33 (84%)
+[gcal] upsert 28/33 (84%)
+[gcal] upsert 29/33 (87%)
+[gcal] upsert 29/33 (87%)
+[gcal] upsert 30/33 (90%)
+[gcal] upsert 30/33 (90%)
+[gcal] upsert 31/33 (93%)
+[gcal] upsert 31/33 (93%)
+[gcal] upsert 32/33 (96%)
+[gcal] upsert 32/33 (96%)
+[gcal] upsert 33/33 (100%)
+[gcal] upsert 33/33 (100%)
+Upsert done: inserted=1, updated=32, skipped=0, total=33
+[gcal] replace: scanning and deleting extras...
+Upsert done: inserted=1, updated=32, skipped=0, total=33
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=2
+Replace mode: deleted=2
+[2025-09-16 01:10:25] lunar done
+[2025-09-16 01:10:25] lunar done
+[2025-09-16 05:48:22] lunar start FROM=2025-09-09 TO=2025-09-23 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250916-0548.json count: 33
+[calc] RAW written: 16519 bytes
+OK: wrote 33 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 33
+OK: /home/DAC/astro/lunar_natal_merged.json events: 33
+[gcal] upsert start: total=33
+[gcal] upsert 1/33 (3%)
+[gcal] upsert 2/33 (6%)
+[gcal] upsert 3/33 (9%)
+[gcal] upsert 4/33 (12%)
+[gcal] upsert 5/33 (15%)
+[gcal] upsert 6/33 (18%)
+[gcal] upsert 7/33 (21%)
+[gcal] upsert 8/33 (24%)
+[gcal] upsert 9/33 (27%)
+[gcal] upsert 10/33 (30%)
+[gcal] upsert 11/33 (33%)
+[gcal] upsert 12/33 (36%)
+[gcal] upsert 13/33 (39%)
+[gcal] upsert 14/33 (42%)
+[gcal] upsert 15/33 (45%)
+[gcal] upsert 16/33 (48%)
+[gcal] upsert 17/33 (51%)
+[gcal] upsert 18/33 (54%)
+[gcal] upsert 19/33 (57%)
+[gcal] upsert 20/33 (60%)
+[gcal] upsert 21/33 (63%)
+[gcal] upsert 22/33 (66%)
+[gcal] upsert 23/33 (69%)
+[gcal] upsert 24/33 (72%)
+[gcal] upsert 25/33 (75%)
+[gcal] upsert 26/33 (78%)
+[gcal] upsert 27/33 (81%)
+[gcal] upsert 28/33 (84%)
+[gcal] upsert 29/33 (87%)
+[gcal] upsert 30/33 (90%)
+[gcal] upsert 31/33 (93%)
+[gcal] upsert 32/33 (96%)
+[gcal] upsert 33/33 (100%)
+Upsert done: inserted=10, updated=23, skipped=0, total=33
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=10
+[2025-09-16 05:48:47] lunar done
+[2025-09-16 06:18:48] lunar start FROM=2025-09-09 TO=2025-09-23 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250916-0618.json count: 33
+[calc] RAW written: 16519 bytes
+OK: wrote 33 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 33
+OK: /home/DAC/astro/lunar_natal_merged.json events: 33
+[gcal] upsert start: total=33
+[gcal] upsert 1/33 (3%)
+[gcal] upsert 2/33 (6%)
+[gcal] upsert 3/33 (9%)
+[gcal] upsert 4/33 (12%)
+[gcal] upsert 5/33 (15%)
+[gcal] upsert 6/33 (18%)
+[gcal] upsert 7/33 (21%)
+[gcal] upsert 8/33 (24%)
+[gcal] upsert 9/33 (27%)
+[gcal] upsert 10/33 (30%)
+[gcal] upsert 11/33 (33%)
+[gcal] upsert 12/33 (36%)
+[gcal] upsert 13/33 (39%)
+[gcal] upsert 14/33 (42%)
+[gcal] upsert 15/33 (45%)
+[gcal] upsert 16/33 (48%)
+[gcal] upsert 17/33 (51%)
+[gcal] upsert 18/33 (54%)
+[gcal] upsert 19/33 (57%)
+[gcal] upsert 20/33 (60%)
+[gcal] upsert 21/33 (63%)
+[gcal] upsert 22/33 (66%)
+[gcal] upsert 23/33 (69%)
+[gcal] upsert 24/33 (72%)
+[gcal] upsert 25/33 (75%)
+[gcal] upsert 26/33 (78%)
+[gcal] upsert 27/33 (81%)
+[gcal] upsert 28/33 (84%)
+[gcal] upsert 29/33 (87%)
+[gcal] upsert 30/33 (90%)
+[gcal] upsert 31/33 (93%)
+[gcal] upsert 32/33 (96%)
+[gcal] upsert 33/33 (100%)
+Upsert done: inserted=0, updated=19, skipped=14, total=33
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-16 06:19:01] lunar done
+[2025-09-17 01:10:02] lunar start FROM=2025-09-10 TO=2025-09-24 CAL=Astro — Lunar Natal (Managed)
+[2025-09-17 01:10:02] lunar start FROM=2025-09-10 TO=2025-09-24 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0110.json count: 33
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0110.json count: 33
+[calc] RAW written: 15020 bytes
+[calc] RAW written: 15020 bytes
+OK: wrote 31 events -> /home/DAC/astro/lunar_natal_for_ics.json
+OK: wrote 31 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 31
+[validate] events: 31
+OK: /home/DAC/astro/lunar_natal_merged.json events: 31
+OK: /home/DAC/astro/lunar_natal_merged.json events: 31
+[gcal] upsert start: total=31
+[gcal] upsert 1/31 (3%)
+[gcal] upsert 2/31 (6%)
+[gcal] upsert 3/31 (9%)
+[gcal] upsert start: total=31
+[gcal] upsert 1/31 (3%)
+[gcal] upsert 2/31 (6%)
+[gcal] upsert 3/31 (9%)
+[gcal] upsert 4/31 (12%)
+[gcal] upsert 5/31 (16%)
+[gcal] upsert 6/31 (19%)
+[gcal] upsert 7/31 (22%)
+[gcal] upsert 8/31 (25%)
+[gcal] upsert 9/31 (29%)
+[gcal] upsert 10/31 (32%)
+[gcal] upsert 11/31 (35%)
+[gcal] upsert 12/31 (38%)
+[gcal] upsert 13/31 (41%)
+[gcal] upsert 14/31 (45%)
+[gcal] upsert 15/31 (48%)
+[gcal] upsert 16/31 (51%)
+[gcal] upsert 4/31 (12%)
+[gcal] upsert 5/31 (16%)
+[gcal] upsert 6/31 (19%)
+[gcal] upsert 7/31 (22%)
+[gcal] upsert 8/31 (25%)
+[gcal] upsert 9/31 (29%)
+[gcal] upsert 10/31 (32%)
+[gcal] upsert 11/31 (35%)
+[gcal] upsert 12/31 (38%)
+[gcal] upsert 13/31 (41%)
+[gcal] upsert 14/31 (45%)
+[gcal] upsert 15/31 (48%)
+[gcal] upsert 16/31 (51%)
+[gcal] upsert 17/31 (54%)
+[gcal] upsert 17/31 (54%)
+[gcal] upsert 18/31 (58%)
+[gcal] upsert 18/31 (58%)
+[gcal] upsert 19/31 (61%)
+[gcal] upsert 19/31 (61%)
+[gcal] upsert 20/31 (64%)
+[gcal] upsert 20/31 (64%)
+[gcal] upsert 21/31 (67%)
+[gcal] upsert 21/31 (67%)
+[gcal] upsert 22/31 (70%)
+[gcal] upsert 22/31 (70%)
+[gcal] upsert 23/31 (74%)
+[gcal] upsert 24/31 (77%)
+[gcal] upsert 23/31 (74%)
+[gcal] upsert 24/31 (77%)
+[gcal] upsert 25/31 (80%)
+[gcal] upsert 25/31 (80%)
+[gcal] upsert 26/31 (83%)
+[gcal] upsert 27/31 (87%)
+[gcal] upsert 28/31 (90%)
+[gcal] upsert 29/31 (93%)
+[gcal] upsert 26/31 (83%)
+[gcal] upsert 27/31 (87%)
+[gcal] upsert 28/31 (90%)
+[gcal] upsert 29/31 (93%)
+[gcal] upsert 30/31 (96%)
+[gcal] upsert 30/31 (96%)
+[gcal] upsert 31/31 (100%)
+[gcal] upsert 31/31 (100%)
+Upsert done: inserted=2, updated=0, skipped=29, total=31
+[gcal] replace: scanning and deleting extras...
+Upsert done: inserted=2, updated=0, skipped=29, total=31
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=4
+Replace mode: deleted=4
+[2025-09-17 01:10:10] lunar done
+[2025-09-17 01:10:10] lunar done
+[2025-09-17 03:52:48] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0352.json count: 31
+[calc] RAW written: 28239 bytes
+OK: wrote 58 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 58
+OK: /home/DAC/astro/lunar_natal_merged.json events: 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=27, updated=20, skipped=11, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-17 03:53:18] lunar done
+[2025-09-17 03:59:51] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0359.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 6, in <module>
+    def load_active_frame(path=os.path.expanduser('~/astro/.state/natal_frame.json')):
+                               ^^
+NameError: name 'os' is not defined
+[2025-09-17 04:01:52] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0401.json count: 57
+[calc] RAW written: 28235 bytes
+OK: wrote 58 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 58
+OK: /home/DAC/astro/lunar_natal_merged.json events: 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=4, updated=34, skipped=20, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=4
+[2025-09-17 04:02:20] lunar done
+[2025-09-17 04:55:20] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0455.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 248, in <module>
+    main()
+  File "/home/DAC/astro/transits_slow.py", line 244, in main
+    data = compute(t0, t1, names)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astro/transits_slow.py", line 114, in compute
+    af_cusps, af_axes = load_active_frame()
+    ^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[2025-09-17 05:05:05] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0505.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 248, in <module>
+    main()
+  File "/home/DAC/astro/transits_slow.py", line 244, in main
+    data = compute(t0, t1, names)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astro/transits_slow.py", line 114, in compute
+    af_cusps, af_axes = load_active_frame()
+    ^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[2025-09-17 05:07:17] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0507.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 248, in <module>
+    main()
+  File "/home/DAC/astro/transits_slow.py", line 244, in main
+    data = compute(t0, t1, names)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astro/transits_slow.py", line 114, in compute
+    af_cusps, af_axes = load_active_frame()
+    ^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[2025-09-17 05:13:08] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0513.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 248, in <module>
+    main()
+  File "/home/DAC/astro/transits_slow.py", line 244, in main
+    data = compute(t0, t1, names)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astro/transits_slow.py", line 114, in compute
+    af_cusps, af_axes = load_active_frame()
+    ^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[2025-09-17 05:15:53] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0515.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 248, in <module>
+    main()
+  File "/home/DAC/astro/transits_slow.py", line 244, in main
+    data = compute(t0, t1, names)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astro/transits_slow.py", line 114, in compute
+    af_cusps, af_axes = load_active_frame()
+    ^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[2025-09-17 05:20:28] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0520.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 248, in <module>
+    main()
+  File "/home/DAC/astro/transits_slow.py", line 244, in main
+    data = compute(t0, t1, names)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astro/transits_slow.py", line 114, in compute
+    af_cusps, af_axes = load_active_frame()
+    ^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[2025-09-17 05:24:52] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0524.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 248, in <module>
+    main()
+  File "/home/DAC/astro/transits_slow.py", line 244, in main
+    data = compute(t0, t1, names)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astro/transits_slow.py", line 114, in compute
+    af_cusps, af_axes = load_active_frame()
+    ^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[2025-09-17 05:27:56] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0527.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 248, in <module>
+    main()
+  File "/home/DAC/astro/transits_slow.py", line 244, in main
+    data = compute(t0, t1, names)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astro/transits_slow.py", line 114, in compute
+    af_cusps, af_axes = load_active_frame()
+    ^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[2025-09-17 05:31:41] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0531.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 248, in <module>
+    main()
+  File "/home/DAC/astro/transits_slow.py", line 244, in main
+    data = compute(t0, t1, names)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astro/transits_slow.py", line 114, in compute
+    af_cusps, af_axes = load_active_frame()
+    ^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[2025-09-17 05:35:46] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0535.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 248, in <module>
+    main()
+  File "/home/DAC/astro/transits_slow.py", line 244, in main
+    data = compute(t0, t1, names)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/DAC/astro/transits_slow.py", line 114, in compute
+    af_cusps, af_axes = load_active_frame()
+    ^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+[2025-09-17 05:38:39] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0538.json count: 57
+[calc] RAW written: 28227 bytes
+OK: wrote 58 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 58
+OK: /home/DAC/astro/lunar_natal_merged.json events: 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=0, updated=42, skipped=16, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-17 05:39:07] lunar done
+[2025-09-17 05:43:39] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0543.json count: 57
+[calc] RAW written: 28227 bytes
+OK: wrote 58 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 58
+OK: /home/DAC/astro/lunar_natal_merged.json events: 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=0, updated=0, skipped=58, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-17 05:43:44] lunar done
+[2025-09-17 05:56:19] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0556.json count: 57
+[calc] RAW written: 28227 bytes
+OK: wrote 58 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 58
+OK: /home/DAC/astro/lunar_natal_merged.json events: 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=0, updated=0, skipped=58, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-17 05:56:24] lunar done
+[2025-09-17 05:59:44] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0559.json count: 57
+[calc] RAW written: 28235 bytes
+OK: wrote 58 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 58
+OK: /home/DAC/astro/lunar_natal_merged.json events: 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=0, updated=42, skipped=16, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-17 06:00:11] lunar done
+[2025-09-17 06:05:57] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0605.json count: 57
+[calc] RAW written: 28235 bytes
+OK: wrote 58 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 58
+OK: /home/DAC/astro/lunar_natal_merged.json events: 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=0, updated=0, skipped=58, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-17 06:06:02] lunar done
+[2025-09-17 06:10:57] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0610.json count: 57
+[calc] RAW written: 28235 bytes
+OK: wrote 58 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 58
+OK: /home/DAC/astro/lunar_natal_merged.json events: 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=0, updated=0, skipped=58, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-17 06:11:02] lunar done
+[2025-09-17 06:13:46] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0613.json count: 57
+Traceback (most recent call last):
+  File "/home/DAC/astro/transits_slow.py", line 34, in <module>
+    cusps_nat = af_cusps
+                ^^^^^^^^
+NameError: name 'af_cusps' is not defined
+[2025-09-17 06:17:43] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0617.json count: 57
+[calc] RAW written: 28238 bytes
+OK: wrote 58 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 58
+OK: /home/DAC/astro/lunar_natal_merged.json events: 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=16, updated=38, skipped=4, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=16
+[2025-09-17 06:18:26] lunar done
+[2025-09-17 06:52:37] lunar start FROM=2025-09-03 TO=2025-10-01 CAL=Astro — Lunar Natal (Managed)
+[backup] saved: /home/DAC/astro/backups/Lunar_20250917-0652.json count: 57
+[calc] RAW written: 28238 bytes
+OK: wrote 58 events -> /home/DAC/astro/lunar_natal_for_ics.json
+[validate] events: 58
+[fix] lunar_natal_for_ics.json: matched=16, changed=48
+[fix] lunar_natal_merged.json: matched=16, changed=2
+[total] matched=32, changed=50
+[rehouse] lunar_natal_for_ics.json changed=2
+[rehouse] lunar_natal_merged.json changed=2
+[total changes] 4
+OK: /home/DAC/astro/lunar_natal_merged.json events: 58
+[gcal] upsert start: total=58
+[gcal] upsert 1/58 (1%)
+[gcal] upsert 2/58 (3%)
+[gcal] upsert 4/58 (6%)
+[gcal] upsert 6/58 (10%)
+[gcal] upsert 8/58 (13%)
+[gcal] upsert 10/58 (17%)
+[gcal] upsert 12/58 (20%)
+[gcal] upsert 14/58 (24%)
+[gcal] upsert 16/58 (27%)
+[gcal] upsert 18/58 (31%)
+[gcal] upsert 20/58 (34%)
+[gcal] upsert 22/58 (37%)
+[gcal] upsert 24/58 (41%)
+[gcal] upsert 26/58 (44%)
+[gcal] upsert 28/58 (48%)
+[gcal] upsert 30/58 (51%)
+[gcal] upsert 32/58 (55%)
+[gcal] upsert 34/58 (58%)
+[gcal] upsert 36/58 (62%)
+[gcal] upsert 38/58 (65%)
+[gcal] upsert 40/58 (68%)
+[gcal] upsert 42/58 (72%)
+[gcal] upsert 44/58 (75%)
+[gcal] upsert 46/58 (79%)
+[gcal] upsert 48/58 (82%)
+[gcal] upsert 50/58 (86%)
+[gcal] upsert 52/58 (89%)
+[gcal] upsert 54/58 (93%)
+[gcal] upsert 56/58 (96%)
+[gcal] upsert 58/58 (100%)
+Upsert done: inserted=16, updated=0, skipped=42, total=58
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=16
+[2025-09-17 06:52:59] lunar done

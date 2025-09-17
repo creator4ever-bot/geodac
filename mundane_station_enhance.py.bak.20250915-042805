@@ -1,0 +1,121 @@
+# -*- coding: utf-8 -*-
+import os, sys, json, re
+from datetime import timedelta
+from dateutil import parser as duparser, tz
+
+PLANETS = r'(Солнце|Меркурий|Венера|Марс|Юпитер|Сатурн|Уран|Нептун|Плутон)'
+
+def parse_dt_local_to_utc(s: str, default_tz='Europe/Moscow'):
+    if not s: return None
+    try:
+        dt = duparser.parse(s)
+        if dt.tzinfo:
+            return dt.astimezone(tz.UTC)
+        # naive: считаем локальным по TZ окружения
+        loc = tz.gettz(os.environ.get('TZ', default_tz))
+        if loc is None:
+            loc = tz.gettz(default_tz)
+        dt = dt.replace(tzinfo=loc)
+        return dt.astimezone(tz.UTC)
+    except Exception:
+        return None
+
+def event_time_utc(ev):
+    return parse_dt_local_to_utc(ev.get('peak') or ev.get('start') or ev.get('end') or '')
+
+def detect_station(summary: str):
+    s = summary or ''
+    if re.search(r'разворот\s+назад', s, re.I):  return 'S->℞'
+    if re.search(r'разворот\s+вперёд', s, re.I): return '℞->D'
+    m = re.search(r'переход\s+в\s+(℞|R|RX|D)', s, re.I)
+    if m:
+        mode = m.group(1).upper()
+        return 'S->℞' if mode in ('℞','R','RX') else '℞->D'
+    m = re.search(r'станц\w*\s*(℞|R|RX|D)', s, re.I)
+    if m:
+        mode = m.group(1).upper()
+        return '℞->D' if mode == 'D' else 'S->℞'
+    m = re.search(r'\bS\s*[→\-]?\s*(℞|R|RX|D)\b', s, re.I)
+    if m:
+        mode = m.group(1).upper()
+        return 'S->℞' if mode in ('℞','R','RX') else '℞->D'
+    return None
+
+def planet_from_summary(summary: str):
+    m = re.match(rf'^{PLANETS}', summary or '')
+    return m.group(1) if m else None
+
+def sort_key(e):
+    t = event_time_utc(e)
+    tkey = t.isoformat(sep=' ') if t else ''
+    summ = (e.get('summary') or '').lower()
+    typ  = (e.get('type') or '').upper()
+    prio = 0 if (typ in ('STATIONARY','STATION') or 'станц' in summ or 'разворот' in summ) else 1
+    return (tkey, prio)
+
+def main(path, dedup_hours=12):
+    p=os.path.expanduser(path)
+    data=json.load(open(p,encoding='utf-8'))
+    ev=data.get('events',[]) if isinstance(data,dict) else data
+
+    # 1) Переименуем явные станции в «разворот …»
+    for e in ev:
+        s=e.get('summary') or ''
+        k = detect_station(s)
+        pl = planet_from_summary(s)
+        if k and pl and ('разворот' not in s):
+            e['summary'] = f"{pl} — разворот {'назад' if k=='S->℞' else 'вперёд'}"
+            if not e.get('type'):
+                e['type']='STATIONARY'
+
+    # 2) Сортировка: станция раньше соседних событий в один момент
+    ev.sort(key=sort_key)
+
+    # 3) Dedup станций одной планеты и одного направления в пределах окна (по умолчанию 12ч)
+    TH = timedelta(hours=float(dedup_hours))
+    keep = [True]*len(ev)
+
+    # список только станций
+    st = []
+    for i,e in enumerate(ev):
+        s=e.get('summary') or ''
+        if 'разворот' in s.lower():
+            pl=planet_from_summary(s)
+            direc='S->℞' if 'назад' in s.lower() else '℞->D'
+            t=event_time_utc(e)
+            if pl and t: st.append((i,pl,direc,t))
+
+    st.sort(key=lambda x: (x[1], x[2], x[3]))
+
+    last = {}  # (pl,dir) -> (idx, dt)
+    for i,pl,dir,dt in st:
+        key=(pl,dir)
+        if key not in last:
+            last[key]=(i,dt); continue
+        j, dj = last[key]
+        if abs((dt - dj)) <= TH:
+            ei, ej = ev[i], ev[j]
+            i_has_win = bool(ei.get('start') and ei.get('end'))
+            j_has_win = bool(ej.get('start') and ej.get('end'))
+            # снимаем менее «полезный»: без окна; если равны — более поздний
+            drop = None
+            if i_has_win and not j_has_win:
+                drop = j; last[key]=(i,dt)
+            elif j_has_win and not i_has_win:
+                drop = i
+            else:
+                drop = i if dt >= dj else j
+                if drop == j: last[key]=(i,dt)
+            keep[drop] = False
+        else:
+            last[key]=(i,dt)
+
+    ev2=[e for k,e in zip(keep,ev) if k]
+
+    json.dump({"events": ev2}, open(p,'w',encoding='utf-8'), ensure_ascii=False, indent=2)
+    print(f"OK station enhance: dedup kept={len(ev2)} (removed {len(ev)-len(ev2)}), sorted")
+if __name__=='__main__':
+    if len(sys.argv)<2:
+        print("Usage: python mundane_station_enhance.py fixed.json [dedup_hours]"); sys.exit(1)
+    dedup = float(sys.argv[2]) if len(sys.argv)>=3 else 12.0
+    main(sys.argv[1], dedup_hours=dedup)

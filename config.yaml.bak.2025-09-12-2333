@@ -1,0 +1,27 @@
+orbs:
+  axis: 2.0
+  node: 2.0
+  lunar: 1.0
+  personal: 1.5
+  social: 2.0
+  outer: 2.5
+
+nodes:
+  use_true_node: true
+
+aspects: [conj, opp, sqr, tri, sex, qnx]
+
+glyphs:
+  enable: true
+
+calendars:
+  long:   "Astro — Long (Managed)"
+  medium: "Astro — Medium (Managed)"
+  lunar:  "Astro — Lunar Natal (Managed)"
+  mundane: "Astro — Mundane (Managed)"
+
+# Локация для сумерек (гражданские, -6°)
+location:
+  lat: 55.7558    # Москва по умолчанию
+  lon: 37.6176
+  tz:  Europe/Moscow

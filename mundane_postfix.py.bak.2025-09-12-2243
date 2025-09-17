@@ -1,0 +1,290 @@
+# -*- coding: utf-8 -*-
+import os, sys, json, math, re
+from datetime import datetime, timedelta, timezone, time as dtime, date as ddate
+from zoneinfo import ZoneInfo
+import swisseph as swe
+
+EPHE = os.path.expanduser("/home/DAC/Zet9 GeoDAC/Swiss")
+
+# Фазы (этикетки)
+PHASES = {"Новолуние":0.0,"Первая четверть":90.0,"Полнолуние":180.0,"Последняя четверть":270.0}
+
+# Глифы (для аспектов/ингрессий — но фазы/затмения словами)
+RU2GL = {"Солнце":"☉","Луна":"☽","Меркурий":"☿","Венера":"♀","Марс":"♂","Юпитер":"♃","Сатурн":"♄","Уран":"♅","Нептун":"♆","Плутон":"♇"}
+GL2B = {'☉':swe.SUN,'☿':swe.MERCURY,'♀':swe.VENUS,'♂':swe.MARS,'♃':swe.JUPITER,'♄':swe.SATURN,'♅':swe.URANUS,'♆':swe.NEPTUNE,'♇':swe.PLUTO}
+SIG2GL = {"Овен":"♈","Телец":"♉","Близнецы":"♊","Рак":"♋","Лев":"♌","Дева":"♍","Весы":"♎","Скорпион":"♏","Стрелец":"♐","Козерог":"♑","Водолей":"♒","Рыбы":"♓"}
+ASPG = "☌☍□△✶"
+
+# Пороги для «S» (стационар) — град/сут
+ST_THR = {"Меркурий":0.05,"Венера":0.04,"Марс":0.03,"Юпитер":0.02,"Сатурн":0.015,"Уран":0.01,"Нептун":0.01,"Плутон":0.01,"Солнце":0.05}
+BIDX = {"Солнце":swe.SUN,"Меркурий":swe.MERCURY,"Венера":swe.VENUS,"Марс":swe.MARS,"Юпитер":swe.JUPITER,"Сатурн":swe.SATURN,"Уран":swe.URANUS,"Нептун":swe.NEPTUNE,"Плутон":swe.PLUTO}
+
+# Толковки (скетчи) — по желанию расширим
+STATIONS_TXT = {
+  "S->℞": "Планета замедляется и разворачивается в ретроградность: пересбор планов, проверка договорённостей, аккуратность в решениях.",
+  "℞->D": "Планета выходит из ретроградности: завершение пересмотра, внедрение выводов, мягкий разгон."
+}
+
+def cfg():
+    import yaml
+    p=os.path.expanduser('~/astro/config.yaml')
+    try: return yaml.safe_load(open(p,'r',encoding='utf-8')) or {}
+    except: return {}
+CFG = cfg()
+TZNAME = (CFG.get('location') or {}).get('tz') or "Europe/Moscow"
+LAT = float((CFG.get('location') or {}).get('lat') or 55.7558)
+LON = float((CFG.get('location') or {}).get('lon') or 37.6176)
+
+def parse_dt(s):
+    s=(s or "").replace('Z','+00:00')
+    try: dt=datetime.fromisoformat(s)
+    except: dt=datetime.fromisoformat(s.replace(' ','T'))
+    return dt
+
+def to_local_iso(dt_utc):
+    return dt_utc.astimezone(ZoneInfo(TZNAME)).replace(microsecond=0).isoformat()
+
+def jd(dt_utc):
+    return swe.julday(dt_utc.year, dt_utc.month, dt_utc.day, dt_utc.hour + dt_utc.minute/60 + dt_utc.second/3600.0)
+
+def elong_deg(dt_utc):
+    j = jd(dt_utc.astimezone(timezone.utc))
+    lm = swe.calc_ut(j, swe.MOON)[0][0] % 360.0
+    ls = swe.calc_ut(j, swe.SUN)[0][0] % 360.0
+    return (lm - ls) % 360.0
+
+def angdiff(a,b): return (a - b + 540.0) % 360.0 - 180.0
+
+def nearest_phase(dt_utc):
+    e = elong_deg(dt_utc)
+    name,deg = min(PHASES.items(), key=lambda kv: abs(angdiff(e, kv[1])))
+    return name, abs(angdiff(e, deg))
+
+def speed_deg_per_day(dt_utc, body):
+    j = jd(dt_utc.astimezone(timezone.utc))
+    l,b,r,ls,bs,rs = swe.calc_ut(j, body, swe.FLG_SWIEPH | swe.FLG_SPEED)[0]
+    return ls
+
+def civil_twilight(date_local, which='dusk'):
+    """
+    Возвращает местное время гражданских сумерек (dusk/dawn) по дате.
+    Если Astral недоступен — фолбэк 21:00/06:00.
+    """
+    try:
+        from astral import sun
+        from astral.location import LocationInfo
+        loc = LocationInfo(latitude=LAT, longitude=LON, timezone=TZNAME)
+        d = ddate.fromisoformat(str(date_local))
+        s = sun.sun(loc.observer, date=d, tzinfo=ZoneInfo(TZNAME))
+        if which=='dusk':
+            return s['dusk']
+        else:
+            return s['dawn']
+    except Exception:
+        # Фолбэк
+        if which=='dusk':
+            return datetime.combine(date_local, dtime(21,0), tzinfo=ZoneInfo(TZNAME))
+        else:
+            return datetime.combine(date_local, dtime(6,0), tzinfo=ZoneInfo(TZNAME))
+
+def build_lunar_water(phases_events):
+    """
+    Из фаз строим:
+    - Поставить Лунную воду: ночь после Новолуния [dusk(NM_date) .. dawn(NM_date+1)]
+    - Применить Лунную воду: ночь перед Полнолунием [dusk(FM_date-1) .. dawn(FM_date)]
+    """
+    out=[]
+    nm_dates=set()
+    fm_dates=set()
+    for e in phases_events:
+        name=e['summary']
+        peak_local = parse_dt(e['peak']).astimezone(ZoneInfo(TZNAME))
+        d = peak_local.date()
+        if name=="Новолуние":
+            nm_dates.add(d)
+        elif name=="Полнолуние":
+            fm_dates.add(d)
+    # Поставить: после каждого NM
+    for d in sorted(nm_dates):
+        start=civil_twilight(d,'dusk')
+        end=civil_twilight(d+timedelta(days=1),'dawn')
+        out.append({
+            "type":"RITUAL","summary":"Поставить Лунную воду","description":"",
+            "category":"Mundane,Ritual","alarm":"",
+            "start": start.isoformat(), "end": end.isoformat(), "peak": start.isoformat(),
+            "gd_id": stable_id("RITUAL","Поставить Лунную воду", start.isoformat())
+        })
+    # Применить: ночь перед FM
+    for d in sorted(fm_dates):
+        start=civil_twilight(d-timedelta(days=1),'dusk')
+        end=civil_twilight(d,'dawn')
+        out.append({
+            "type":"RITUAL","summary":"Применить Лунную воду","description":"",
+            "category":"Mundane,Ritual","alarm":"",
+            "start": start.isoformat(), "end": end.isoformat(), "peak": start.isoformat(),
+            "gd_id": stable_id("RITUAL","Применить Лунную воду", start.isoformat())
+        })
+    return out
+
+def stable_id(kind, summary, peak):
+    import hashlib
+    return "gd" + hashlib.sha1(f"{kind}|{summary}|{peak}".encode('utf-8')).hexdigest()
+
+def glyphize_summary(summary, keep_words=False):
+    s=(summary or "").strip()
+    if not s: return s
+    # Фазы/затмения/ритуалы — оставляем словами
+    if s in PHASES or "затмени" in s.lower() or "Лунную воду" in s:
+        return s
+    # аспекты
+    m=re.match(r'^(Солнце|Меркурий|Венера|Марс|Юпитер|Сатурн|Уран|Нептун|Плутон)\s+([%s])\s+(Солнце|Меркурий|Венера|Марс|Юпитер|Сатурн|Уран|Нептун|Плутон)$' % ASPG, s)
+    if m:
+        a, asp, b = m.groups()
+        return f"{RU2GL.get(a,a)} {asp} {RU2GL.get(b,b)}"
+    # ингрессии
+    m=re.match(r'^(Солнце|Меркурий|Венера|Марс|Юпитер|Сатурн|Уран|Нептун|Плутон)\s+→\s+(Овен|Телец|Близнецы|Рак|Лев|Дева|Весы|Скорпион|Стрелец|Козерог|Водолей|Рыбы)(.*)$', s)
+    if m:
+        pl, sign, tail = m.groups()
+        return f"{RU2GL.get(pl,pl)} → {SIG2GL.get(sign,sign)}{tail}"
+    # станции — оставим RU (требование)
+    if re.match(r'^(Солнце|Меркурий|Венера|Марс|Юпитер|Сатурн|Уран|Нептун|Плутон)\s+Station\s+(Rx|D)$', s):
+        return s
+    return s
+
+def detect_station_seeds(raw_events):
+    import re
+    return [e for e in raw_events if 'category' in e and re.search(r'station', e['category'], re.I)]
+
+def find_station_window(t0, planet_ru, thr, max_h, step_h=6):
+    body=BIDX.get(planet_ru); 
+    if body is None: return None
+    def g(dt): return abs(speed_deg_per_day(dt, body)) - thr
+    # бока
+    def side(sign, t0):
+        a=t0; b=t0
+        for k in range(1, int(max_h/step_h)+1):
+            b=t0 + timedelta(hours=sign*step_h*k)
+            if g(b) >= 0:
+                low, high = a, b
+                for _ in range(40):
+                    mid = low + (high - low)/2
+                    if abs((high-low).total_seconds()) <= 2: break
+                    if g(mid) >= 0: high = mid
+                    else: low = mid
+                return high
+            a=b
+        return t0 + timedelta(hours=sign*max_h)
+    left=side(-1,t0); right=side(+1,t0)
+    return left, right
+
+def extract_planet_ru(summary):
+    m=re.search(r'(Солнце|Меркурий|Венера|Марс|Юпитер|Сатурн|Уран|Нептун|Плутон)', summary or '')
+    if m: return m.group(1)
+    return None
+
+def postfilter(events, raw_events):
+    swe.set_ephe_path(EPHE)
+    # 0) убираем старые «Лунная вода» из входа
+    events=[e for e in events if ("Лунную воду" not in (e.get('summary') or ''))]
+
+    # 1) нормализуем фазы
+    fixed=[]
+    for e in events:
+        t = parse_dt(e.get('peak') or e.get('start') or e.get('end'))
+        if not t: 
+            continue
+        summ = (e.get('summary') or '').strip()
+        if (e.get('type',"").upper()=='PHASE') or (summ in PHASES):
+            name, delt = nearest_phase(t.astimezone(timezone.utc))
+            ee=dict(e); ee['type']='PHASE'; ee['summary']=name; ee['_phase_delta']=float(delt)
+            fixed.append(ee)
+        else:
+            fixed.append(dict(e))
+    # 2) дедуп фаз (<=90 мин, ближе к цели)
+    fixed.sort(key=lambda x: x.get('peak') or x.get('start') or '')
+    out=[]; last_keep={}; TH=timedelta(minutes=90)
+    for e in fixed:
+        if e.get('type')=='PHASE' or e.get('summary') in PHASES:
+            name=e['summary']; t=parse_dt(e.get('peak') or e.get('start'))
+            prev=last_keep.get(name)
+            if prev and abs(t-prev[0])<=TH:
+                i=prev[1]; p=out[i]
+                if e.get('_phase_delta',999.0) < p.get('_phase_delta',999.0):
+                    out[i]=e; last_keep[name]=(t,i)
+            else:
+                last_keep[name]=(t,len(out)); out.append(e)
+        else:
+            out.append(e)
+    # 3) затмения — дедуп <=3ч (оставляем более длинное)
+    res=[]; groups={}; THE=timedelta(hours=3)
+    for e in out:
+        s=(e.get('summary') or '')
+        if 'затмен' in s:
+            kind='SOL' if 'Солн' in s else ('LUN' if 'Лун' in s else 'UNK')
+            t=parse_dt(e.get('peak') or e.get('start')); key=(kind, t.date())
+            found=None; idx=None
+            for j in groups.get(key,[]):
+                t0=parse_dt(res[j].get('peak') or res[j].get('start'))
+                if abs((t-t0).total_seconds())<=THE.total_seconds():
+                    found=res[j]; idx=j; break
+            if found is None:
+                res.append(e); groups.setdefault(key,[]).append(len(res)-1)
+            else:
+                def span(x):
+                    st=parse_dt(x.get('start') or x.get('peak')); en=parse_dt(x.get('end') or x.get('peak'))
+                    return (en-st).total_seconds() if (st and en) else 0
+                if span(e)>span(found): res[idx]=e
+        else:
+            res.append(e)
+    # 4) глифизация аспектов/ингрессий (фазы/затмения — словами; станции RU)
+    for e in res:
+        e['summary']=glyphize_summary(e.get('summary'))
+    # 5) Лунная вода из фаз
+    phases=[e for e in res if e.get('type')=='PHASE']
+    res.extend(build_lunar_water(phases))
+    # 6) Стационарные окна + RU summary + короткая толковка в description
+    extra=[]
+    seeds=detect_station_seeds(raw_events)
+    for s in seeds:
+        t0=parse_dt(s.get('peak') or s.get('start') or s.get('end'))
+        ru=extract_planet_ru(s.get('summary','')) or "Меркурий"
+        thr=ST_THR.get(ru,0.02)
+        maxh=240
+        win=find_station_window(t0, ru, thr, maxh)
+        if not win: continue
+        left,right=win
+        # направление: знак скорости через 12ч после t0
+        sign_after=speed_deg_per_day(t0 + timedelta(hours=12), BIDX[ru])
+        mode='D' if sign_after>0 else '℞'
+        # Толкование:
+        k="S->℞" if mode=='℞' else "℞->D"
+        desc=STATIONS_TXT.get(k,"Период смены хода: дайте делам осесть, осторожность в важных шагах.")
+        start=to_local_iso(left.astimezone(timezone.utc))
+        end=to_local_iso(right.astimezone(timezone.utc))
+        peak=to_local_iso(t0.astimezone(timezone.utc))
+        label=f"{ru} S (переход в {mode})"
+        extra.append({
+            "type":"STATIONARY","summary":label,"description":desc,
+            "category":"Mundane,Retro,Stationary","alarm":"",
+            "start": start, "end": end, "peak": peak,
+            "gd_id": stable_id("MUNDANE","STATIONARY|"+label, peak)
+        })
+    res.extend(extra)
+    # 7) стабилизация id/сортировка
+    for e in res:
+        e.pop('_phase_delta', None)
+        if not e.get('gd_id'):
+            e['gd_id']=stable_id(e.get('type') or 'MUNDANE', e.get('summary') or '', e.get('peak') or e.get('start') or '')
+    res.sort(key=lambda x: x.get('peak') or x.get('start') or '')
+    return {"events": res}
+
+if __name__=="__main__":
+    if len(sys.argv)<3:
+        print("Usage: python mundane_postfix.py IN.json OUT.json"); sys.exit(1)
+    swe.set_ephe_path(EPHE)
+    IN, OUT = sys.argv[1], sys.argv[2]
+    data = json.load(open(os.path.expanduser(IN),'r',encoding='utf-8'))
+    raw = data.get('events',[]) if isinstance(data,dict) else data
+    out = postfilter(raw, raw)
+    json.dump(out, open(os.path.expanduser(OUT),'w',encoding='utf-8'), ensure_ascii=False, indent=2)
+    print("OK:", os.path.expanduser(OUT), "events:", len(out.get('events',[])))

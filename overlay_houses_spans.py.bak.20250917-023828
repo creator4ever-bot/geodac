@@ -1,0 +1,138 @@
+# -*- coding: utf-8 -*-
+import os, sys, json
+from datetime import datetime, timedelta, timezone
+import swisseph as swe
+
+EPHE = os.path.expanduser('/home/DAC/Zet9 GeoDAC/Swiss')
+
+PLANETS = [
+    ('Mercury','☿', swe.MERCURY),
+    ('Venus',  '♀', swe.VENUS),
+    ('Mars',   '♂', swe.MARS),
+    ('Jupiter','♃', swe.JUPITER),
+    ('Saturn', '♄', swe.SATURN),
+    ('Uranus', '♅', swe.URANUS),
+    ('Neptune','♆', swe.NEPTUNE),
+    ('Pluto',  '♇', swe.PLUTO),
+]
+
+def load_cusps(path):
+    d = json.load(open(os.path.expanduser(path), encoding='utf-8'))
+    cusps = d.get('cusps') or d.get('houses') or []
+    cusps = [float(x) % 360.0 for x in cusps]
+    if len(cusps) != 12:
+        raise ValueError("Need 12 cusps in active_houses.json")
+    return cusps
+
+def house_of(lon, cusps):
+    # Возвращает дом 1..12 по списку куспидов (натальная сетка)
+    # Идём по кругу от cusp1 .. cusp12 .. cusp1+360
+    lon = lon % 360.0
+    c = cusps[:] + [cusps[0] + 360.0]
+    for i in range(12):
+        a, b = c[i] % 360.0, c[i+1] % 360.0
+        if a <= b:
+            if a <= lon < b: return i+1
+        else:
+            # переход через 360
+            if lon >= a or lon < b: return i+1
+    return 12
+
+def planet_lon_ut(dt):
+    jd = swe.julday(dt.year, dt.month, dt.day, dt.hour + dt.minute/60 + dt.second/3600)
+    lon = swe.calc_ut(jd, cur_sid, swe.FLG_SWIEPH | swe.FLG_SPEED)[0][0]
+    return lon % 360.0
+
+def bracket_refine(cusps, t0, t1):
+    # двоичный поиск момента смены дома в интервальном отрезке
+    h0 = house_of(planet_lon_ut(t0), cusps)
+    for _ in range(20):  # ~микро‑минутная точность
+        mid = t0 + (t1 - t0)/2
+        hm = house_of(planet_lon_ut(mid), cusps)
+        if hm == h0: t0 = mid
+        else:        t1 = mid
+    return t1
+
+def spans_for_planet(name, glyph, sid, cusps, t_start, t_end, step_hours):
+    global cur_sid
+    cur_sid = sid
+    spans=[]; ing=[]
+    # старт
+    t = t_start
+    lon = planet_lon_ut(t)
+    cur_h = house_of(lon, cusps)
+    span_start = t
+    prev_h = cur_h
+    while t <= t_end:
+        t_next = t + timedelta(hours=step_hours)
+        if t_next > t_end: t_next = t_end
+        lon_next = planet_lon_ut(t_next)
+        h_next = house_of(lon_next, cusps)
+        if h_next != cur_h:
+            # уточняем момент ингресса
+            ingress_time = bracket_refine(cusps, t, t_next)
+            # закрываем спан
+            spans.append({
+                'summary': f'{glyph} в H{cur_h}',
+                'start': span_start.replace(tzinfo=timezone.utc).isoformat().replace('+00:00','Z'),
+                'end':   ingress_time.replace(tzinfo=timezone.utc).isoformat().replace('+00:00','Z'),
+                'description': f'Положение транзитной планеты в натальной сетке домов (overlay).',
+                'category': 'OverlayHouses',
+                'busy': 'FREE'
+            })
+            # добавляем ингресс
+            ing.append({
+                'summary': f'{glyph} → H{h_next} (ингресс)',
+                'start': ingress_time.replace(tzinfo=timezone.utc).isoformat().replace('+00:00','Z'),
+                'end':   (ingress_time + timedelta(minutes=30)).replace(tzinfo=timezone.utc).isoformat().replace('+00:00','Z'),
+                'description': f'Ингресс: вход {glyph} в H{h_next}.',
+                'category': 'OverlayHouses'
+            })
+            # новый спан
+            span_start = ingress_time
+            cur_h = h_next
+        t = t_next
+    # финальный спан
+    if span_start < t_end:
+        spans.append({
+            'summary': f'{glyph} в H{cur_h}',
+            'start': span_start.replace(tzinfo=timezone.utc).isoformat().replace('+00:00','Z'),
+            'end':   t_end.replace(tzinfo=timezone.utc).isoformat().replace('+00:00','Z'),
+            'description': 'Положение транзитной планеты в натальной сетке домов (overlay).',
+            'category': 'OverlayHouses',
+            'busy': 'FREE'
+        })
+    return spans, ing
+
+def main():
+    import argparse
+    ap = argparse.ArgumentParser(description="Overlay Houses spans & ingresses")
+    ap.add_argument('--cusps', default='~/astro/data/natal/active_houses.json')
+    ap.add_argument('--from', dest='date_from', required=False)
+    ap.add_argument('--to',   dest='date_to',   required=False)
+    ap.add_argument('--step', type=float, default=6.0, help='шаг часов (slow планеты достаточно 6ч)')
+    args = ap.parse_args()
+
+    cusps = load_cusps(args.cusps)
+    swe.set_ephe_path(EPHE)
+
+    # окно: как у Long (±6 месяцев)
+    now = datetime.utcnow()
+    t_start = datetime.fromisoformat(args.date_from) if args.date_from else (now - timedelta(days=183))
+    t_end   = datetime.fromisoformat(args.date_to)   if args.date_to   else (now + timedelta(days=183))
+    t_start = t_start.replace(tzinfo=timezone.utc); t_end = t_end.replace(tzinfo=timezone.utc)
+
+    all_spans=[]; all_ing=[]
+    for name,glyph,sid in PLANETS:
+        s,i = spans_for_planet(name,glyph,sid,cusps,t_start,t_end,args.step)
+        all_spans += s; all_ing += i
+
+    def dump(path, ev):
+        ev = sorted(ev, key=lambda x: x.get('start') or '')
+        json.dump({'events':ev}, open(os.path.expanduser(path),'w',encoding='utf-8'), ensure_ascii=False, indent=2)
+        print(f"OK: {path} events={len(ev)}")
+
+    dump('~/astro/overlay_spans.json',     all_spans)
+    dump('~/astro/overlay_ingresses.json', all_ing)
+
+if __name__ == '__main__': main()

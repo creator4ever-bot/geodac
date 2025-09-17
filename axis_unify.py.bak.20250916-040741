@@ -1,0 +1,186 @@
+# -*- coding: utf-8 -*-
+import os, sys, json, re
+from datetime import datetime, timezone, timedelta
+
+AX_VERT = {'MC','IC'}
+AX_HOR  = {'ASC','DESC'}
+ASPS = '□☍△✶'
+
+def pdt(x, tzname='Europe/Moscow'):
+    if x is None: return None
+    if isinstance(x, dict):
+        x = x.get('dateTime') or x.get('date') or x
+    s=str(x).strip()
+    if not s: return None
+    s=s.replace('Z','+00:00')
+    for cand in (s, s.replace(' ','T')):
+        try:
+            d=datetime.fromisoformat(cand)
+            if d.tzinfo is None:
+                # трактуем как локальное -> в UTC
+                from zoneinfo import ZoneInfo
+                d=d.replace(tzinfo=ZoneInfo(tzname))
+            return d.astimezone(timezone.utc)
+        except Exception:
+            pass
+    return None
+
+def tstr(d): return d.isoformat().replace('+00:00','Z') if d else ''
+
+# «Транзит с меткой»: первый символ + возможная вставка ' S' / ' ℞'
+def transit_token(summary: str):
+    s = (summary or '').strip()
+    if not s: return ''
+    if len(s) >= 2 and s[1] in (' ','℞','S'):
+        # формы: "☿ ℞ ..." или "☿ S ..."
+        return s[:2].strip()
+    return s[0]
+
+RX = re.compile(r'^(?P<tr>(?:\S(?:\s[℞S])?))\s+(?P<asp>[%s])\s+(?P<tgt>IC|MC|ASC|DESC|[^\s]+)' % ASPS)
+
+def overlap(a0,a1,b0,b1, pad=timedelta(hours=6)):
+    if not a0 or not b0: return False
+    A0, A1 = (a0, a1 or a0); B0, B1 = (b0, b1 or b0)
+    return max(A0,B0) <= (min(A1,B1) + pad)
+
+def main(path_in, path_out=None, mode_axes=('VERT','HOR'), strict_shape=False, tzname='Europe/Moscow'):
+    p = os.path.expanduser(path_in)
+    d = json.load(open(p, encoding='utf-8'))
+    evs = d.get('events') if isinstance(d, dict) else d
+    keep = [True]*len(evs)
+
+    # Сгруппируем по (axis, transit)
+    groups = {}  # key -> list of idx
+    meta   = {}  # idx -> parsed tuple
+    for i,e in enumerate(evs):
+        s = e.get('summary','') or ''
+        m = RX.match(s)
+        if not m: continue
+        tr = m.group('tr')
+        asp = m.group('asp')
+        tgt = m.group('tgt')
+        t0 = pdt(e.get('start') or e.get('when') or e.get('peak'), tzname)
+        t1 = pdt(e.get('end')   or e.get('when') or e.get('peak'), tzname)
+        tok = transit_token(s)
+        axis = 'VERT' if tgt in AX_VERT else ('HOR' if tgt in AX_HOR else None)
+        if axis and axis in mode_axes:
+            key = (axis, tok)
+            meta[i] = (axis, tok, asp, tgt, t0, t1, s, e)
+            groups.setdefault(key, []).append(i)
+
+    # Для каждой группы проверим наборы, где есть >=2 целей (MC+IC или ASC+DESC) и окна пересекаются
+    new_events = []
+    for key, idxs in groups.items():
+        axis, tok = key
+        # сгруппируем по целям
+        items = [meta[i] for i in idxs]
+        tgts  = set(x[3] for x in items)
+        if len(tgts) < 2:  # нужна пара на оси
+            continue
+        # возможны разные аспекты; в strict_shape склеиваем только при одинаковых аспектах
+        # иначе — склеиваем всё, что перекрывается по окну
+        # разобьём на кластеры перекрывающихся интервалов
+        items_sorted = sorted(items, key=lambda z: z[4] or datetime.max.replace(tzinfo=timezone.utc))
+        clusters = []
+        cur = []
+        for it in items_sorted:
+            if not cur:
+                cur = [it]
+                continue
+            a0,a1 = cur[-1][4], (cur[-1][5] or cur[-1][4])
+            b0,b1 = it[4], (it[5] or it[4])
+            if overlap(a0,a1,b0,b1):
+                cur.append(it)
+            else:
+                clusters.append(cur); cur=[it]
+        if cur: clusters.append(cur)
+
+        for cl in clusters:
+            # если в кластере менее 2 целей — пропускаем
+            if len(set(x[3] for x in cl)) < 2:
+                continue
+            if strict_shape and len(set(x[2] for x in cl)) > 1:
+                continue
+            # построим объединённое событие
+            c_t0 = min(x[4] for x in cl if x[4])
+            c_t1 = max((x[5] or x[4]) for x in cl if (x[5] or x[4]))
+            aspects = sorted(set(x[2] for x in cl), key=lambda z: ASPS.index(z))
+            tgtlist = sorted(set(x[3] for x in cl))
+            # Собираем summary
+            asp_str = aspects[0] if len(aspects)==1 else '/'.join(aspects)
+            axis_label = 'вертикали (MC/IC)' if axis=='VERT' else 'горизонтали (ASC/DESC)'
+            summary = f"{tok} {asp_str} к {axis_label}"
+
+            # Откорректируем описание:
+            # - краткая шапка с перечислением исходных событий (аспект+цель+окно)
+            # - дом/знак: возьмём строку «Дома: …» и «Знаки: …» из первого исходного описания если есть
+            def fetch_desc(e):
+                return (e.get('description') or '').strip()
+            desc_lines = [f"Склейка по {axis_label}:"] + [
+                f"• {x[2]} {x[3]}: {tstr(x[4])} → {tstr(x[5] or x[4])}"
+                for x in cl
+            ]
+            base_desc = ''
+            for x in cl:
+                d0 = fetch_desc(x[7])
+                if d0:
+                    base_desc = d0
+                    break
+            # Попробуем вытащить строки «Дома: …» и «Знаки: …»
+            import itertools
+            homes = None; signs = None
+            for x in cl:
+                d0 = fetch_desc(x[7])
+                m = re.search(r'Дома:\s*([^\n]+)', d0)
+                if m: homes = m.group(1).strip(); break
+            for x in cl:
+                d0 = fetch_desc(x[7])
+                m = re.search(r'Знаки:\s*([^\n]+)', d0)
+                if m: signs = m.group(1).strip(); break
+            # Сведём в финальное описание
+            extra = []
+            if homes: extra.append(f"Дома: {homes} → {'H10/H4' if axis=='VERT' else 'H1/H7'}")
+            if signs: extra.append(f"Знаки: {signs}")
+            # если есть «Совет: …» — оставим его (первый найденный)
+            advice = None
+            for x in cl:
+                d0 = fetch_desc(x[7])
+                m = re.search(r'Совет:\s*([^\n]+)', d0)
+                if m: advice = m.group(0); break
+
+            description = '\n'.join(desc_lines)
+            if base_desc:
+                description += '\n\n' + base_desc
+            if extra:
+                description += '\n' + '\n'.join(extra)
+            if advice:
+                description += '\n' + advice
+
+            # Собираем итоговое событие
+            new_e = {
+                'summary': summary,
+                'start': tstr(c_t0),
+                'end':   tstr(c_t1),
+                'description': description,
+                'extendedProperties': {'private': {'src':'geodac', 'axis_unify':'1', 'axis':axis, 'targets': ','.join(tgtlist), 'aspects':asp_str}},
+            }
+            new_events.append(new_e)
+            # пометим исходники на удаление
+            for x in cl:
+                # удаляем только осевые исходники; не трогаем прочее
+                idx = [k for k,v in meta.items() if v is x][0]
+                keep[idx] = False
+
+    # Собираем выходной список: исходные (оставленные) + новые
+    out = [e for k,e in enumerate(evs) if keep[k]] + new_events
+    out.sort(key=lambda e: (e.get('peak') or e.get('start') or ''))
+    container = {"events": out} if isinstance(d, dict) else out
+    if not path_out: path_out = p
+    json.dump(container, open(path_out,'w',encoding='utf-8'), ensure_ascii=False, indent=2)
+    print(f"axis_unify: new={len(new_events)} removed={(len(evs)-sum(keep))} kept={sum(keep)} -> total={len(out)} in {os.path.basename(path_out)}")
+
+if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print("Usage: python axis_unify.py FIX.json [OUT.json] [--strict-shape]"); sys.exit(1)
+    strict = '--strict-shape' in sys.argv[3:] or '--strict' in sys.argv[3:]
+    main(sys.argv[1], sys.argv[2] if len(sys.argv)>=3 and not sys.argv[2].startswith('--') else None, strict_shape=strict)

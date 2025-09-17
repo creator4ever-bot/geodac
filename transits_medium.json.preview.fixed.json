@@ -1,0 +1,1000 @@
+{
+  "events": [
+    {
+      "transit": "Mercury",
+      "target": "ASC",
+      "aspect": "☍",
+      "aspect_deg": 180,
+      "orb_peak_deg": 0.134,
+      "signs": {
+        "tr": "LEO",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-08-14 00:00",
+      "peak": "2025-08-11 10:30",
+      "end": "2025-08-17 18:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "DSC",
+      "aspect": "☌",
+      "aspect_deg": 0,
+      "orb_peak_deg": 0.134,
+      "signs": {
+        "tr": "LEO",
+        "nat": "LEO"
+      },
+      "start": "2025-08-14 00:00",
+      "peak": "2025-08-11 10:30",
+      "end": "2025-08-17 18:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "DSC",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "LEO"
+      },
+      "start": "2025-08-14 00:00",
+      "peak": "2025-08-13 16:13",
+      "end": "2025-08-16 01:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "ASC",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-08-14 00:00",
+      "peak": "2025-08-13 16:13",
+      "end": "2025-08-16 20:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "Venus",
+      "aspect": "☍",
+      "aspect_deg": 180,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 6,
+        "nat": 12
+      },
+      "signs": {
+        "tr": "LEO",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-08-14 00:00",
+      "peak": "2025-08-15 12:43",
+      "end": "2025-08-17 14:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "Mercury",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 7,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-08-14 01:59",
+      "peak": "2025-08-16 10:28",
+      "end": "2025-08-18 19:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "Sun",
+      "aspect": "☍",
+      "aspect_deg": 180,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 5,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "CANCER",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-08-15 18:59",
+      "peak": "2025-08-17 10:45",
+      "end": "2025-08-19 03:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "IC",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LEO",
+        "nat": "GEMINI"
+      },
+      "start": "2025-08-18 05:59",
+      "peak": "2025-08-20 09:21",
+      "end": "2025-08-22 03:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "MC",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LEO",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-08-17 13:59",
+      "peak": "2025-08-20 09:21",
+      "end": "2025-08-22 13:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "MC",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-08-18 23:59",
+      "peak": "2025-08-21 08:02",
+      "end": "2025-08-23 16:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "IC",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "GEMINI"
+      },
+      "start": "2025-08-18 04:59",
+      "peak": "2025-08-21 08:02",
+      "end": "2025-08-24 11:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Moon",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 6,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "LEO",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-08-19 16:59",
+      "peak": "2025-08-21 13:47",
+      "end": "2025-08-23 04:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "Moon",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 8,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-08-21 19:59",
+      "peak": "2025-08-23 09:19",
+      "end": "2025-08-24 22:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "Mars",
+      "aspect": "☍",
+      "aspect_deg": 180,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 5,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "CANCER",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-08-22 19:59",
+      "peak": "2025-08-24 12:13",
+      "end": "2025-08-26 04:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "Mercury",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 6,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-08-26 23:59",
+      "peak": "2025-08-29 01:13",
+      "end": "2025-08-31 02:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "ASC",
+      "aspect": "☍",
+      "aspect_deg": 180,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LEO",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-08-27 03:59",
+      "peak": "2025-08-29 06:04",
+      "end": "2025-08-31 08:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "DSC",
+      "aspect": "☌",
+      "aspect_deg": 0,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LEO",
+        "nat": "LEO"
+      },
+      "start": "2025-08-27 03:59",
+      "peak": "2025-08-29 06:04",
+      "end": "2025-08-31 08:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Venus",
+      "aspect": "☍",
+      "aspect_deg": 180,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 6,
+        "nat": 12
+      },
+      "signs": {
+        "tr": "LEO",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-08-28 16:59",
+      "peak": "2025-08-29 19:49",
+      "end": "2025-08-30 22:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "MC",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-08-29 16:59",
+      "peak": "2025-09-01 06:26",
+      "end": "2025-09-03 20:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "IC",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "GEMINI"
+      },
+      "start": "2025-08-29 16:59",
+      "peak": "2025-09-01 06:26",
+      "end": "2025-09-03 20:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "IC",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LEO",
+        "nat": "GEMINI"
+      },
+      "start": "2025-08-31 15:59",
+      "peak": "2025-09-02 07:09",
+      "end": "2025-09-03 23:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "MC",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LEO",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-08-31 05:59",
+      "peak": "2025-09-02 07:09",
+      "end": "2025-09-04 09:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "Moon",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 7,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-08-31 13:59",
+      "peak": "2025-09-02 14:58",
+      "end": "2025-09-04 16:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "Moon",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 6,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "LEO",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-09-01 17:59",
+      "peak": "2025-09-03 09:20",
+      "end": "2025-09-05 01:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Mercury",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 6,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-04 16:59",
+      "peak": "2025-09-05 17:16",
+      "end": "2025-09-06 18:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "MC",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-09-06 00:59",
+      "peak": "2025-09-07 07:46",
+      "end": "2025-09-08 14:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "IC",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "GEMINI"
+      },
+      "start": "2025-09-06 00:59",
+      "peak": "2025-09-07 07:46",
+      "end": "2025-09-08 14:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "Sun",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 8,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-05 04:59",
+      "peak": "2025-09-07 11:43",
+      "end": "2025-09-09 18:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Moon",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 7,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-09-06 23:59",
+      "peak": "2025-09-08 00:02",
+      "end": "2025-09-09 00:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "Venus",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 8,
+        "nat": 12
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-09-09 09:59",
+      "peak": "2025-09-11 16:28",
+      "end": "2025-09-13 22:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "Sun",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 7,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-10 15:59",
+      "peak": "2025-09-12 17:01",
+      "end": "2025-09-14 18:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Sun",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 7,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-12 01:59",
+      "peak": "2025-09-13 03:02",
+      "end": "2025-09-14 04:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "Venus",
+      "aspect": "☍",
+      "aspect_deg": 180,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 6,
+        "nat": 12
+      },
+      "signs": {
+        "tr": "LEO",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-09-12 02:59",
+      "peak": "2025-09-13 18:22",
+      "end": "2025-09-15 09:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Mars",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 7,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-16 13:59",
+      "peak": "2025-09-17 16:21",
+      "end": "2025-09-18 19:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "Mars",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 8,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-17 21:59",
+      "peak": "2025-09-20 03:23",
+      "end": "2025-09-22 09:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "DSC",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "LEO"
+      },
+      "start": "2025-09-19 17:59",
+      "peak": "2025-09-20 20:58",
+      "end": "2025-09-22 00:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "ASC",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-09-19 10:59",
+      "peak": "2025-09-20 20:58",
+      "end": "2025-09-22 07:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "Mars",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 7,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-19 06:59",
+      "peak": "2025-09-21 07:15",
+      "end": "2025-09-23 08:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Mercury",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 7,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-20 17:59",
+      "peak": "2025-09-21 21:00",
+      "end": "2025-09-23 00:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "MC",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-09-22 12:59",
+      "peak": "2025-09-23 16:31",
+      "end": "2025-09-24 20:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "IC",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "GEMINI"
+      },
+      "start": "2025-09-22 05:59",
+      "peak": "2025-09-23 16:31",
+      "end": "2025-09-25 04:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "Mercury",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 6,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-22 19:59",
+      "peak": "2025-09-24 10:33",
+      "end": "2025-09-26 01:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Moon",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 8,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-09-23 13:59",
+      "peak": "2025-09-24 11:05",
+      "end": "2025-09-25 08:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "MC",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-09-24 22:59",
+      "peak": "2025-09-26 23:25",
+      "end": "2025-09-29 00:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "IC",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "GEMINI"
+      },
+      "start": "2025-09-24 22:59",
+      "peak": "2025-09-26 23:25",
+      "end": "2025-09-29 00:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "DSC",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "LEO"
+      },
+      "start": "2025-09-25 01:59",
+      "peak": "2025-09-27 02:07",
+      "end": "2025-09-29 03:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "ASC",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-09-24 12:59",
+      "peak": "2025-09-27 02:07",
+      "end": "2025-09-29 15:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "Moon",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 7,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-09-26 09:59",
+      "peak": "2025-09-28 01:02",
+      "end": "2025-09-29 16:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "ASC",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "SCORPIO",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-09-25 14:59",
+      "peak": "2025-09-28 13:13",
+      "end": "2025-10-01 11:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "DSC",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "SCORPIO",
+        "nat": "LEO"
+      },
+      "start": "2025-09-25 14:59",
+      "peak": "2025-09-28 13:13",
+      "end": "2025-10-01 11:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "Mercury",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 7,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-26 19:59",
+      "peak": "2025-09-28 20:43",
+      "end": "2025-09-30 21:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Sun",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 8,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-29 04:59",
+      "peak": "2025-09-30 10:06",
+      "end": "2025-10-01 16:59"
+    },
+    {
+      "transit": "Mars",
+      "target": "Mercury",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 9,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "SCORPIO",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-09-29 15:59",
+      "peak": "2025-10-01 02:44",
+      "end": "2025-10-02 13:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "MC",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-09-29 23:59",
+      "peak": "2025-10-02 00:42",
+      "end": "2025-10-04 01:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "IC",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "GEMINI"
+      },
+      "start": "2025-09-29 11:59",
+      "peak": "2025-10-02 00:42",
+      "end": "2025-10-04 13:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Venus",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 8,
+        "nat": 12
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-09-30 21:59",
+      "peak": "2025-10-02 03:55",
+      "end": "2025-10-03 10:59"
+    },
+    {
+      "transit": "Sun",
+      "target": "Moon",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 8,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "SAGITTARIUS"
+      },
+      "start": "2025-10-01 20:59",
+      "peak": "2025-10-03 08:42",
+      "end": "2025-10-04 21:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Mars",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 8,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "LIBRA",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-10-04 11:59",
+      "peak": "2025-10-05 19:06",
+      "end": "2025-10-07 02:59"
+    },
+    {
+      "transit": "Venus",
+      "target": "Sun",
+      "aspect": "△",
+      "aspect_deg": 120,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 7,
+        "nat": 11
+      },
+      "signs": {
+        "tr": "VIRGO",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-10-04 08:59",
+      "peak": "2025-10-05 23:42",
+      "end": "2025-10-07 14:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "ASC",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "SCORPIO",
+        "nat": "AQUARIUS"
+      },
+      "start": "2025-10-07 21:59",
+      "peak": "2025-10-09 13:57",
+      "end": "2025-10-11 07:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "DSC",
+      "aspect": "□",
+      "aspect_deg": 90,
+      "orb_peak_deg": 0.0,
+      "signs": {
+        "tr": "SCORPIO",
+        "nat": "LEO"
+      },
+      "start": "2025-10-07 21:59",
+      "peak": "2025-10-09 13:57",
+      "end": "2025-10-11 07:59"
+    },
+    {
+      "transit": "Mercury",
+      "target": "Mercury",
+      "aspect": "✶",
+      "aspect_deg": 60,
+      "orb_peak_deg": 0.0,
+      "houses": {
+        "tr": 9,
+        "nat": 10
+      },
+      "signs": {
+        "tr": "SCORPIO",
+        "nat": "CAPRICORN"
+      },
+      "start": "2025-10-09 17:59",
+      "peak": "2025-10-10 18:31",
+      "end": "2025-10-11 19:59"
+    }
+  ]
+}

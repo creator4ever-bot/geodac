@@ -1,0 +1,98 @@
+# -*- coding: utf-8 -*-
+# Безопасный рендер: добавляет gd_id, не переписывая summary/description, если они уже есть.
+import os, sys, json, hashlib
+
+ASTRO = os.path.expanduser("~/astro")
+
+def load_yaml(path, default=None):
+    try:
+        import yaml as _yaml
+        p = os.path.expanduser(path)
+        if not os.path.exists(p): return default or {}
+        with open(p, 'r', encoding='utf-8') as f:
+            return _yaml.safe_load(f) or {}
+    except Exception:
+        return default or {}
+
+CFG = load_yaml('~/astro/config.yaml', {})
+GL  = load_yaml('~/astro/data/glyphs.yaml', {})
+GL_B = (GL.get('bodies') or {})
+GL_A = (GL.get('aspects') or {})
+
+def glyph_body(name):
+    if not (CFG.get('glyphs',{}).get('enable')): return name
+    key = (name or "").upper()
+    return GL_B.get(key, name)
+
+def glyph_aspect(name):
+    if not (CFG.get('glyphs',{}).get('enable')): return name
+    key = (name or "").lower()
+    return GL_A.get(key, name)
+
+def norm(s): return (s or "").strip()
+
+def stable_id(ev):
+    kind = norm(ev.get('type') or ev.get('category') or 'ASPECT').upper()
+    tr   = norm(ev.get('transit')).upper()
+    asp  = norm(ev.get('aspect')).lower()
+    tg   = norm(ev.get('target')).upper()
+    peak = norm(ev.get('peak'))
+    if tr and asp and tg and peak:
+        base = f"{kind}|{tr}|{asp}|{tg}|{peak}"
+    elif peak and norm(ev.get('summary')):
+        base = f"{kind}|{norm(ev.get('summary'))}|{peak}"
+    else:
+        base = json.dumps(ev, ensure_ascii=False, sort_keys=True)
+    return "gd" + hashlib.sha1(base.encode('utf-8')).hexdigest()
+
+def transform(in_path, out_path):
+    data = json.load(open(os.path.expanduser(in_path), 'r', encoding='utf-8'))
+    events = data.get('events') if isinstance(data, dict) else data
+    out = {'events': []}
+
+    for ev in events:
+        new_ev = {}
+        # Время
+        for k in ('peak','start','end'):
+            if ev.get(k): new_ev[k] = ev[k]
+
+        # summary/description — не трогаем, если уже есть
+        new_ev['summary'] = ev.get('summary') or ev.get('title') or ''
+        new_ev['description'] = ev.get('description') or ev.get('notes') or ''
+
+        # category/alarm — строки
+        new_ev['category'] = str(ev.get('category') or 'Astro')
+        if isinstance(ev.get('alarm'), str):
+            new_ev['alarm'] = ev.get('alarm')
+        elif ev.get('alarm') is not None:
+            new_ev['alarm'] = str(ev.get('alarm'))
+        else:
+            new_ev['alarm'] = ''
+
+        # переносим полезные поля «как есть»
+        for k in ('transit','aspect','target','signs','houses','axis','type'):
+            if k in ev: new_ev[k] = ev[k]
+
+        # Если summary пуст и можно собрать "глифовую" подпись — сделаем
+        if not new_ev['summary'] and ev.get('transit') and ev.get('aspect') and ev.get('target'):
+            line = f"{glyph_body(ev['transit'])} {glyph_aspect(ev['aspect'])} {glyph_body(ev['target'])}"
+            htr = (ev.get('houses',{}) or {}).get('tr')
+            htg = (ev.get('houses',{}) or {}).get('nat') or (ev.get('houses',{}) or {}).get('tg')
+            if htr or htg:
+                line += f" (H{htr or '?'}→H{htg or '?'})"
+            new_ev['summary'] = line or "Event"
+
+        # gd_id
+        new_ev['gd_id'] = ev.get('gd_id') or stable_id({**ev, **new_ev})
+
+        out['events'].append(new_ev)
+
+    with open(os.path.expanduser(out_path), 'w', encoding='utf-8') as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+    print(f"OK: wrote {len(out['events'])} events -> {out_path}")
+
+if __name__ == '__main__':
+    if len(sys.argv) < 3:
+        print("Usage: python render_for_ics.py IN.json OUT.json")
+        sys.exit(1)
+    transform(sys.argv[1], sys.argv[2])

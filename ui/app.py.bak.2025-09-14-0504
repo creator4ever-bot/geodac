@@ -1,0 +1,143 @@
+from nicegui import ui
+import json, yaml, sys
+from pathlib import Path
+
+# == safe progress hooks ==
+try:
+    from pipeline import start_push_progress, read_push_status_layer
+except Exception:
+    def _fallback_start_push_progress(*args, **kwargs): return 0
+    def _fallback_read_push_status_layer(layer: str): return {'percent': 0, 'stage': 'idle'}
+    start_push_progress = _fallback_start_push_progress
+    read_push_status_layer = _fallback_read_push_status_layer
+# == end ==
+
+sys.path.append(str(Path(__file__).resolve().parent))
+from pipeline import (
+    env_info, preview_mundane, preview_medium, preview_long, preview_lunar,
+    push, tail_log, snapshot, start_push_progress, read_push_status_layer
+)
+
+ASTRO = Path.home() / 'astro'
+CONFIG_PATH = ASTRO / 'config.yaml'
+CONF_RU_PATH = ASTRO / 'data' / 'configs' / 'configs_ru.yaml'
+
+with ui.header().classes('items-center'):
+    ui.label('GeoDAC — Control Panel').classes('text-h6')
+    ui.space()
+    ui.label('local UI')
+
+with ui.tabs().classes('w-full') as tabs:
+    t_mund = ui.tab('Mundane')
+    t_pers = ui.tab('Personal')
+    t_luna = ui.tab('Lunar')
+    t_conf = ui.tab('Config')
+    t_logs = ui.tab('Логи')
+
+with ui.tab_panels(tabs, value=t_mund).classes('w-full'):
+    # Mundane
+    with ui.tab_panel(t_mund):
+        with ui.card().classes('w-full'):
+            ui.label('Mundane: предпросмотр и пуш').classes('text-subtitle1')
+            with ui.row():
+                from_date = ui.input('From', value='2025-02-25')
+                to_date   = ui.input('To',   value='2026-04-01')
+                orb  = ui.input('ORB',    value='2').props('type=number')
+                step = ui.input('STEP_H', value='12').props('type=number')
+            area = ui.textarea().props('rows=10').classes('w-full')
+            with ui.row():
+                ui.button('Preview', on_click=lambda: area.set_value(json.dumps(preview_mundane(from_date.value, to_date.value, orb.value, step.value), ensure_ascii=False, indent=2))).props('color=primary')
+                ui.button('Push (replace)', on_click=lambda: area.set_value(push('mundane', min_events=100, orb=orb.value, step_h=step.value))).props('color=negative')
+            # прогресс
+            prog_mn = ui.linear_progress(value=0).classes('w-full mt-2')
+            stage_mn = ui.label('')
+            timer_mn = {'t': None}
+            def start_prog_mn():
+                start_push_progress('mundane', min_events=100, orb=orb.value, step_h=step.value)
+                def poll():
+                    st=read_push_status_layer('mundane')
+                    pct=max(0,min(100,int(st.get('percent',0))))
+                    prog_mn.value=pct/100.0; stage_mn.text=f"{pct}% — {st.get('stage','…')}"
+                    if pct>=100 and timer_mn['t']:
+                        timer_mn['t'].active=False; timer_mn['t']=None
+                        ui.notify('Mundane: done')
+                if timer_mn['t']:
+                    timer_mn['t'].active=False
+                timer_mn['t']=ui.timer(1.0, poll, active=True)
+            ui.button('Push (progress)', on_click=start_prog_mn).props('color=primary')
+
+    # Personal (Medium / Long)
+    with ui.tab_panel(t_pers):
+        with ui.card().classes('w-full'):
+            ui.label('Personal: Medium / Long').classes('text-subtitle1')
+            out2 = ui.textarea().props('rows=10').classes('w-full')
+            with ui.row():
+                ui.button('Preview Medium', on_click=lambda: out2.set_value(json.dumps(preview_medium(), ensure_ascii=False, indent=2))).props('color=primary')
+                ui.button('Preview Long',   on_click=lambda: out2.set_value(json.dumps(preview_long(),   ensure_ascii=False, indent=2))).props('color=primary')
+            with ui.row():
+                ui.button('Push Medium', on_click=lambda: out2.set_value(push('medium', min_events=40))).props('color=negative')
+                ui.button('Push Long',   on_click=lambda: out2.set_value(push('long',   min_events=10))).props('color=negative')
+            # прогресс Medium
+            prog_md = ui.linear_progress(value=0).classes('w-full mt-2'); stage_md = ui.label('')
+            t_md={'t':None}
+            def start_prog_md():
+                start_push_progress('medium', min_events=40)
+                def poll():
+                    st=read_push_status_layer('medium'); pct=max(0,min(100,int(st.get('percent',0))))
+                    prog_md.value=pct/100.0; stage_md.text=f"{pct}% — {st.get('stage','…')}"
+                    if pct>=100 and t_md['t']: t_md['t'].active=False; t_md['t']=None
+                if t_md['t']: t_md['t'].active=False
+                t_md['t']=ui.timer(1.0, poll, active=True)
+            ui.button('Push Medium (progress)', on_click=start_prog_md).props('color=primary')
+            # прогресс Long
+            prog_lg = ui.linear_progress(value=0).classes('w-full mt-2'); stage_lg = ui.label('')
+            t_lg={'t':None}
+            def start_prog_lg():
+                start_push_progress('long', min_events=10)
+                def poll():
+                    st=read_push_status_layer('long'); pct=max(0,min(100,int(st.get('percent',0))))
+                    prog_lg.value=pct/100.0; stage_lg.text=f"{pct}% — {st.get('stage','…')}"
+                    if pct>=100 and t_lg['t']: t_lg['t'].active=False; t_lg['t']=None
+                if t_lg['t']: t_lg['t'].active=False
+                t_lg['t']=ui.timer(1.0, poll, active=True)
+            ui.button('Push Long (progress)', on_click=start_prog_lg).props('color=primary')
+
+    # Lunar
+    with ui.tab_panel(t_luna):
+        with ui.card().classes('w-full'):
+            ui.label('Lunar Natal').classes('text-subtitle1')
+            out3 = ui.textarea().props('rows=10').classes('w-full')
+            with ui.row():
+                ui.button('Preview Lunar', on_click=lambda: out3.set_value(json.dumps(preview_lunar(), ensure_ascii=False, indent=2))).props('color=primary')
+                ui.button('Push Lunar',    on_click=lambda: out3.set_value(push('lunar', min_events=10))).props('color=negative')
+            # прогресс Lunar
+            prog_ln = ui.linear_progress(value=0).classes('w-full mt-2'); stage_ln = ui.label('')
+            t_ln={'t':None}
+            def start_prog_ln():
+                start_push_progress('lunar', min_events=10)
+                def poll():
+                    st=read_push_status_layer('lunar'); pct=max(0,min(100,int(st.get('percent',0))))
+                    prog_ln.value=pct/100.0; stage_ln.text=f"{pct}% — {st.get('stage','…')}"
+                    if pct>=100 and t_ln['t']: t_ln['t'].active=False; t_ln['t']=None
+                if t_ln['t']: t_ln['t'].active=False
+                t_ln['t']=ui.timer(1.0, poll, active=True)
+            ui.button('Push Lunar (progress)', on_click=start_prog_ln).props('color=primary')
+
+    # Config
+    with ui.tab_panel(t_conf):
+        with ui.card().classes('w-full'):
+            ui.label('config.yaml').classes('text-subtitle1')
+            cfg_area = ui.textarea(value=(CONFIG_PATH.read_text(encoding='utf-8') if CONFIG_PATH.exists() else '')).props('rows=12').classes('w-full')
+            def save_cfg():
+                try: yaml.safe_load(cfg_area.value)
+                except Exception as e: ui.notify(f"YAML error: {e}", color='negative'); return
+                CONFIG_PATH.write_text(cfg_area.value, encoding='utf-8'); ui.notify('config.yaml сохранён')
+            ui.button('Сохранить config.yaml', on_click=save_cfg).props('color=primary')
+
+    # Logs
+    with ui.tab_panel(t_logs):
+        with ui.card().classes('w-full'):
+            ui.label('Логи').classes('text-subtitle1')
+            sel = ui.select(['mundane','medium','long','lunar'], value='mundane', label='Log')
+            ta  = ui.textarea().props('rows=16').classes('w-full')
+            ui.button('Refresh', on_click=lambda: ta.set_value(tail_log('lunar' if sel.value=='lunar' else sel.value, 300)))

@@ -1,0 +1,34 @@
+[2025-09-17 03:23:23] overlay houses using cusps=/home/DAC/astro/.state/natal_frame.json
+OK: ~/astro/overlay_spans.json events=48
+OK: ~/astro/overlay_ingresses.json events=40
+[overlay-enrich] spans changed=48 -> /home/DAC/astro/overlay_spans.json
+OK: overlay_houses_forpush.json 88
+[gcal] upsert start: total=88
+[gcal] upsert 1/88 (1%)
+[gcal] upsert 4/88 (4%)
+[gcal] upsert 8/88 (9%)
+[gcal] upsert 12/88 (13%)
+[gcal] upsert 16/88 (18%)
+[gcal] upsert 20/88 (22%)
+[gcal] upsert 24/88 (27%)
+[gcal] upsert 28/88 (31%)
+[gcal] upsert 32/88 (36%)
+[gcal] upsert 36/88 (40%)
+[gcal] upsert 40/88 (45%)
+[gcal] upsert 44/88 (50%)
+[gcal] upsert 48/88 (54%)
+[gcal] upsert 52/88 (59%)
+[gcal] upsert 56/88 (63%)
+[gcal] upsert 60/88 (68%)
+[gcal] upsert 64/88 (72%)
+[gcal] upsert 68/88 (77%)
+[gcal] upsert 72/88 (81%)
+[gcal] upsert 76/88 (86%)
+[gcal] upsert 80/88 (90%)
+[gcal] upsert 84/88 (95%)
+[gcal] upsert 88/88 (100%)
+Upsert done: inserted=88, updated=0, skipped=0, total=88
+[gcal] replace: scanning and deleting extras...
+[gcal] replace deleted 50...
+Replace mode: deleted=88
+[2025-09-17 03:24:48] overlay houses done

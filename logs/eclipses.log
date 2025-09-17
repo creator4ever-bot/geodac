@@ -1,0 +1,93 @@
+[2025-09-17 04:20:01] eclipses FROM=2025-03-01 TO=2026-04-05 CAL=GeoDAC • Eclipses
+[2025-09-17 04:20:01] eclipses FROM=2025-03-01 TO=2026-04-05 CAL=GeoDAC • Eclipses
+OK triggers: 162 -> /home/DAC/astro/eclipse_triggers_window.json
+OK triggers: 162 -> /home/DAC/astro/eclipse_triggers_window.json
+[prep] Eclipses: 162 -> /home/DAC/astro/eclipse_triggers_forpush.json
+[prep] Eclipses: 162 -> /home/DAC/astro/eclipse_triggers_forpush.json
+[validate] events: 162
+[validate] events: 162
+[gcal] upsert start: total=162
+[gcal] upsert start: total=162
+[gcal] upsert 1/162 (0%)
+[gcal] upsert 1/162 (0%)
+[gcal] upsert 8/162 (4%)
+[gcal] upsert 8/162 (4%)
+[gcal] upsert 16/162 (9%)
+[gcal] upsert 16/162 (9%)
+[gcal] upsert 24/162 (14%)
+[gcal] upsert 24/162 (14%)
+[gcal] upsert 32/162 (19%)
+[gcal] upsert 32/162 (19%)
+[gcal] upsert 40/162 (24%)
+[gcal] upsert 40/162 (24%)
+[gcal] upsert 48/162 (29%)
+[gcal] upsert 48/162 (29%)
+[gcal] upsert 56/162 (34%)
+[gcal] upsert 56/162 (34%)
+[gcal] upsert 64/162 (39%)
+[gcal] upsert 64/162 (39%)
+[gcal] upsert 72/162 (44%)
+[gcal] upsert 72/162 (44%)
+[gcal] upsert 80/162 (49%)
+[gcal] upsert 80/162 (49%)
+[gcal] upsert 88/162 (54%)
+[gcal] upsert 88/162 (54%)
+[gcal] upsert 96/162 (59%)
+[gcal] upsert 96/162 (59%)
+[gcal] upsert 104/162 (64%)
+[gcal] upsert 104/162 (64%)
+[gcal] upsert 112/162 (69%)
+[gcal] upsert 112/162 (69%)
+[gcal] upsert 120/162 (74%)
+[gcal] upsert 120/162 (74%)
+[gcal] upsert 128/162 (79%)
+[gcal] upsert 128/162 (79%)
+[gcal] upsert 136/162 (83%)
+[gcal] upsert 136/162 (83%)
+[gcal] upsert 144/162 (88%)
+[gcal] upsert 144/162 (88%)
+[gcal] upsert 152/162 (93%)
+[gcal] upsert 152/162 (93%)
+[gcal] upsert 160/162 (98%)
+[gcal] upsert 160/162 (98%)
+[gcal] upsert 162/162 (100%)
+[gcal] upsert 162/162 (100%)
+Upsert done: inserted=1, updated=161, skipped=0, total=162
+[gcal] replace: scanning and deleting extras...
+Upsert done: inserted=1, updated=161, skipped=0, total=162
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=2
+Replace mode: deleted=2
+[2025-09-17 04:21:23] eclipses done
+[2025-09-17 04:21:23] eclipses done
+[2025-09-17 05:50:43] eclipses FROM=2025-03-01 TO=2026-04-05 CAL=GeoDAC • Eclipses
+OK triggers: 162 -> /home/DAC/astro/eclipse_triggers_window.json
+[prep] Eclipses: 162 -> /home/DAC/astro/eclipse_triggers_forpush.json
+[validate] events: 162
+[gcal] upsert start: total=162
+[gcal] upsert 1/162 (0%)
+[gcal] upsert 8/162 (4%)
+[gcal] upsert 16/162 (9%)
+[gcal] upsert 24/162 (14%)
+[gcal] upsert 32/162 (19%)
+[gcal] upsert 40/162 (24%)
+[gcal] upsert 48/162 (29%)
+[gcal] upsert 56/162 (34%)
+[gcal] upsert 64/162 (39%)
+[gcal] upsert 72/162 (44%)
+[gcal] upsert 80/162 (49%)
+[gcal] upsert 88/162 (54%)
+[gcal] upsert 96/162 (59%)
+[gcal] upsert 104/162 (64%)
+[gcal] upsert 112/162 (69%)
+[gcal] upsert 120/162 (74%)
+[gcal] upsert 128/162 (79%)
+[gcal] upsert 136/162 (83%)
+[gcal] upsert 144/162 (88%)
+[gcal] upsert 152/162 (93%)
+[gcal] upsert 160/162 (98%)
+[gcal] upsert 162/162 (100%)
+Upsert done: inserted=0, updated=0, skipped=162, total=162
+[gcal] replace: scanning and deleting extras...
+Replace mode: deleted=0
+[2025-09-17 05:50:45] eclipses done

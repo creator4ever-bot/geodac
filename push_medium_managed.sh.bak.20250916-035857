@@ -1,0 +1,96 @@
+#!/usr/bin/env bash
+set -euo pipefail
+exec 9>/tmp/geodac_medium.lock; flock -n 9 || { echo "[medium] locked, skip"; exit 0; }
+source "$HOME/astroenv/bin/activate"
+
+PY="$HOME/astroenv/bin/python"
+CDIR="$HOME/astro"
+LOG="$CDIR/logs/medium.log"; mkdir -p "$CDIR/logs" "$CDIR/.state"
+exec > >(tee -a "$LOG") 2>&1
+
+TZ="${TZ:-Europe/Moscow}"
+EPHE="/home/DAC/Zet9 GeoDAC/Swiss"
+FROM="$(date -d '-30 days' +%F)"; TO="$(date -d '+30 days' +%F)"
+CAL="Astro — Medium (Managed)"
+RAW="$CDIR/transits_medium.json"
+FIX="$CDIR/transits_medium_for_ics.json"
+RICH="$CDIR/experimental_configs_rich.json"
+MERGED="$CDIR/transits_medium_merged.json"
+MIN_EVENTS="${MIN_EVENTS:-40}"
+
+echo "[$(date '+%F %T')] medium FROM=$FROM TO=$TO CAL=$CAL"
+
+# Бэкап окна
+$PY - << 'PY'
+import os,json,datetime as dt
+from google.oauth2.credentials import Credentials; from googleapiclient.discovery import build
+name="Astro — Medium (Managed)"; dst=os.path.expanduser('~/astro/backups'); os.makedirs(dst,exist_ok=True)
+creds=Credentials.from_authorized_user_file(os.path.expanduser('~/astro/.gcal/token.json'),['https://www.googleapis.com/auth/calendar'])
+svc=build('calendar','v3',credentials=creds)
+cal=next((it for it in svc.calendarList().list().execute().get('items',[]) if it['summary']==name),None)
+if cal:
+  now=dt.datetime.utcnow(); tmin=(now-dt.timedelta(days=60)).isoformat()+"Z"; tmax=(now+dt.timedelta(days=60)).isoformat()+"Z"
+  ev=[]; page=None
+  while True:
+    r=svc.events().list(calendarId=cal['id'],timeMin=tmin,timeMax=tmax,singleEvents=True,orderBy='startTime',pageToken=page).execute()
+    ev+=r.get('items',[]); page=r.get('nextPageToken'); 
+    if not page: break
+  p=os.path.join(dst, f"Medium_{dt.datetime.now().strftime('%Y%m%d-%H%M')}.json"); json.dump({'items':ev}, open(p,'w',encoding='utf-8'), ensure_ascii=False, indent=2)
+  print("[backup] saved:", p, "count:", len(ev))
+PY
+
+# Расчёт RAW
+$PY "$CDIR/transits_slow.py" "$FROM" "$TO" --ephe "$EPHE" --bodies Sun,Mercury,Venus,Mars,NNode > "$RAW"
+# Рендер FIX (глифы + composer description)
+$PY "$CDIR/render_for_ics.py" "$RAW" "$FIX"
+# Rx/S пометки в summary (по скорости транзитной)
+$PY - << 'PY'
+import os,json,swisseph as swe
+from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
+EPHE="/home/DAC/Zet9 GeoDAC/Swiss"; TZ=os.environ.get("TZ","Europe/Moscow")
+GL={'☉':swe.SUN,'☿':swe.MERCURY,'♀':swe.VENUS,'♂':swe.MARS,'♃':swe.JUPITER,'♄':swe.SATURN,'♅':swe.URANUS,'♆':swe.NEPTUNE,'♇':swe.PLUTO}
+TH={'☿':0.05,'♀':0.04,'♂':0.03,'♃':0.02,'♄':0.015,'♅':0.01,'♆':0.01,'♇':0.01,'☉':0.05}
+def parse(s): s=s.replace('Z','+00:00'); t=datetime.fromisoformat(s); return t if t.tzinfo else t.replace(tzinfo=ZoneInfo(TZ))
+def spd(t,b): jd=swe.julday(t.year,t.month,t.day,t.hour+t.minute/60+t.second/3600); return swe.calc_ut(jd,b,swe.FLG_SWIEPH|swe.FLG_SPEED)[0][3]
+p=os.path.expanduser('~/astro/transits_medium_for_ics.json'); d=json.load(open(p,encoding='utf-8'))
+swe.set_ephe_path(EPHE)
+for e in d['events']:
+  s=(e.get('summary') or '').strip()
+  if not s or s[0] not in GL or s[0]=='☽': continue
+  v=spd(parse(e.get('peak') or e.get('start')), GL[s[0]])
+  mark=' S' if abs(v)<TH.get(s[0],0.02) else (' ℞' if v<0 else '')
+  if mark and mark not in s: e['summary']=s[0]+mark+s[1:]
+json.dump(d, open(p,'w',encoding='utf-8'), ensure_ascii=False, indent=2); print("[post] Rx/S done")
+PY
+
+# Богатые конфигурации (домены)
+$PY "$CDIR/experimental_configs_rich.py" "$FIX" "$CDIR/transits_long_for_ics.json" "$RICH" --domains work,health,finance,relationships || true
+
+# MERGE FIX + RICH
+$PY - << 'PY'
+import json, os
+fix=os.path.expanduser('~/astro/transits_medium_for_ics.json')
+rich=os.path.expanduser('~/astro/experimental_configs_rich.json')
+out=os.path.expanduser('~/astro/transits_medium_merged.json')
+def load(p):
+    if not os.path.exists(p) or os.path.getsize(p)==0: return []
+    d=json.load(open(p,encoding='utf-8')); 
+    return d.get('events',[]) if isinstance(d,dict) else d
+A=load(fix); B=load(rich)
+uniq={}
+for e in A+B:
+    k=e.get('gd_id') or (e.get('summary',''), e.get('peak',''))
+    uniq[k]=e
+ev=sorted(uniq.values(), key=lambda x: x.get('peak') or x.get('start') or '')
+json.dump({"events":ev}, open(out,'w',encoding='utf-8'), ensure_ascii=False, indent=2)
+print("[merge] FIX:", len(A), "RICH:", len(B), "=> MERGED:", len(ev))
+PY
+
+# Guard + push
+CNT=$($PY -c 'import json,os; print(len(json.load(open(os.path.expanduser("~/astro/transits_medium_merged.json"),encoding="utf-8"))["events"]))')
+echo "[validate] events:", $CNT; [ "$CNT" -lt "$MIN_EVENTS" ] && { echo "[abort] few events"; exit 3; }
+
+$PY "$CDIR/push_gcal.py" --json "$MERGED" --tz "$TZ" --calendar "$CAL" --replace
+date +%s > "$CDIR/.state/medium.last_ok"
+echo "[$(date '+%F %T')] medium done"

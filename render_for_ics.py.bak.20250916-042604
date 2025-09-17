@@ -1,0 +1,191 @@
+# -*- coding: utf-8 -*-
+import os, sys, json, hashlib, importlib.util, re
+
+try:
+    import yaml
+except Exception:
+    yaml = None
+
+ASTRO = os.path.expanduser('~/astro')
+
+def load_yaml(path, default=None):
+    try:
+        p = os.path.expanduser(path)
+        if not os.path.exists(p): return default or {}
+        import yaml as _yaml
+        return _yaml.safe_load(open(p, 'r', encoding='utf-8')) or {}
+    except Exception:
+        return default or {}
+
+CFG = load_yaml('~/astro/config.yaml', {})
+GL  = load_yaml('~/astro/data/glyphs.yaml', {})
+GL_B = (GL.get('bodies')  or {})
+GL_A = (GL.get('aspects') or {})
+
+AXES_SKIP = {'ASC','DSC','MC','IC'}
+
+ASPECT_FALLBACK = {
+    '☍': 'баланс/перекалибровка',
+    'opp': 'баланс/перекалибровка',
+    '□' : 'напряжение/требует действия',
+    'sqr': 'напряжение/требует действия',
+    '△' : 'поддержка/поток',
+    'tri': 'поддержка/поток',
+    '✶' : 'возможность/шанс',
+    'sex': 'возможность/шанс',
+    '☌': 'фокус/сборка темы',
+    'conj': 'фокус/сборка темы',
+}
+
+def glyph_body(name: str) -> str:
+    if not (CFG.get('glyphs',{}).get('enable', True)): return name or ''
+    key = (name or '').upper()
+    return GL_B.get(key, name or '')
+
+def glyph_aspect(aspect: str) -> str:
+    if not (CFG.get('glyphs',{}).get('enable', True)): return aspect or ''
+    key = (aspect or '')
+    if key in GL_A: return GL_A[key]
+    low = key.lower()
+    return GL_A.get(low, key)
+
+def stable_id(ev):
+    kind = (ev.get('type') or ev.get('category') or 'ASPECT').upper()
+    tr   = (ev.get('transit') or '').upper()
+    asp  = (ev.get('aspect') or '').lower()
+    tg   = (ev.get('target') or '').upper()
+    peak = (ev.get('peak') or '')
+    if tr and asp and tg and peak:
+        base = f"{kind}|{tr}|{asp}|{tg}|{peak}"
+    else:
+        base = json.dumps(ev, ensure_ascii=False, sort_keys=True)
+    return "gd" + hashlib.sha1(base.encode('utf-8')).hexdigest()
+
+def load_composer():
+    p = os.path.join(ASTRO, 'compose_aspect_text.py')
+    if not os.path.exists(p): return None
+    spec = importlib.util.spec_from_file_location('composer', p)
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    return mod
+
+def _houses_text(ev):
+    hs = ev.get('houses')
+    if not isinstance(hs, dict): return ''
+    tg = (ev.get('target') or '').upper()
+    if tg in AXES_SKIP: return ''
+    htr = hs.get('tr'); htg = hs.get('nat') or hs.get('tg')
+    if not (htr or htg): return ''
+    if htr and htg and str(htr) == str(htg): return f"Дома: H{htr}"
+    if htr and htg: return f"Дома: из H{htr} к H{htg}"
+    one = htr or htg
+    return f"Дома: H{one}"
+
+def make_glyph_summary(ev):
+    tr = ev.get('transit'); tg = ev.get('target'); asp = ev.get('aspect')
+    if not (tr and tg and asp):
+        return ev.get('summary') or ''
+    hs = ev.get('houses') if isinstance(ev.get('houses'), dict) else {}
+    htr = hs.get('tr'); htg = hs.get('nat') or hs.get('tg')
+    ssum = f"{glyph_body(tr)} {glyph_aspect(asp)} {glyph_body(tg)}"
+    if str((tg or '').upper()) not in AXES_SKIP and (htr or htg):
+        if htr and htg and str(htr)==str(htg):
+            ssum += f" (H{htr})"
+        else:
+            ssum += f" (из H{htr or '?'} к H{htg or '?'})"
+    return ssum
+
+def _normalize_desc(text: str) -> str:
+    if not text: return ''
+    t = text
+    t = re.sub(r'([^\.\!\?])\s+(Фокус\s+—)', r'\1. \2', t)
+    repl = {
+        'Фактчек': 'Проверка информации',
+        'Опростите': 'Упростите',
+        'сервис': 'служение',
+        'выходит на лицо': 'становится заметным',
+    }
+    for a,b in repl.items(): t = t.replace(a,b)
+    lines = [x.strip() for x in re.split(r'\n+', t) if x.strip()]
+    uniq=[]; seen=set()
+    for line in lines:
+        key = re.sub(r'\s+', ' ', line.lower())
+        if key in seen: continue
+        seen.add(key); uniq.append(line)
+    return '\n'.join(uniq)
+
+def make_description_with_composer(ev, composer, dcts):
+    try:
+        tr = (ev.get('transit') or '').upper()
+        tg = (ev.get('target')  or '').upper()
+        r = composer.compose(
+            transit={'planet': tr,
+                     'sign': (ev.get('signs',{}) or {}).get('tr',''),
+                     'house': str((ev.get('houses',{}) or {}).get('tr',''))},
+            aspect=ev.get('aspect'),
+            natal={'target': tg,
+                   'sign': (ev.get('signs',{}) or {}).get('nat',''),
+                   'house': str((ev.get('houses',{}) or {}).get('nat',''))},
+            dcts=dcts
+        )
+        parts=[]
+        if (r.get('summary') or '').strip(): parts.append(r['summary'].strip())
+        if (r.get('advice')  or '').strip(): parts.append("Совет: " + r['advice'].strip())
+        ctx=[]
+        hline = _houses_text(ev)
+        if hline: ctx.append(hline)
+        sg = ev.get('signs',{}) or {}
+        if sg.get('tr') or sg.get('nat'): ctx.append(f"Знаки: {sg.get('tr','?')}→{sg.get('nat','?')}")
+        if ctx: parts.append("; ".join(ctx))
+        desc = "\n".join([p for p in parts if p])
+        if desc: return desc
+    except Exception:
+        pass
+    asp_raw = ev.get('aspect') or ''
+    asp_sym = asp_raw if asp_raw in ('☌','☍','□','△','✶') else glyph_aspect(asp_raw)
+    tr_g = glyph_body(ev.get('transit') or '')
+    tg_g = glyph_body(ev.get('target')  or '')
+    phrase = ASPECT_FALLBACK.get(asp_sym, 'взаимодействие')
+    fb = f"{tr_g} {asp_sym} {tg_g} — {phrase}."
+    ctx=[]
+    hline = _houses_text(ev)
+    if hline: ctx.append(hline)
+    sg = ev.get('signs',{}) or {}
+    if sg.get('tr') or sg.get('nat'): ctx.append(f"Знаки: {sg.get('tr','?')}→{sg.get('nat','?')}")
+    if ctx: fb += "\n" + "; ".join(ctx)
+    return fb
+
+def transform(in_path, out_path):
+    composer = load_composer()
+    dcts = composer.load_dicts() if composer and hasattr(composer,'load_dicts') else None
+
+    data = json.load(open(os.path.expanduser(in_path), 'r', encoding='utf-8'))
+    events = data.get('events') if isinstance(data, dict) else data
+    out = {'events': []}
+
+    for ev in events:
+        new_ev = {}
+        for k in ('peak','start','end','type'):
+            if ev.get(k): new_ev[k] = ev[k]
+        new_ev['category'] = str(ev.get('category') or 'Astro')
+        new_ev['alarm'] = ev.get('alarm') if isinstance(ev.get('alarm'), str) else (str(ev.get('alarm')) if ev.get('alarm') is not None else '')
+        for k in ('transit','aspect','target','signs','houses','axis'):
+            if k in ev: new_ev[k] = ev[k]
+        new_ev['summary'] = make_glyph_summary(ev) or ev.get('summary') or 'Event'
+        desc = ev.get('description') or ''
+        if (not desc) and composer and dcts and ev.get('transit') and ev.get('aspect') and ev.get('target'):
+            desc = make_description_with_composer(ev, composer, dcts)
+        if not desc:
+            desc = make_description_with_composer(ev, None, None)
+        new_ev['description'] = _normalize_desc(desc)
+        new_ev['gd_id'] = ev.get('gd_id') or stable_id({**ev, **new_ev})
+        out['events'].append(new_ev)
+
+    with open(os.path.expanduser(out_path), 'w', encoding='utf-8') as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+    print(f"OK: wrote {len(out['events'])} events -> {out_path}")
+
+if __name__ == '__main__':
+    if len(sys.argv) < 3:
+        print("Usage: python render_for_ics.py IN.json OUT.json")
+        sys.exit(1)
+    transform(sys.argv[1], sys.argv[2])

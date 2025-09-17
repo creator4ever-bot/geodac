@@ -1,0 +1,1284 @@
+{
+  "items": [
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602814957374\"",
+      "id": "dq4cof3vigjan5lhp7o7re20p0",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZHE0Y29mM3ZpZ2phbjVsaHA3bzdyZTIwcDAgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:10.000Z",
+      "updated": "2025-09-13T22:10:07.478Z",
+      "summary": "☽ ✶ ☿ (из H7 к H11)",
+      "description": "Небольшая удачная встреча/переписка. Стиль — через вдохновение, эмпатию и мягкое растворение границ фокус — на партнёрстве, контрактах и переговорах. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nСовет: Назначьте короткий созвон; подтвердите следующую точку.\nДома: из H7 к H11; Знаки: PISCES→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-07T03:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-07T06:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "dq4cof3vigjan5lhp7o7re20p0@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd237e31698fa499a850fc89711421bda26834699e"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602816292670\"",
+      "id": "p24kn4r2i8jqf14kl6gk81gm54",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=cDI0a240cjJpOGpxZjE0a2w2Z2s4MWdtNTQgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-13T00:37:12.000Z",
+      "updated": "2025-09-13T22:10:08.146Z",
+      "summary": "☽ □ к вертикали",
+      "description": "Срочные задачи и напряжение; расставьте приоритеты. Стиль — через вдохновение, эмпатию и мягкое растворение границ фокус — на доме, семье, основе и безопасности. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Сократите задачи до топ‑3; отложите второстепенное.\nЗнаки: PISCES→SAGITTARIUS \nБыт «давит»; починить и упорядочить. Стиль — через вдохновение, эмпатию и мягкое растворение границ фокус — на доме, семье, основе и безопасности. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Почините одну вещь; разгрузите угол/полку; уберите «визуальный шум».\nЗнаки: PISCES→GEMINI",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-07T07:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-07T12:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "p24kn4r2i8jqf14kl6gk81gm54@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd69f757bfde0e4510062a388448bd0460700dfe1b"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602818107454\"",
+      "id": "umtb2ql03mkrghl1nsiqel7n3c",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dW10YjJxbDAzbWtyZ2hsMW5zaXFlbDduM2MgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:11.000Z",
+      "updated": "2025-09-13T22:10:09.053Z",
+      "summary": "☽ □ ☽ (из H3 к H10)",
+      "description": "Чувствительность и дёрганность; замедлиться. Стиль — через вдохновение, эмпатию и мягкое растворение границ фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nСовет: Уберите триггеры; 30 минут тишины/прогулки.\nДома: из H3 к H10; Знаки: PISCES→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-07T10:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-07T14:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "umtb2ql03mkrghl1nsiqel7n3c@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd11889acf41ac2ec1e518bbfe48e8f840cf770a97"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602819793214\"",
+      "id": "f87na6bsg5e40egu13b4st67rg",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Zjg3bmE2YnNnNWU0MGVndTEzYjRzdDY3cmcgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:12.000Z",
+      "updated": "2025-09-13T22:10:09.896Z",
+      "summary": "☽ ✶ ☉ (из H7 к H12)",
+      "description": "Небольшое окно удачи и симпатии. Стиль — через вдохновение, эмпатию и мягкое растворение границ фокус — на партнёрстве, контрактах и переговорах. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nСовет: Используйте момент, чтобы попросить малое/закрепить договорённость.\nДома: из H7 к H12; Знаки: PISCES→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-08T03:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-08T06:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "f87na6bsg5e40egu13b4st67rg@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd138056f74f96c3edf48b0a068cdc5cee4a65c6e3"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602821524862\"",
+      "id": "im61i4e6m4i2aupk0kpt0ipgic",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aW02MWk0ZTZtNGkyYXVwazBrcHQwaXBnaWMgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:12.000Z",
+      "updated": "2025-09-13T22:10:10.762Z",
+      "summary": "☽ ✶ ♂ (из H1 к H12)",
+      "description": "Подходящее окно для маленького шага. Стиль — через вдохновение, эмпатию и мягкое растворение границ фокус — на личности, теле, имидже и стартах. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nСовет: Сделайте маленький шаг — и остановитесь.\nДома: из H1 к H12; Знаки: PISCES→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-08T17:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-08T20:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "im61i4e6m4i2aupk0kpt0ipgic@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gda6d2206a38a7e4025302973b855e2494f9a29e43"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602823202878\"",
+      "id": "93o875dk4l6u6uqfkup3gpkq3g",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OTNvODc1ZGs0bDZ1NnVxZmt1cDNncGtxM2cgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-13T00:37:14.000Z",
+      "updated": "2025-09-13T22:10:11.601Z",
+      "summary": "☽ △/✶ к горизонту",
+      "description": "Шанс на полезную встречу или маленькое дело. Стиль — через инициативу, скорость и прямое действие фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир.\nСовет: Воспользуйтесь случаем/приглашением; подтвердите договорённость.\nЗнаки: ARIES→AQUARIUS \nТёплое взаимодействие; легко договориться. Стиль — через инициативу, скорость и прямое действие фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения.\nСовет: Зафиксируйте маленький общий план/ритуал.\nЗнаки: ARIES→LEO",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-09T02:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-09T06:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "93o875dk4l6u6uqfkup3gpkq3g@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd3e904de6bf616b9ac79ec5f55e61ab5220f81c0a"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602824934526\"",
+      "id": "6vpv1jhvhq6krjh9lp9dj3if38",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NnZwdjFqaHZocTZrcmpoOWxwOWRqM2lmMzggMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:14.000Z",
+      "updated": "2025-09-13T22:10:12.467Z",
+      "summary": "☽ □ ☿ (из H7 к H11)",
+      "description": "Суета и ошибки в переписке; проверить факты. Стиль — через инициативу, скорость и прямое действие фокус — на партнёрстве, контрактах и переговорах. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nСовет: Двойная проверка текста/цифр; ответ позже, если эмоции.\nДома: из H7 к H11; Знаки: ARIES→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-09T05:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-09T08:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "6vpv1jhvhq6krjh9lp9dj3if38@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdb5e79428e00e51f3359394ba5c6e7c5898f073a4"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602826539326\"",
+      "id": "tlvpqj9ua016gtmj7dpmu3h1a0",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dGx2cHFqOXVhMDE2Z3RtajdkcG11M2gxYTAgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-13T00:37:15.000Z",
+      "updated": "2025-09-13T22:10:13.269Z",
+      "summary": "☽ △/✶ к вертикали",
+      "description": "Поддержка сверху/клиентов; всё складывается. Стиль — через инициативу, скорость и прямое действие фокус — на доме, семье, основе и безопасности. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Попросите обратную связь/рекомендацию; зафиксируйте договорённости.\nЗнаки: ARIES→SAGITTARIUS \nМаленькие улучшения дома. Стиль — через инициативу, скорость и прямое действие фокус — на доме, семье, основе и безопасности. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Сделайте мелкое благоустройство; отложите крупное на другой день.\nЗнаки: ARIES→GEMINI",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-09T09:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-09T14:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "tlvpqj9ua016gtmj7dpmu3h1a0@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd03cb49c35218b8de3d8f77059176558a29e3286d"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602828355870\"",
+      "id": "kuvvnc23mbki9eb1mpv5g257eo",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=a3V2dm5jMjNtYmtpOWViMW1wdjVnMjU3ZW8gMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:16.000Z",
+      "updated": "2025-09-13T22:10:14.177Z",
+      "summary": "☽ △ ☽ (из H3 к H10)",
+      "description": "Ровный фон и восстановление. Стиль — через инициативу, скорость и прямое действие фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nСовет: Поддержите режим; лёгкая прогулка/дыхание.\nДома: из H3 к H10; Знаки: ARIES→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-09T12:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-09T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "kuvvnc23mbki9eb1mpv5g257eo@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd4375136f4afec3ae111d72820bebc9812ef0d06e"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602830013406\"",
+      "id": "p6i650a1c1kf6fku6evktnsfro",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=cDZpNjUwYTFjMWtmNmZrdTZldmt0bnNmcm8gMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:16.000Z",
+      "updated": "2025-09-13T22:10:15.006Z",
+      "summary": "☽ □ ☉ (из H8 к H12)",
+      "description": "Перепады настроения; не спешить с решениями. Стиль — через инициативу, скорость и прямое действие фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nСовет: Перенесите важные решения; выспитесь; сократите стимулы.\nДома: из H8 к H12; Знаки: ARIES→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-10T05:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-10T08:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "p6i650a1c1kf6fku6evktnsfro@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd9ffc23760fc73b668466b7cb8c87265588c872c1"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602831696638\"",
+      "id": "1ghadu8enqt7mvgbp4rtna5qok",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MWdoYWR1OGVucXQ3bXZnYnA0cnRuYTVxb2sgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:17.000Z",
+      "updated": "2025-09-13T22:10:15.848Z",
+      "summary": "☽ ✶ ♀ (из H5 к H1)",
+      "description": "Маленькая радость, комплимент. Стиль — через инициативу, скорость и прямое действие фокус — на творчестве, игре, сцене, удовольствиях и детях. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов.\nСовет: Сделайте комплимент; маленькая покупка с лимитом.\nДома: из H5 к H1; Знаки: ARIES→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-10T10:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-10T12:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "1ghadu8enqt7mvgbp4rtna5qok@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd313eec4a3352e61890ab895b3acccc3db0b54ad1"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602833464926\"",
+      "id": "l0rfclccctsq0v6g90kdi8qoro",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bDByZmNsY2NjdHNxMHY2Zzkwa2RpOHFvcm8gMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:17.000Z",
+      "updated": "2025-09-13T22:10:16.732Z",
+      "summary": "☽ □ ♂ (H12)",
+      "description": "Острые углы и раздражение; разрядка через движение. Стиль — через инициативу, скорость и прямое действие фокус — на уединении, завершении, скрытых процессах и исцелении. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nСовет: Разрядитесь движением; перенесите спор/жёсткий разговор.\nДома: H12; Знаки: ARIES→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-10T18:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-10T22:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "l0rfclccctsq0v6g90kdi8qoro@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd13e36bd53f44f542872f97790346048153ee5db2"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602835441662\"",
+      "id": "8kk79cpkne9aftqf00c4gj4gno",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=OGtrNzljcGtuZTlhZnRxZjAwYzRnajRnbm8gMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-13T00:37:17.000Z",
+      "updated": "2025-09-13T22:10:17.720Z",
+      "summary": "☽ □ к горизонту",
+      "description": "Раздражительность и суета; держите границы и темп. Стиль — через устойчивость, материальные опоры и терпение фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир.\nСовет: Сделайте паузу; распишите дела по 15 минут; ограничьте раздражители.\nЗнаки: TAURUS→AQUARIUS \nНедомолвки и трения; проговорить ожидания. Стиль — через устойчивость, материальные опоры и терпение фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения.\nСовет: Проясните одно спорное место; опирайтесь на факты, не стиль.\nЗнаки: TAURUS→LEO",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-11T03:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-11T08:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "8kk79cpkne9aftqf00c4gj4gno@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd496dacc7b34242a5d4c2609c9408aa162b2e5953"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602837153758\"",
+      "id": "2h0u0sbflshm4g34dt4vop6ra4",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MmgwdTBzYmZsc2htNGczNGR0NHZvcDZyYTQgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:19.000Z",
+      "updated": "2025-09-13T22:10:18.576Z",
+      "summary": "☽ △ ☿ (из H7 к H11)",
+      "description": "Лёгкие переговоры, учёба, документы. Стиль — через устойчивость, материальные опоры и терпение фокус — на партнёрстве, контрактах и переговорах. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nСовет: Сделайте заметку/план на 3 пункта; договоритесь о времени.\nДома: из H7 к H11; Знаки: TAURUS→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-11T07:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-11T10:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "2h0u0sbflshm4g34dt4vop6ra4@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd4c9192a056355e37eb68ac91d71d0ac0e750af75"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602838895166\"",
+      "id": "2rel83g6fcj2g6gsocva5f7ujs",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MnJlbDgzZzZmY2oyZzZnc29jdmE1Zjd1anMgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T04:48:32.000Z",
+      "updated": "2025-09-13T22:10:19.447Z",
+      "summary": "☽ △ ☉ (из H8 к H12)",
+      "description": "Комфорт и согласие; дела идут проще. Стиль — через устойчивость, материальные опоры и терпение фокус — на общих финансах, доверии, интимности и глубинной психике. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nСовет: Сделайте шаг, который добавляет комфорта/поддержки.\nДома: из H8 к H12; Знаки: TAURUS→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-12T06:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-12T09:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "2rel83g6fcj2g6gsocva5f7ujs@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gda14cad6f6d8883bbb32919e2908cd237b8722659"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602840595550\"",
+      "id": "2r6b2khlj246rr4t636hoeepoc",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=MnI2YjJraGxqMjQ2cnI0dDYzNmhvZWVwb2MgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T04:48:32.000Z",
+      "updated": "2025-09-13T22:10:20.297Z",
+      "summary": "☽ □ ♀ (из H6 к H1)",
+      "description": "Капризы/обиды; не тратиться на эмоциях. Стиль — через устойчивость, материальные опоры и терпение фокус — на рутине, службе, здоровье и эффективности. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов.\nСовет: Не обсуждайте деньги/ценности на эмоциях; перенесите разговор.\nДома: из H6 к H1; Знаки: TAURUS→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-12T11:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-12T14:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "2r6b2khlj246rr4t636hoeepoc@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd4f165650ef74c10353d67d0deab0be9eca4d3d3f"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602842460062\"",
+      "id": "6enufdik73kasct38gkbm496vo",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NmVudWZkaWs3M2thc2N0Mzhna2JtNDk2dm8gMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T04:48:33.000Z",
+      "updated": "2025-09-13T22:10:21.230Z",
+      "summary": "☽ △ ♂ (H12)",
+      "description": "Энергии в меру; сделать минимум с результатом. Стиль — через устойчивость, материальные опоры и терпение фокус — на уединении, завершении, скрытых процессах и исцелении. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nСовет: Сделайте одно дело до конца, без рывков.\nДома: H12; Знаки: TAURUS→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-12T20:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-12T23:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "6enufdik73kasct38gkbm496vo@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd27af481030f4829b98b6c12314d50af2d556604a"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602844119934\"",
+      "id": "p484rredbtphn6dkrvr5ckpc1o",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=cDQ4NHJyZWRidHBobjZka3J2cjVja3BjMW8gMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-13T00:37:20.000Z",
+      "updated": "2025-09-13T22:10:22.059Z",
+      "summary": "☽ △/✶ к горизонту",
+      "description": "Небольшая услуга или компромисс. Стиль — через коммуникации, обучение и гибкость фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — самовыражение, сцена, гордость и творческий центр; партнёрсто, соглашения и переговоры. Это партнёрство, контракты, зеркальные отношения.\nСовет: Предложите компромисс; отметьте результат.\nЗнаки: GEMINI→LEO \nЛёгкий контакт с людьми; дела идут мягко. Стиль — через коммуникации, обучение и гибкость фокус — на путешествиях, высшем обучении, законе и мировоззрении. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир.\nСовет: Решите 1–2 вопроса живым разговором; закрепите результат.\nЗнаки: GEMINI→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-13T05:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-13T09:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "p484rredbtphn6dkrvr5ckpc1o@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gda2502029dfc7dd7cf811cb7eb543be117546fdf2"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602846116958\"",
+      "id": "ih2365kn94d3hb1as9iqln5d5s",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aWgyMzY1a245NGQzaGIxYXM5aXFsbjVkNXMgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:22.000Z",
+      "updated": "2025-09-13T22:10:23.058Z",
+      "summary": "☽ ☍ MC",
+      "description": "Баланс дом–работа; не перегибать. Стиль — через коммуникации, обучение и гибкость фокус — на творчестве, игре, сцене, удовольствиях и детях. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Поставьте границы времени «дом/работа»; перенесите лишнее.\nЗнаки: GEMINI→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-13T13:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-13T18:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "ih2365kn94d3hb1as9iqln5d5s@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd0f1ad82c07ed432bd572f5272a7ccab94d478594"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602847809342\"",
+      "id": "667i9jnndtitlrr3qk1kb3q6qg",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NjY3aTlqbm5kdGl0bHJyM3FrMWtiM3E2cWcgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T04:48:34.000Z",
+      "updated": "2025-09-13T22:10:23.904Z",
+      "summary": "☽ ☍ ☽ (из H3 к H10)",
+      "description": "Кульминация чувства; яснее видно, что важно. Стиль — через коммуникации, обучение и гибкость фокус — на коммуникациях, обучении, документах и поездках. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nСовет: Запишите ощущение и наблюдение; выводы — потом.\nДома: из H3 к H10; Знаки: GEMINI→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-13T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-13T19:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "667i9jnndtitlrr3qk1kb3q6qg@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gda149ec776817486128ca03084b339f0abf54b4b2"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602849399902\"",
+      "id": "tj14mkl1906hqfb5hrle0gg7q4",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dGoxNG1rbDE5MDZocWZiNWhybGUwZ2c3cTQgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T04:48:35.000Z",
+      "updated": "2025-09-13T22:10:24.699Z",
+      "summary": "☽ △ ♀ (из H6 к H1)",
+      "description": "Приятная встреча/покупка; гармония. Стиль — через коммуникации, обучение и гибкость фокус — на рутине, службе, здоровье и эффективности. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов.\nСовет: Спланируйте небольшую приятность вместе.\nДома: из H6 к H1; Знаки: GEMINI→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-14T13:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-14T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "tj14mkl1906hqfb5hrle0gg7q4@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd52ed3cd7900c91f80cdb025dd6c5a0d288dd36d7"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602851245950\"",
+      "id": "hhfh8pck3qitgo9i3ph9f66d50",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=aGhmaDhwY2szcWl0Z285aTNwaDlmNjZkNTAgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T04:48:35.000Z",
+      "updated": "2025-09-13T22:10:25.622Z",
+      "summary": "☽ ☍ ☿ (из H7 к H11)",
+      "description": "Разные точки зрения; слушать и уточнять. Стиль — через заботу, дом и эмоциональную близость фокус — на партнёрстве, контрактах и переговорах. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nСовет: Переспросите; подведите итог письменно.\nДома: из H7 к H11; Знаки: CANCER→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-15T11:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-15T15:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "hhfh8pck3qitgo9i3ph9f66d50@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gde00be5e8da148fbde6476778b0ac48fa7123e761"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602852945150\"",
+      "id": "m86i6tq43i1mjqu1ibpee82eoo",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bTg2aTZ0cTQzaTFtanF1MWlicGVlODJlb28gMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T04:48:36.000Z",
+      "updated": "2025-09-13T22:10:26.472Z",
+      "summary": "☽ ☍ ☉ (из H7 к H12)",
+      "description": "Полярности «хочу–надо»; держать баланс. Стиль — через заботу, дом и эмоциональную близость фокус — на партнёрстве, контрактах и переговорах. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nСовет: Проверьте «хочу/надо»; выберите одно действие и сделайте его.\nДома: из H7 к H12; Знаки: CANCER→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-16T12:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-16T16:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "m86i6tq43i1mjqu1ibpee82eoo@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd777ea45ce66aa32deb2d69d5f734351beb859891"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602854587198\"",
+      "id": "6aah7rvsoh38jd775bopf2ir1c",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NmFhaDdydnNvaDM4amQ3NzVib3BmMmlyMWMgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T04:48:36.000Z",
+      "updated": "2025-09-13T22:10:27.293Z",
+      "summary": "☽ ☍ ♂ (из H11 к H12)",
+      "description": "Тяга к спору; перевести энергию в дело. Стиль — через заботу, дом и эмоциональную близость фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nСовет: Сделайте физическую задачу; избегайте конфронтации.\nДома: из H11 к H12; Знаки: CANCER→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-17T03:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-17T07:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "6aah7rvsoh38jd775bopf2ir1c@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd99e42e2579d73e215e89d05ba849f246e68f7a83"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602856433374\"",
+      "id": "ed2ko4c4fm89pgh3svjl7p21ek",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=ZWQya280YzRmbTg5cGdoM3N2amw3cDIxZWsgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T13:58:26.000Z",
+      "updated": "2025-09-13T22:10:28.216Z",
+      "summary": "☽ ☍ ASC",
+      "description": "Маятник между «мне» и «другим»; найти середину. Стиль — через лидерство, сцену и творчество фокус — на партнёрстве, контрактах и переговорах. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов. Это становится заметным: имидж, тело, манера входить в мир.\nСовет: Обсудите ожидания; выделите время «для себя» и «для дела» поровну.\nЗнаки: LEO→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-17T13:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-17T18:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "ed2ko4c4fm89pgh3svjl7p21ek@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd348504216105f277715e65ce71fa2d77c572d2e9"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602858166686\"",
+      "id": "gdcj1i4rufgb7u0uesvoeei67s",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Z2RjajFpNHJ1ZmdiN3UwdWVzdm9lZWk2N3MgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-13T00:37:23.000Z",
+      "updated": "2025-09-13T22:10:29.083Z",
+      "summary": "☽ △/✶ к вертикали",
+      "description": "Маленькие улучшения дома. Стиль — через лидерство, сцену и творчество фокус — на личности, теле, имидже и стартах. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Сделайте мелкое благоустройство; отложите крупное на другой день.\nЗнаки: LEO→GEMINI \nПоддержка сверху/клиентов; всё складывается. Стиль — через лидерство, сцену и творчество фокус — на личности, теле, имидже и стартах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Попросите обратную связь/рекомендацию; зафиксируйте договорённости.\nЗнаки: LEO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-17T22:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-18T02:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "gdcj1i4rufgb7u0uesvoeei67s@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdbab52b758a814501b42f411d58ed44afbfa873d7"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602859893150\"",
+      "id": "man80h1jnvbnkqo0naimrd9614",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=bWFuODBoMWpudmJua3FvMG5haW1yZDk2MTQgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T04:48:38.000Z",
+      "updated": "2025-09-13T22:10:29.946Z",
+      "summary": "☽ △ ☽ (из H12 к H10)",
+      "description": "Ровный фон и восстановление. Стиль — через лидерство, сцену и творчество фокус — на уединении, завершении, скрытых процессах и исцелении. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nСовет: Поддержите режим; лёгкая прогулка/дыхание.\nДома: из H12 к H10; Знаки: LEO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-18T01:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-18T04:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "man80h1jnvbnkqo0naimrd9614@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd8f6af5b4f93ee60e3b3eb3fc0d1d875f4174957d"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602861513726\"",
+      "id": "6n5ola3jenuodqa10l7ps2p4go",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Nm41b2xhM2plbnVvZHFhMTBsN3BzMnA0Z28gMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T04:48:38.000Z",
+      "updated": "2025-09-13T22:10:30.756Z",
+      "summary": "☽ ☍ ♀ (H1)",
+      "description": "Потребности не совпадают; мягко согласовать. Стиль — через лидерство, сцену и творчество фокус — на личности, теле, имидже и стартах. На стороне натала — уникальность, автономия и социальная осознанность; личность, тело, имидж и старт циклов.\nСовет: Обменяйтесь ожиданиями; найдите общий комфорт.\nДома: H1; Знаки: LEO→AQUARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-19T00:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-19T03:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "6n5ola3jenuodqa10l7ps2p4go@google.com",
+      "sequence": 1,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdff013fd9671050057a42e1dacbaaa84244aef746"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602863224542\"",
+      "id": "us20b83fcuipkeu6dudqeh5b3c",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=dXMyMGI4M2ZjdWlwa2V1NmR1ZHFlaDViM2MgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T21:53:52.000Z",
+      "updated": "2025-09-13T22:10:31.612Z",
+      "summary": "☽ △ ☿ (из H2 к H11)",
+      "description": "Лёгкие переговоры, учёба, документы. Стиль — через детали, служение, анализ и улучшения фокус — на доходах, ресурсах, ценностях и самооценке. На стороне натала — амбиции, структура, границы и долг; друзья, команда, коллектив, сообщества и проекты.\nСовет: Сделайте заметку/план на 3 пункта; договоритесь о времени.\nДома: из H2 к H11; Знаки: VIRGO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-20T00:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-20T04:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "us20b83fcuipkeu6dudqeh5b3c@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd585dc50bb239b57d5f624d3a0184eb1c5d28d629"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602864935102\"",
+      "id": "gvm2vm1k39ep6ig8i2hk3g5f98",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=Z3ZtMnZtMWszOWVwNmlnOGkyaGszZzVmOTggMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-13T00:37:25.000Z",
+      "updated": "2025-09-13T22:10:32.467Z",
+      "summary": "☽ □ к вертикали",
+      "description": "Срочные задачи и напряжение; расставьте приоритеты. Стиль — через детали, служение, анализ и улучшения фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи. Это карьера/статус, публичный образ и направление роста.\nСовет: Сократите задачи до топ‑3; отложите второстепенное.\nЗнаки: VIRGO→SAGITTARIUS \nБыт «давит»; починить и упорядочить. Стиль — через детали, служение, анализ и улучшения фокус — на друзьях, команде, сообществе, коллективе и проектах. На стороне натала — обмен, учёба, сеть контактов и быстрые решения; дом, семья, основы и безопасность. Это дом, корни, частная жизнь, внутренняя опора.\nСовет: Почините одну вещь; разгрузите угол/полку; уберите «визуальный шум».\nЗнаки: VIRGO→GEMINI",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-20T05:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-20T11:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "gvm2vm1k39ep6ig8i2hk3g5f98@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gdbe9f5105210d244faac98688ae25474aad0c8885"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602866672606\"",
+      "id": "59ehh4lk1j8iioo5u17ddqs12o",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=NTllaGg0bGsxajhpaW9vNXUxN2RkcXMxMm8gMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-12T21:53:54.000Z",
+      "updated": "2025-09-13T22:10:33.336Z",
+      "summary": "☽ □ ☽ (H10)",
+      "description": "Чувствительность и дёрганность; замедлиться. Стиль — через детали, служение, анализ и улучшения фокус — на карьере, статусе, роли и стратегических задачах. На стороне натала — смысл, свобода, дальние горизонты, вера; карьера, статус, роль и стратегические задачи.\nСовет: Уберите триггеры; 30 минут тишины/прогулки.\nДома: H10; Знаки: VIRGO→SAGITTARIUS",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-20T08:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-20T12:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "59ehh4lk1j8iioo5u17ddqs12o@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gddd591bc7af567747f36078da10bcbd7638a9e580"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    },
+    {
+      "kind": "calendar#event",
+      "etag": "\"3515602868437726\"",
+      "id": "bufgknrb6nu9oq24rld770jdog",
+      "status": "confirmed",
+      "htmlLink": "https://www.google.com/calendar/event?eid=YnVmZ2tucmI2bnU5b3EyNHJsZDc3MGpkb2cgMjEyMjMyZDkzYjVjMTk5M2RjYzIwYWRjNWE2M2Q3ZGU1MjI4YzQ4NzVjNDkzZjE1YWU3ZDBiNzFkNzQ2NWNkYUBn",
+      "created": "2025-09-13T22:10:33.000Z",
+      "updated": "2025-09-13T22:10:34.218Z",
+      "summary": "☽ △ ☉ (из H1 к H12)",
+      "description": "Комфорт и согласие; дела идут проще. Стиль — через детали, служение, анализ и улучшения фокус — на личности, теле, имидже и стартах. На стороне натала — амбиции, структура, границы и долг; уединение, завершение, скрытые процессы и исцеление.\nСовет: Сделайте шаг, который добавляет комфорта/поддержки.\nДома: из H1 к H12; Знаки: VIRGO→CAPRICORN",
+      "creator": {
+        "email": "creator4ever@gmail.com"
+      },
+      "organizer": {
+        "email": "212232d93b5c1993dcc20adc5a63d7de5228c4875c493f15ae7d0b71d7465cda@group.calendar.google.com",
+        "displayName": "Astro — Lunar Natal (Managed)",
+        "self": true
+      },
+      "start": {
+        "dateTime": "2025-09-21T03:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "end": {
+        "dateTime": "2025-09-21T07:59:00+03:00",
+        "timeZone": "Europe/Moscow"
+      },
+      "transparency": "transparent",
+      "iCalUID": "bufgknrb6nu9oq24rld770jdog@google.com",
+      "sequence": 0,
+      "extendedProperties": {
+        "private": {
+          "src": "geodac",
+          "gd_id": "gd8084393033ccb23dbdac7f2d8fb3cd27b2d2ae9d"
+        }
+      },
+      "reminders": {
+        "useDefault": false
+      },
+      "eventType": "default"
+    }
+  ]
+}

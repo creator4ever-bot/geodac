@@ -1,0 +1,319 @@
+#!/usr/bin/env python3
+import swisseph as swe, pytz, datetime as dt, math, json, argparse
+from astral import LocationInfo
+from astral.sun import sun
+
+EPHE = "/home/DAC/Zet9 GeoDAC/Swiss"
+TZ   = pytz.timezone("Europe/Moscow")
+LOC  = LocationInfo("Moscow","RU","Europe/Moscow", 55.75, 37.5833333333)
+
+SIGNS_RU = ["Овен","Телец","Близнецы","Рак","Лев","Дева","Весы","Скорпион","Стрелец","Козерог","Водолей","Рыбы"]
+PLANET_RU= { 'Sun':'Солнце','Moon':'Луна','Mercury':'Меркурий','Venus':'Венера','Mars':'Марс',
+             'Jupiter':'Юпитер','Saturn':'Сатурн','Uranus':'Уран','Neptune':'Нептун','Pluto':'Плутон' }
+ASPS = [(0,'☌'),(60,'✶'),(90,'□'),(120,'△'),(180,'☍')]
+OUTERS = {'Jupiter','Saturn','Uranus','Neptune','Pluto'}
+
+def norm(x): return x%360.0
+def wrap180(x): return (x+180.0)%360.0-180.0
+
+def jd_utc(t_local):
+    ut = t_local.astimezone(pytz.utc)
+    return swe.julday(ut.year,ut.month,ut.day, ut.hour+ut.minute/60+ut.second/3600.0)
+
+def lon_spd(jd, pid):
+    pos,_ = swe.calc_ut(jd, pid, swe.FLG_SWIEPH | swe.FLG_SPEED)
+    return norm(pos[0]), pos[3]  # lon, speed deg/day
+
+def refine_root(j0,j1,f,eps_days=1.0/1440, maxit=60):
+    a,b=j0,j1; fa,fb=f(a),f(b)
+    for _ in range(maxit):
+        m=0.5*(a+b); fm=f(m)
+        if abs(fm)<1e-8 or abs(b-a)<eps_days: return m
+        if fa*fm<=0: b,fb=m,fm
+        else: a,fa=m,fm
+    return 0.5*(a+b)
+
+def to_local(jd):  # -> 'YYYY-MM-DD HH:MM', datetime
+    t = dt.datetime.fromtimestamp((jd-2440587.5)*86400, tz=dt.timezone.utc).astimezone(TZ)
+    return t.strftime("%Y-%m-%d %H:%M"), t
+
+def sign_name(lon): return SIGNS_RU[int(math.floor(lon/30.0))%12]
+
+def window_hours_for(name):
+    if name=='Sun': return 1
+    if name in ('Mercury','Venus'): return 2
+    if name=='Mars': return 6
+    if name in ('Jupiter','Saturn'): return 12
+    if name=='Uranus': return 24
+    if name=='Neptune': return 36
+    if name=='Pluto': return 48
+    return 2
+
+def phase_events(t0_local, t1_local):
+    jd0,jd1 = jd_utc(t0_local), jd_utc(t1_local)
+    def elong(jd):
+        lon_m,_ = lon_spd(jd, swe.MOON); lon_s,_ = lon_spd(jd, swe.SUN)
+        return norm(lon_m - lon_s)
+    phases = [(0.0,"Новолуние"),(90.0,"Первая четверть"),(180.0,"Полнолуние"),(270.0,"Последняя четверть")]
+    step = 1.0/24.0
+    events=[]
+    for deg,name in phases:
+        j=jd0; fprev=wrap180(elong(j)-deg)
+        while j<jd1:
+            j2=min(j+step,jd1); fcur=wrap180(elong(j2)-deg)
+            if fprev==0 or fprev*fcur<=0 or abs(fcur)<1e-4:
+                jp=refine_root(j,j2, lambda x: wrap180(elong(x)-deg))
+                s,t = to_local(jp)
+                events.append({
+                    "category":"Mundane,Phase",
+                    "summary": name,
+                    "peak": s,
+                    "start": (t-dt.timedelta(hours=1)).strftime("%Y-%m-%d %H:%M"),
+                    "end":   (t+dt.timedelta(hours=1)).strftime("%Y-%m-%d %H:%M"),
+                    "alarm": "-PT30M"
+                })
+                j=j2; fprev=fcur
+            else:
+                j,fprev=j2,fcur
+    return events
+
+def ingress_events(t0_local, t1_local):
+    jd0,jd1 = jd_utc(t0_local), jd_utc(t1_local)
+    planets = [(swe.SUN,'Sun'),(swe.MERCURY,'Mercury'),(swe.VENUS,'Venus'),(swe.MARS,'Mars'),
+               (swe.JUPITER,'Jupiter'),(swe.SATURN,'Saturn'),(swe.URANUS,'Uranus'),(swe.NEPTUNE,'Neptune'),(swe.PLUTO,'Pluto')]
+    events=[]
+    for pid,name in planets:
+        step = 0.5 if name in ('Sun','Mercury','Venus') else 1.0
+        j=jd0
+        sl_prev = int(math.floor(lon_spd(j, pid)[0]/30.0))
+        while j<jd1:
+            j2=min(j+step,jd1)
+            sl_cur = int(math.floor(lon_spd(j2, pid)[0]/30.0))
+            if sl_cur!=sl_prev:
+                k = sl_cur%12
+                target = k*30.0
+                jp=refine_root(j,j2, lambda x: wrap180(lon_spd(x,pid)[0]-target))
+                s,_ = to_local(jp)
+                events.append({
+                    "category":"Mundane,Ingress",
+                    "summary": f"{PLANET_RU[name]} → {sign_name(target)} (ингресс)",
+                    "peak": s,
+                    "start": s,
+                    "end":   (TZ.localize(dt.datetime.strptime(s,"%Y-%m-%d %H:%M"))+dt.timedelta(hours=1)).strftime("%Y-%m-%d %H:%M"),
+                    "alarm": "-PT30M"
+                })
+                j=j2; sl_prev=sl_cur
+            else:
+                j=j2
+    return events
+
+def station_and_retro_events(t0_local, t1_local):
+    jd0,jd1 = jd_utc(t0_local), jd_utc(t1_local)
+    planets=[(swe.MERCURY,'Mercury'),(swe.VENUS,'Venus'),(swe.MARS,'Mars'),
+             (swe.JUPITER,'Jupiter'),(swe.SATURN,'Saturn'),(swe.URANUS,'Uranus'),
+             (swe.NEPTUNE,'Neptune'),(swe.PLUTO,'Pluto')]
+    events=[]
+    for pid,name in planets:
+        step = 0.25 if name in ('Mercury','Venus') else 0.5 if name=='Mars' else 1.0
+        j=jd0
+        _,spd_prev = lon_spd(j,pid)
+        r_start=None
+        while j<jd1:
+            j2=min(j+step,jd1)
+            _,spd_cur = lon_spd(j2,pid)
+            if spd_prev==0 or spd_prev*spd_cur<=0:
+                jp=refine_root(j,j2, lambda x: lon_spd(x,pid)[1], eps_days=1.0/2880)
+                s,t = to_local(jp)
+                if spd_prev>0 and spd_cur<=0:
+                    # станция R
+                    events.append({
+                        "category":"Mundane,Retro,Station",
+                        "summary": f"{PLANET_RU[name]} — станция R",
+                        "peak": s,
+                        "start": (t-dt.timedelta(hours=1)).strftime("%Y-%m-%d %H:%M"),
+                        "end":   (t+dt.timedelta(hours=1)).strftime("%Y-%m-%d %H:%M"),
+                        "alarm": "-PT30M",
+                        "description": "Начало ретроградности: время пересмотра и доработки. Не запускать новое; завершать отложенное. Для Венеры — избегать крупных/необязательных покупок."
+                    })
+                    r_start = t
+                elif spd_prev<0 and spd_cur>=0:
+                    # станция D
+                    events.append({
+                        "category":"Mundane,Retro,Station",
+                        "summary": f"{PLANET_RU[name]} — станция D",
+                        "peak": s,
+                        "start": (t-dt.timedelta(hours=1)).strftime("%Y-%m-%d %H:%M"),
+                        "end":   (t+dt.timedelta(hours=1)).strftime("%Y-%m-%d %H:%M"),
+                        "alarm": "-PT30M",
+                        "description": "Конец ретроградности: аккуратно возобновляйте проекты. Сначала завершите хвосты, затем постепенно новые инициативы. Для Венеры — пересмотреть бюджеты/ценности."
+                    })
+                    if r_start:
+                        # VEVENT целого ретропериода без сигналов
+                        events.append({
+                            "category":"Mundane,Retro,Period",
+                            "summary": f"{PLANET_RU[name]} ретроградный",
+                            "start": r_start.strftime("%Y-%m-%d %H:%M"),
+                            "peak":  s,
+                            "end":   t.strftime("%Y-%m-%d %H:%M"),
+                            "alarm": "NONE"
+                        })
+                        r_start=None
+                spd_prev=spd_cur
+                j=j2
+            else:
+                spd_prev=spd_cur; j=j2
+    return events
+
+def aspect_events(t0_local, t1_local):
+    jd0,jd1 = jd_utc(t0_local), jd_utc(t1_local)
+    bodies=[(swe.SUN,'Sun'),(swe.MERCURY,'Mercury'),(swe.VENUS,'Venus'),(swe.MARS,'Mars'),
+            (swe.JUPITER,'Jupiter'),(swe.SATURN,'Saturn'),(swe.URANUS,'Uranus'),
+            (swe.NEPTUNE,'Neptune'),(swe.PLUTO,'Pluto')]
+    events=[]
+    pairs=[]
+    for i in range(len(bodies)):
+        for j in range(i+1,len(bodies)):
+            (pi,ni),(pj,nj)=bodies[i],bodies[j]
+            if 'Moon' in (ni,nj): continue
+            if (ni in OUTERS) or (nj in OUTERS):
+                pairs.append(((pi,ni),(pj,nj)))
+    for (pi,ni),(pj,nj) in pairs:
+        step = 0.25 if 'Sun' in (ni,nj) else 0.5 if ('Mercury' in (ni,nj) or 'Venus' in (ni,nj) or 'Mars' in (ni,nj)) else 1.0
+        for deg,sym in ASPS:
+            pols=(1,) if deg in (0,180) else (1,-1)
+            for pol in pols:
+                j=jd0
+                def f(x):
+                    l1,_=lon_spd(x,pi); l2,_=lon_spd(x,pj)
+                    return wrap180((l1 - l2) - pol*deg)
+                fprev=f(j)
+                while j<jd1:
+                    j2=min(j+step,jd1); fcur=f(j2)
+                    if fprev==0 or fprev*fcur<=0 or abs(fcur)<1e-4:
+                        jp=refine_root(j,j2,f, eps_days=1.0/2880)
+                        s,t = to_local(jp)
+                        w = max(window_hours_for(ni), window_hours_for(nj))
+                        events.append({
+                            "category":"Mundane,Aspect",
+                            "summary": f"{PLANET_RU[ni]} {sym} {PLANET_RU[nj]}",
+                            "peak": s,
+                            "start": (t-dt.timedelta(hours=w)).strftime("%Y-%m-%d %H:%M"),
+                            "end":   (t+dt.timedelta(hours=w)).strftime("%Y-%m-%d %H:%M"),
+                            "alarm": "-PT30M"
+                        })
+                        j=j2; fprev=fcur
+                    else:
+                        j,fprev=j2,fcur
+    events.sort(key=lambda e: e["peak"])
+    return events
+
+def eclipse_events(t0_local, t1_local):
+    jd0,jd1 = jd_utc(t0_local), jd_utc(t1_local)
+    events=[]
+    # Solar eclipses (глобально, без видимости)
+    j = jd0
+    while True:
+        tret, flag = swe.sol_eclipse_when_glob(j, 0)
+        if not tret: break
+        tmax = tret[0]
+        if tmax > jd1: break
+        if tmax >= jd0:
+            s,t = to_local(tmax)
+            if flag & swe.SE_ECL_TOTAL: kind="полное"
+            elif flag & swe.SE_ECL_ANNULAR_TOTAL: kind="гибридное"
+            elif flag & swe.SE_ECL_ANNULAR: kind="кольцевое"
+            elif flag & swe.SE_ECL_PARTIAL: kind="частное"
+            else: kind="затмение"
+            events.append({
+                "category":"Mundane,Eclipse,Solar",
+                "summary": f"Солнечное затмение ({kind})",
+                "peak": s,
+                "start": (t-dt.timedelta(hours=2)).strftime("%Y-%m-%d %H:%M"),
+                "end":   (t+dt.timedelta(hours=2)).strftime("%Y-%m-%d %H:%M"),
+                "alarm":"-PT60M"
+            })
+        j = tmax + 1.0  # двигаемся вперёд ~на сутки
+    # Lunar eclipses (глобально, без видимости)
+    j = jd0
+    while True:
+        tret, flag = swe.lun_eclipse_when(j, 0)
+        if not tret: break
+        tmax = tret[0]
+        if tmax > jd1: break
+        if tmax >= jd0:
+            s,t = to_local(tmax)
+            if flag & swe.SE_ECL_TOTAL: kind="полное"
+            elif flag & swe.SE_ECL_PARTIAL: kind="частное"
+            elif flag & swe.SE_ECL_PENUMBRAL: kind="полутеневое"
+            else: kind="затмение"
+            events.append({
+                "category":"Mundane,Eclipse,Lunar",
+                "summary": f"Лунное затмение ({kind})",
+                "peak": s,
+                "start": (t-dt.timedelta(hours=2)).strftime("%Y-%m-%d %H:%M"),
+                "end":   (t+dt.timedelta(hours=2)).strftime("%Y-%m-%d %H:%M"),
+                "alarm":"-PT60M"
+            })
+        j = tmax + 1.0
+    events.sort(key=lambda e: e["peak"])
+    return events
+
+def lunar_water_events(phases):
+    ev=[]
+    for p in phases:
+        if p["summary"]=="Новолуние":
+            t_peak = TZ.localize(dt.datetime.strptime(p["peak"], "%Y-%m-%d %H:%M"))
+            d = t_peak.date()
+            s_today = sun(LOC.observer, date=d, tzinfo=TZ)
+            dusk   = s_today["dusk"]
+            if t_peak < dusk:
+                start = dusk
+            else:
+                s_next = sun(LOC.observer, date=d+dt.timedelta(days=1), tzinfo=TZ)
+                start = s_next["dusk"]
+            dawn = sun(LOC.observer, date=start.date()+dt.timedelta(days=1), tzinfo=TZ)["dawn"]
+            ev.append({
+                "category":"Mundane,Ritual",
+                "summary":"Поставить Лунную воду",
+                "start": start.strftime("%Y-%m-%d %H:%M"),
+                "peak":  (start + dt.timedelta(minutes=30)).strftime("%Y-%m-%d %H:%M"),
+                "end":   dawn.strftime("%Y-%m-%d %H:%M"),
+                "alarm":"-PT1H"
+            })
+        elif p["summary"]=="Полнолуние":
+            t_peak = TZ.localize(dt.datetime.strptime(p["peak"], "%Y-%m-%d %H:%M"))
+            d = t_peak.date()
+            s_prev = sun(LOC.observer, date=d-dt.timedelta(days=1), tzinfo=TZ)
+            dusk   = s_prev["dusk"]
+            dawn   = sun(LOC.observer, date=d, tzinfo=TZ)["dawn"]
+            ev.append({
+                "category":"Mundane,Ritual",
+                "summary":"Употребить Лунную воду",
+                "start": dusk.strftime("%Y-%m-%d %H:%M"),
+                "peak":  (dusk + dt.timedelta(minutes=30)).strftime("%Y-%m-%d %H:%M"),
+                "end":   dawn.strftime("%Y-%m-%d %H:%M"),
+                "alarm":"-PT1H"
+            })
+    return ev
+
+def main():
+    swe.set_ephe_path(EPHE)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("start"); ap.add_argument("end")
+    args = ap.parse_args()
+    t0 = TZ.localize(dt.datetime.fromisoformat(args.start+"T00:00"))
+    t1 = TZ.localize(dt.datetime.fromisoformat(args.end+"T23:59"))
+
+    phases = phase_events(t0,t1)
+    ing    = ingress_events(t0,t1)
+    retro  = station_and_retro_events(t0,t1)
+    aspects= aspect_events(t0,t1)
+    eclips = eclipse_events(t0,t1)
+    rituals= lunar_water_events(phases)
+
+    events = phases + ing + retro + aspects + eclips + rituals
+    events.sort(key=lambda e: e["peak"])
+    print(json.dumps({"meta":{"tz":"UTC+3","type":"mundane-6m"},"events":events}, ensure_ascii=False, indent=2))
+
+if __name__=="__main__":
+    main()

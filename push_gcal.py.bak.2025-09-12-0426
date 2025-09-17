@@ -1,0 +1,141 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import os, sys, json, argparse, hashlib, re
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+
+SCOPES = ['https://www.googleapis.com/auth/calendar']
+
+def ensure_service(creds_dir):
+    os.makedirs(creds_dir, exist_ok=True)
+    cred_path = os.path.join(creds_dir, 'credentials.json')
+    token_path = os.path.join(creds_dir, 'token.json')
+    if not os.path.exists(cred_path):
+        print(f"ERROR: credentials.json not found at {cred_path}", file=sys.stderr); sys.exit(1)
+    creds = None
+    if os.path.exists(token_path):
+        creds = Credentials.from_authorized_user_file(token_path, SCOPES)
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(cred_path, SCOPES)
+            # если браузер не откроется, замените на: creds = flow.run_console()
+            creds = flow.run_local_server(port=0)
+        with open(token_path, 'w', encoding='utf-8') as f:
+            f.write(creds.to_json())
+    return build('calendar', 'v3', credentials=creds)
+
+def get_or_create_calendar(service, summary, tzname):
+    pageToken = None
+    while True:
+        cals = service.calendarList().list(pageToken=pageToken, maxResults=250).execute()
+        for it in cals.get('items', []):
+            if it.get('summary') == summary:
+                return it['id']
+        pageToken = cals.get('nextPageToken')
+        if not pageToken: break
+    body = {'summary': summary, 'timeZone': tzname}
+    cal = service.calendars().insert(body=body).execute()
+    return cal['id']
+
+def parse_alarm_minutes(s):
+    if not s: return None
+    m = re.match(r'^-PT(\d+)M$', s)
+    if m: return int(m.group(1))
+    m = re.match(r'^-PT(\d+)H$', s)
+    if m: return int(m.group(1)) * 60
+    return None
+
+def to_dt_local(s):
+    # ожидаем "YYYY-MM-DD HH:MM" -> "YYYY-MM-DDTHH:MM:00"
+    return s.replace(' ', 'T') + ":00"
+
+def make_id(e):
+    base = f"{e.get('summary','')}|{e.get('start','')}|{e.get('end','')}"
+    h = hashlib.sha1(base.encode('utf-8')).hexdigest()
+    return ("gd-" + h).lower()
+
+def build_event(e, tzname):
+    alarm_min = parse_alarm_minutes(e.get('alarm'))
+    vis = 'private' if (e.get('privacy','').lower() == 'private') else 'default'
+    transparency = 'transparent' if e.get('busy','FREE') == 'FREE' else 'opaque'
+    body = {
+        'summary': e['summary'][:250],
+        'description': e.get('description','')[:8192],
+        'start': {'dateTime': to_dt_local(e['start']), 'timeZone': tzname},
+        'end':   {'dateTime': to_dt_local(e['end']),   'timeZone': tzname},
+        'visibility': vis,
+        'transparency': transparency,
+        'extendedProperties': {'private': {'src':'geodac'}},
+        'reminders': {'useDefault': False}
+    }
+    if alarm_min is not None:
+        body['reminders']['overrides'] = [{'method':'popup','minutes': alarm_min}]
+    return body
+
+def list_existing_ids(service, cal_id):
+    ids = set(); pageToken = None
+    while True:
+        resp = service.events().list(calendarId=cal_id, maxResults=2500, singleEvents=True,
+                                     showDeleted=False, orderBy='startTime', pageToken=pageToken).execute()
+        for it in resp.get('items', []):
+            if 'id' in it: ids.add(it['id'])
+        pageToken = resp.get('nextPageToken')
+        if not pageToken: break
+    return ids
+
+def main():
+    ap = argparse.ArgumentParser(description="GeoDAC → Google Calendar writer (upsert)")
+    ap.add_argument('--json', required=True, help='Path to JSON with {"events":[...]}, fields: summary,start,end,description,alarm,privacy')
+    ap.add_argument('--calendar', required=True, help='Calendar summary (create if missing)')
+    ap.add_argument('--tz', default='Europe/Moscow', help='Time zone')
+    ap.add_argument('--creds', default=os.path.expanduser('~/astro/.gcal'), help='Dir for credentials.json/token.json')
+    ap.add_argument('--replace', action='store_true', help='Delete events not present in JSON')
+    args = ap.parse_args()
+
+    service = ensure_service(args.creds)
+    cal_id = get_or_create_calendar(service, args.calendar, args.tz)
+
+    data = json.load(open(args.json, 'r', encoding='utf-8'))
+    events = data.get('events', [])
+    if not events:
+        print("No events in JSON"); sys.exit(0)
+
+    desired = {}
+    for e in events:
+        if not (e.get('summary') and e.get('start') and e.get('end')): continue
+        eid = make_id(e)
+        desired[eid] = build_event(e, args.tz)
+
+    ins = upd = 0
+    for eid, body in desired.items():
+        try:
+            service.events().update(calendarId=cal_id, eventId=eid, body=body).execute()
+            upd += 1
+        except HttpError as err:
+            if err.resp.status == 404:
+                b = dict(body); b['id'] = eid
+                service.events().insert(calendarId=cal_id, body=b).execute()
+                ins += 1
+            else:
+                raise
+    print(f"Upsert done: inserted={ins}, updated={upd}, total={len(desired)}")
+
+    if args.replace:
+        existing = list_existing_ids(service, cal_id)
+        to_del = [eid for eid in existing if eid not in desired]
+        del_cnt = 0
+        for eid in to_del:
+            try:
+                service.events().delete(calendarId=cal_id, eventId=eid).execute()
+                del_cnt += 1
+            except HttpError:
+                pass
+        print(f"Replace mode: deleted={del_cnt}")
+
+if __name__ == '__main__':
+    main()

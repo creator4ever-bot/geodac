@@ -1,0 +1,22 @@
+Upsert done: inserted=22, updated=18, total=40
+Replace mode: deleted=21
+Upsert done: inserted=31, updated=8, total=39
+Pruned older than 7d: 2
+Upsert done: inserted=39, updated=0, total=39
+Pruned older than 7d: 0
+Upsert done: inserted=31, updated=0, total=31
+Pruned older than 7d: 0
+Upsert done: inserted=8, updated=23, total=31
+Pruned older than 7d: 0
+Upsert done: inserted=29, updated=2, total=31
+Pruned older than 7d: 0
+Upsert done: inserted=5, updated=26, total=31
+Replace mode: deleted=27
+Upsert done: inserted=0, updated=31, total=31
+Replace mode: deleted=0
+Upsert done: inserted=0, updated=31, total=31
+Replace mode: deleted=0
+Upsert done: inserted=0, updated=31, total=31
+Replace mode: deleted=0
+Upsert done: inserted=0, updated=31, total=31
+Replace mode: deleted=0

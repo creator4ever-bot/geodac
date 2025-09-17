@@ -1,0 +1,51 @@
+#!/usr/bin/env python3
+import sys, json, hashlib, datetime as dt, pytz, argparse
+def esc(s): return s.replace("\\","\\\\").replace(",","\\,").replace(";","\\;").replace("\n","\\n")
+def build_ics(events, tzname="Europe/Moscow", alarm="-PT30M",
+              vclass="PRIVATE", busy="FREE", def_cat="Astrology", add_msft_free=True):
+    TZ = pytz.timezone(tzname)
+    now = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    L = ["BEGIN:VCALENDAR","PRODID:-//astrokit//SE-Topocentric-RU//RU","VERSION:2.0",
+         "CALSCALE:GREGORIAN","METHOD:PUBLISH","BEGIN:VTIMEZONE",f"TZID:{tzname}",
+         f"X-LIC-LOCATION:{tzname}","BEGIN:STANDARD","TZOFFSETFROM:+0300","TZOFFSETTO:+0300",
+         "TZNAME:MSK","DTSTART:19700101T000000","END:STANDARD","END:VTIMEZONE"]
+    for e in events:
+        peak = e.get("peak"); 
+        if not peak: continue
+        cat = e.get("category")  # 'Lunar trigger' | 'Fast trigger' | None
+        # локальное время
+        t_peak = TZ.localize(dt.datetime.strptime(peak, "%Y-%m-%d %H:%M"))
+        # режим длительности:
+        if cat in ("Lunar trigger","Fast trigger","Solar marker") and e.get("start") and e.get("end"):
+            t_start = TZ.localize(dt.datetime.strptime(e["start"], "%Y-%m-%d %H:%M"))
+            t_end   = TZ.localize(dt.datetime.strptime(e["end"],   "%Y-%m-%d %H:%M"))
+        else:
+            t_start = t_peak
+            t_end   = t_peak + dt.timedelta(minutes=30)
+        dtstart = t_start.strftime("%Y%m%dT%H%M%S")
+        dtend   = t_end.strftime("%Y%m%dT%H%M%S")
+        tr, tg, asp = e.get("transit","?"), e.get("target","?"), e.get("aspect","?")
+        uid = hashlib.md5(f"{tr}-{tg}-{asp}-{peak}".encode("utf-8")).hexdigest()+"@astrokit"
+        houses = e.get("houses", {})
+        desc = f"Start: {e.get('start','?')}\nPeak: {peak}\nEnd: {e.get('end','?')}\nHouses: tr {houses.get('tr','?')}/nat {houses.get('nat','?')}"
+        summary = f"{tr} {asp} {tg} — пик"
+        cats = def_cat if not cat else f"{def_cat},{cat}"
+        ev = ["BEGIN:VEVENT", f"UID:{uid}", f"DTSTAMP:{now}", f"CLASS:{vclass}", "STATUS:CONFIRMED",
+              f"DTSTART;TZID={tzname}:{dtstart}", f"DTEND;TZID={tzname}:{dtend}",
+              f"TRANSP:{'TRANSPARENT' if busy=='FREE' else 'OPAQUE'}",
+              f"CATEGORIES:{cats}", f"SUMMARY:{summary}", f"DESCRIPTION:{esc(desc)}",
+              "BEGIN:VALARM", f"TRIGGER:{alarm}", "ACTION:DISPLAY", "DESCRIPTION:Reminder", "END:VALARM"]
+        if add_msft_free and busy=="FREE": ev.append("X-MICROSOFT-CDO-BUSYSTATUS:FREE")
+        ev.append("END:VEVENT"); L.extend(ev)
+    L.append("END:VCALENDAR"); return "\r\n".join(L)
+if __name__=="__main__":
+    ap=argparse.ArgumentParser()
+    ap.add_argument("json_in"); ap.add_argument("ics_out")
+    ap.add_argument("--tz", default="Europe/Moscow")
+    ap.add_argument("--alarm", default="-PT30M")
+    ap.add_argument("--class", dest="vclass", choices=["PUBLIC","PRIVATE"], default="PRIVATE")
+    ap.add_argument("--busy", choices=["FREE","BUSY"], default="FREE")
+    args=ap.parse_args()
+    data=json.load(open(args.json_in,"r",encoding="utf-8"))
+    ics=build_ics(data.get("events",[]), tzname=args.tz, alarm=args.alarm, vclass=args.vclass, busy=args.busy)
+    open(args.ics_out,"w",encoding="utf-8",newline="\r\n").write(ics)
