@@ -1,0 +1,252 @@
+#!/usr/bin/env python3
+import os
+import swisseph as swe, pytz, datetime as dt, math, json, argparse
+
+import json as _json
+
+def rotate_cusps(cusps, asc=None):
+    if not cusps or asc is None: 
+        return cusps
+    # найдём индекс куспида, ближайшего к ASC
+    def adiff(a,b): 
+        x=(a-b)%360.0
+        return min(x, 360.0-x)
+    j = min(range(len(cusps)), key=lambda i: adiff(cusps[i], asc))
+    rot = cusps[j:]+cusps[:j]
+    return [x%360.0 for x in rot]
+
+def load_active_frame(path=os.path.expanduser('~/astro/.state/natal_frame.json')):
+    try:
+        d = _json.load(open(path, 'r', encoding='utf-8'))
+        cusps = d.get('cusps') or []
+        # формат: [None, cusp1..cusp12] — выкидываем None и приводим к float
+        cleaned=[]
+        for x in cusps:
+            if x is None: continue
+            try: cleaned.append(float(x)%360.0)
+            except: pass
+        if len(cleaned)>12: cleaned=cleaned[-12:]
+        axes = d.get('axes') or {}
+        return cleaned if len(cleaned)==12 else None, axes
+    except Exception:
+        return None, {}
+
+# --- конфиг по умолчанию ---
+EPHE = "/home/DAC/Zet9 GeoDAC/Swiss"   # путь к эфемеридам ZET9 (с пробелом — в кавычках)
+TZ    = pytz.timezone("Europe/Moscow") # UTC+3
+LAT, LON = 55.75, 37.5833333333        # Москва
+NATAL_LOCAL = TZ.localize(dt.datetime(1964,1,11,9,39,27))
+SIGNS = ["ARIES","TAURUS","GEMINI","CANCER","LEO","VIRGO","LIBRA","SCORPIO","SAGITTARIUS","CAPRICORN","AQUARIUS","PISCES"]
+def sign_of(lon):
+    return SIGNS[int((lon % 360.0)//30)]
+
+
+# доступные тела
+BODIES = {
+    "Sun": swe.SUN, "Mercury": swe.MERCURY, "Venus": swe.VENUS, "Mars": swe.MARS,
+    "Jupiter": swe.JUPITER, "Saturn": swe.SATURN, "Uranus": swe.URANUS,
+    "Neptune": swe.NEPTUNE, "Pluto": swe.PLUTO, "NNode": swe.TRUE_NODE, "Moon": swe.MOON
+}
+
+# мажорные аспекты
+ASPS = [(0,"☌"), (60,"✶"), (90,"□"), (120,"△"), (180,"☍")]
+
+def norm(x): return x % 360.0
+def angdiff(a,b): return (a - b + 180.0) % 360.0 - 180.0
+
+def jd_utc(dt_local):
+    ut = dt_local.astimezone(pytz.utc)
+    return swe.julday(ut.year, ut.month, ut.day, ut.hour + ut.minute/60 + ut.second/3600.0)
+
+def lon_planet(jd_ut, pid):
+    pos,_ = swe.calc_ut(jd_ut, pid, swe.FLG_SWIEPH | swe.FLG_SPEED)
+    return norm(pos[0]), pos[3]  # lon, speed deg/day
+
+def houses(jd_ut):
+    cusps, ascmc = swe.houses_ex(jd_ut, LAT, LON, b'T')
+    return [c % 360.0 for c in cusps[:12]], ascmc
+
+def house_of(lon, cusps):
+    for i in range(12):
+        a=cusps[i]; b=cusps[(i+1)%12]
+        if b < a: b += 360.0
+        x = lon
+        if x < a: x += 360.0
+        if a <= x < b: return i+1
+    return 12
+
+def orb_v11(transit_name, target_kind, asp_deg):
+    # строгие орбы v1.1
+    if transit_name in ("Sun","Mercury","Venus"):
+        base = 2.0 if asp_deg in (0,90,120,180) else 1.5
+    elif transit_name == "Mars":
+        base = 1.5 if asp_deg in (0,90,120,180) else 1.0
+    elif transit_name in ("Jupiter","Saturn"):
+        base = 1.5 if asp_deg in (0,90,120,180) else 1.0
+    else:  # Uranus/Neptune/Pluto
+        base = 1.0 if asp_deg in (0,90,120,180) else 0.75
+    if target_kind == "angle": base += 0.5
+    return base
+
+def refine_peak(pid, ref_angle_abs, jd_guess):
+    # уточняем пик (мин. орб к ref_angle_abs) шагами 60-10-2-0.5 мин
+    best=(1e9, jd_guess)
+    span_h=24
+    jd0 = jd_guess - span_h/24.0
+    jd1 = jd_guess + span_h/24.0
+    for step in (60,10,2,0.5):
+        N = int((jd1-jd0)*24*60/step)+1
+        for k in range(max(2,N)):
+            jd = jd0 + k*step/1440.0
+            lon_tr,_ = lon_planet(jd, pid)
+            orb = abs(angdiff(lon_tr, ref_angle_abs))
+            if orb < best[0]:
+                best = (orb, jd)
+        jd0, jd1 = best[1] - step/24.0, best[1] + step/24.0
+    return best  # (orb_abs_deg, jd_peak)
+
+def compute(start_local, end_local, transiting_names):
+    swe.set_ephe_path(EPHE)
+
+    # Натал: долготы личных и углы
+    jd_nat = jd_utc(NATAL_LOCAL)
+    af = load_active_frame()
+    af_cusps, af_axes = (af.get('cusps'), af.get('axes')) if isinstance(af, dict) else (af[0], af[1])
+    if af_cusps:
+        cusps_nat = af_cusps
+        ascmc_nat = [af_axes.get('ASC', 0.0), af_axes.get('MC', 0.0)]
+    else:
+        af = load_active_frame()
+        if isinstance(af, dict):
+            af_cusps, af_axes = af.get('cusps'), af.get('axes')
+            _tz = (af.get('cfg', {}).get('tz') or af.get('tz'))
+        else:
+            af_cusps = af[0]; af_axes = af[1]; _tz = (af[2] if len(af)>2 else None)
+    if af_cusps:
+        cusps_nat = af_cusps
+        ascmc_nat = [af_axes.get('ASC', 0.0), af_axes.get('MC', 0.0)]
+    else:
+        cusps_nat, ascmc_nat = houses(jd_nat)
+    natal = {}
+    for pid,name in [(swe.SUN,"Sun"),(swe.MOON,"Moon"),(swe.MERCURY,"Mercury"),
+                     (swe.VENUS,"Venus"),(swe.MARS,"Mars")]:
+        pos,_ = swe.calc_ut(jd_nat, pid, swe.FLG_SWIEPH)
+        natal[name] = norm(pos[0])
+    natal["ASC"] = norm(ascmc_nat[0]); natal["MC"] = norm(ascmc_nat[1])
+    natal["DSC"] = norm(natal["ASC"] + 180.0); natal["IC"] = norm(natal["MC"] + 180.0)
+    # Natal nodes (☊/☋)
+    lon_nn = swe.calc_ut(jd_nat, swe.TRUE_NODE)[0][0]
+    natal["NN"] = norm(lon_nn)
+    natal["SN"] = norm(lon_nn + 180.0)
+
+    # Натальные дома целей (приближённо по долготе)
+    nat_houses = {k: house_of(natal[k], cusps_nat) for k in ("Sun","Moon","Mercury","Venus","Mars")}
+    nat_houses.update({"ASC":1,"MC":10,"DSC":7,"IC":4})
+    nat_houses["NN"] = house_of(natal["NN"], cusps_nat)
+    nat_houses["SN"] = house_of(natal["SN"], cusps_nat)
+
+    # Сканирование
+    t0, t1 = start_local, end_local
+    jd0, jd1 = jd_utc(t0), jd_utc(t1)
+    step_h = 1.0
+    results = []
+    # состояние: ключ (pname, target, deg, pol) -> окно
+    state = {}
+
+    transiting = [(BODIES[nm], nm) for nm in transiting_names]
+
+    def open_win(pname, tgt, deg, pol, jd):
+        state[(pname,tgt,deg,pol)] = {"in":True, "deg":deg, "pol":pol, "jd_start":jd, "min_orb":999, "jd_min":jd}
+
+    def close_win(pid, pname, tgt, deg, pol, start_jd, end_jd, min_orb, jd_min, ref_abs):
+        orb_peak, jd_peak = refine_peak(pid, ref_abs, jd_min)
+        # дом транзита на пик
+        lon_tr,_ = lon_planet(jd_peak, pid)
+        tr_house = house_of(lon_tr, cusps_nat)
+        tr_sign = sign_of(lon_tr)
+        nat_sign = sign_of(natal[tgt])
+        to_dt = lambda jd: dt.datetime.fromtimestamp((jd-2440587.5)*86400,
+        tz=dt.timezone.utc).astimezone(TZ).strftime("%Y-%m-%d %H:%M")
+        results.append({
+            "transit": pname,
+            "target": tgt,
+            "aspect": next(sym for d,sym in ASPS if d==deg),
+            "aspect_deg": deg,
+            "orb_peak_deg": round(orb_peak,3),
+            "houses": {"tr": tr_house, "nat": nat_houses.get(tgt)},
+            "signs": {"tr": tr_sign, "nat": nat_sign},
+            "start": to_dt(start_jd),
+            "peak":  to_dt(jd_peak),
+            "end":   to_dt(end_jd)
+        })
+
+    jd = jd0
+    while jd <= jd1 + 1e-9:
+        # позиции транзитных
+        tr_lons = {}
+        for pid,pname in transiting:
+            lon,_ = lon_planet(jd, pid)
+            tr_lons[pname]=(pid,lon)
+        # цели
+        for tgt in ("Sun","Moon","Mercury","Venus","Mars","ASC","MC","DSC","IC"):
+            lon_nat = natal[tgt]
+            kind = "angle" if tgt in ("ASC","MC","DSC","IC") else "planet"
+            for deg, sym in ASPS:
+                # полярности: +deg и -deg (для 0 и 180 достаточно +1)
+                pols = (1,) if deg in (0,180) else (1,-1)
+                for pol in pols:
+                    ref_abs = norm(lon_nat + pol*deg)
+                    for pid,pname in transiting:
+                        plon = tr_lons[pname][1]
+                        orb_now = abs(angdiff(plon, ref_abs))
+                        lim = orb_v11(pname, kind, deg)
+                        key = (pname, tgt, deg, pol)
+                        st = state.get(key)
+                        inside = orb_now <= lim
+                        if inside:
+                            if not st or not st.get("in"):
+                                open_win(pname, tgt, deg, pol, jd)
+                                st = state[key]
+                                st["min_orb"] = orb_now; st["jd_min"] = jd
+                            else:
+                                if orb_now < st["min_orb"]:
+                                    st["min_orb"] = orb_now; st["jd_min"] = jd
+                        else:
+                            if st and st.get("in"):
+                                close_win(tr_lons[pname][0], pname, tgt, deg, pol,
+                                          st["jd_start"], jd, st["min_orb"], st["jd_min"], ref_abs)
+                                state[key] = {"in":False}
+        jd += step_h/24.0
+
+    results.sort(key=lambda x: x["peak"])
+    meta = {
+        "tz": "UTC+3",
+        "period": {"start": t0.strftime("%Y-%m-%d %H:%M"), "end": t1.strftime("%Y-%m-%d %H:%M")},
+        "profile": "SE Topocentric; orbs v1.1; +0.5° to angles",
+        "transiting": transiting_names,
+        "targets": "Sun,Moon,Mercury,Venus,Mars,ASC,MC,DSC,IC,NN,SN",
+        "majors": "☌ ☍ □ △ ✶"
+    }
+    return {"meta": meta, "events": results}
+
+def main():
+    ap = argparse.ArgumentParser(description="Transits (majors) with strict orbs v1.1 to personals+angles")
+    ap.add_argument('--ephe', default=EPHE, help='Path to Swiss ephemeris')
+    ap.add_argument('--bodies', default='Jupiter,Saturn,Uranus,Neptune,Pluto',
+                    help='Comma-separated transiting bodies, e.g. Sun,Mercury,Venus,Jupiter,Saturn,Uranus,Neptune,Pluto')
+    ap.add_argument('start', nargs='?', default='2025-09-10', help='Start date YYYY-MM-DD (local TZ)')
+    ap.add_argument('end', nargs='?', default='2025-09-30', help='End date YYYY-MM-DD (local TZ)')
+    args = ap.parse_args()
+    swe.set_ephe_path(args.ephe)
+    names = [s.strip() for s in args.bodies.split(',') if s.strip()]
+    # валидация имён
+    for nm in names:
+        if nm not in BODIES:
+            raise SystemExit(f"Unknown body: {nm}")
+    t0 = TZ.localize(dt.datetime.fromisoformat(args.start + "T00:00"))
+    t1 = TZ.localize(dt.datetime.fromisoformat(args.end   + "T23:59"))
+    data = compute(t0, t1, names)
+    print(json.dumps(data, ensure_ascii=False, indent=2))
+
+if __name__ == "__main__":
+    main()
