@@ -1,0 +1,31 @@
+# Secrets
+.gcal/
+
+# Runtime state
+.state/
+
+# Logs and backups
+logs/
+backups/
+chatlog/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Generated artifacts (JSON)
+lunar_*.json
+transits_*.json
+overlay_*.json
+overlay_ingresses.json
+overlay_spans.json
+overlay_houses_forpush.json
+eclipse_triggers_window.json
+eclipse_triggers_forpush.json
+eclipse_triggers_forpush.composed.json
+
+# Ad-hoc backups and previews
+*.bak.*
+*.preview.json
