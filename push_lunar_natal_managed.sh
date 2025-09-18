@@ -23,11 +23,11 @@ MERGED="${MERGED:-$CDIR/lunar_natal_merged.json}"
 
 echo "[$(date '+%F %T')] lunar start FROM=$FROM TO=$TO CAL=$CAL"
 
-# Бэкап
-$PY - << 'PY'
+# Бэкап окна калendarя (на всякий)
+"$PY" - << 'PY'
 import os,json,datetime as dt
-from google.oauth2.credentials import Credentials; from googleapiclient.discovery import build
-  # Lunar angles post-fixes (finalize just before push)
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
 creds=Credentials.from_authorized_user_file(os.path.expanduser('~/astro/.gcal/token.json'),['https://www.googleapis.com/auth/calendar'])
 svc=build('calendar','v3',credentials=creds); name="Astro — Lunar Natal (Managed)"
 cal=next((it for it in svc.calendarList().list().execute().get('items',[]) if it['summary']==name),None)
@@ -41,25 +41,39 @@ if cal:
   dst=os.path.expanduser('~/astro/backups'); os.makedirs(dst,exist_ok=True)
   p=os.path.join(dst, f"Lunar_{dt.datetime.now().strftime('%Y%m%d-%H%M')}.json"); json.dump({'items':ev}, open(p,'w',encoding='utf-8'), ensure_ascii=False, indent=2)
   print("[backup] saved:", p, "count:", len(ev))
-else: print("[backup] calendar not found:", name)
+else:
+  print("[backup] calendar not found:", name)
 PY
 
 # Расчёт RAW
-$PY "$CDIR/transits_slow.py" "$FROM" "$TO" --ephe "$EPHE" --bodies Moon,NNode > "$RAW"
+"$PY" "$CDIR/transits_slow.py" "$FROM" "$TO" --ephe "$EPHE" --bodies Moon,NNode > "$RAW"
 echo "[calc] RAW written: $(wc -c < "$RAW") bytes"
 
 # Рендер → FIX
-$PY "$CDIR/render_for_ics.py" "$RAW" "$FIX"
+"$PY" "$CDIR/render_for_ics.py" "$RAW" "$FIX"
 
-# Guard + push (Rx/S не ставим для Луны)
-CNT=$($PY -c 'import json,os; print(len(json.load(open(os.path.expanduser("~/astro/lunar_natal_for_ics.json"),encoding="utf-8"))["events"]))')
+# Guard + validate
+CNT=$("$PY" -c 'import json,os; print(len(json.load(open(os.path.expanduser("~/astro/lunar_natal_for_ics.json"),encoding="utf-8"))["events"]))')
 echo "[validate] events: $CNT"
-  # Lunar angles post-fixes (fill houses.tr for angle events, ensure peak and "(из Hn)")
 [ "$CNT" -lt "$MIN_EVENTS" ] && { echo "[abort] too few events ($CNT < $MIN_EVENTS)"; exit 3; }
 
-$PY "$CDIR/lunar_merge_angles.py" "$FIX" "$CDIR/lunar_natal_merged.json"
+# Merge осевые события
+"$PY" "$CDIR/lunar_merge_angles.py" "$FIX" "$MERGED"
 
-$PY "$CDIR/push_gcal.py" --json "$MERGED" --tz "$TZ" --calendar "$CAL" --replace
+# Post-fixes для углов и перерасчёт домов — строго перед пушем
+if [[ -f "$CDIR/lunar_angles_postfix.py" ]]; then
+  "$PY" "$CDIR/lunar_angles_postfix.py" "$MERGED" || echo "[warn] lunar_angles_postfix failed"
+else
+  echo "[warn] lunar_angles_postfix.py not found; skipping"
+fi
+if [[ -f "$CDIR/lunar_angles_rehouse.py" ]]; then
+  "$PY" "$CDIR/lunar_angles_rehouse.py" "$MERGED" || echo "[warn] lunar_angles_rehouse failed"
+else
+  echo "[warn] lunar_angles_rehouse.py not found; skipping"
+fi
+
+# Push
+"$PY" "$CDIR/push_gcal.py" --json "$MERGED" --tz "$TZ" --calendar "$CAL" --replace
 
 date +%s > "$ST/lunar.last_ok"
 echo "[$(date '+%F %T')] lunar done"

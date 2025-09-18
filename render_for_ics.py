@@ -443,7 +443,17 @@ def transform(in_path, out_path):
             desc = make_description_with_composer(ev, composer, dcts)
         if not desc:
             desc = make_description_with_composer(ev, None, None)
-        new_ev['description'] = _normalize_desc(desc)
+                # Fallback для ингрессий (если пусто)
+        new_ev.setdefault('description', desc)
+        new_ev.setdefault('description', desc)
+        if not new_ev['description']:
+            sm = (new_ev.get('summary') or '')
+            # простая эвристика ингресса: стрелка «→» и отсутствие аспект-глифа
+            if '→' in sm and all(a not in sm for a in ('☌','☍','□','△','✶')):
+                # вытащим знаки/цель из summary и составим мягкий текст
+                new_ev['description'] = 'Ингресс: смена контекста, обновление фона тем. Присмотритесь к первым сигналам.'
+        new_ev['description'] = _normalize_desc(new_ev['description'])
+
         new_ev['gd_id'] = ev.get('gd_id') or stable_id({**ev, **new_ev})
         out['events'].append(new_ev)
     with open(os.path.expanduser(out_path), 'w', encoding='utf-8') as f:
