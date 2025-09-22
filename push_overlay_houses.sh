@@ -23,33 +23,20 @@ CAL="GeoDAC • Overlay Houses"
 # снимок окружения в лог
 env
 
-echo "[$(date '+%F %T')] overlay houses using ingress + digest"
+echo "[$(date '+%F %T')] overlay houses build timeline"
+"$HOME/astro/tools/overlay_houses_timeline.py"
 
-# 1) Сформируем forpush из overlay_ingresses.json (только ингрессии)
-CDIR="$CDIR" "$PY" - <<'PY'
-import json, os
-cdir = os.environ['CDIR']
-ing = os.path.join(cdir, 'overlay_ingresses.json')
-out = os.path.join(cdir, 'overlay_houses_forpush.json')
-with open(ing, encoding='utf-8') as f:
-    data = json.load(f)
-evs = data.get('events', data)
-with open(out, 'w', encoding='utf-8') as f:
-    json.dump({"events": evs}, f, ensure_ascii=False, indent=2)
-print(f"[overlay] prepared from ingress: {len(evs)} -> {out}")
-PY
-
-# 2) Добавим сводку по домам (сегодня)
-if [[ -f "$CDIR/overlay_houses_digest.py" ]]; then
-  "$PY" "$CDIR/overlay_houses_digest.py"
-else
-  echo "[digest] overlay_houses_digest.py not found; skipping"
+# Если пушить нельзя — выходим после сборки
+if [[ "${PUSH:-0}" != "1" ]]; then
+  echo "[gcal] skip push (PUSH=${PUSH:-0})"
+  date +%s > "$CDIR/.state/overlay_houses.last_ok"
+  echo "[$(date '+%F %T')] overlay houses done"
+  exit 0
 fi
 
-# 3) Push в GCal
+# Пуш в календарь (замена)
 "$PY" "$CDIR/push_gcal.py" \
   --json "$CDIR/overlay_houses_forpush.json" \
   --tz "$TZ" --calendar "$CAL" --replace
-
 date +%s > "$CDIR/.state/overlay_houses.last_ok"
 echo "[$(date '+%F %T')] overlay houses done"
