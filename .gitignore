@@ -29,3 +29,7 @@ eclipse_triggers_forpush.composed.json
 # Ad-hoc backups and previews
 *.bak.*
 *.preview.json
+/.gcal/
+/.state/
+/logs/
+/backups/
