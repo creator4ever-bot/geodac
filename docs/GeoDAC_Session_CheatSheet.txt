@@ -55,6 +55,7 @@ CLI wrappers (короткие команды)
 Справка: geodac-help
 
 Закрытие сессии
+- session-close — бэкап итоговых JSON + summary + end в оперлог
 - SAVE_JSONS (бэкап JSON)
 - SUMMARY_NOW (короткая сводка)
 - ops_note "end"
