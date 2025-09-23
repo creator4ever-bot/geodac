@@ -64,12 +64,31 @@ def load_pack(ppath:Path):
     return pack
 
 def compose_text(planet:str, sign:str, pack:dict):
-    s = pack["signs"].get(sign, {})
-    p = pack["planets"].get(planet, "")
-    tpl = pack["template"]
-    header = tpl.get("header","").format(planet=planet, sign=s.get("title", sign))
-    body   = tpl.get("body","").format(sign=s.get("title", sign), sign_gist=s.get("gist",""), planet_role=p)
-    advice = tpl.get("advice","")
+    aliases = {"Sun":"Солнце","Mercury":"Меркурий","Venus":"Венера","Mars":"Марс",
+               "Jupiter":"Юпитер","Saturn":"Сатурн","Uranus":"Уран",
+               "Neptune":"Нептун","Pluto":"Плутон"}
+    s = pack.get("signs",{}).get(sign, {})
+    p = pack.get("planets",{}).get(planet, {})
+    tpl = pack.get("template", {})
+    header = tpl.get("header","Ингресс: {planet_ru} в {sign_ru}").format(
+        planet_ru=p.get("alias", aliases).get(planet, planet),
+        sign_ru=s.get("title", sign)
+    )
+    sign_themes  = ", ".join(s.get("themes", [])) or "—"
+    sign_risks   = ", ".join(s.get("risks", [])) or "—"
+    sign_markets = ", ".join(s.get("markets", [])) or "—"
+    planet_role  = p.get("role","—")
+    planet_trig  = ", ".join(p.get("triggers", [])) or "—"
+    body = tpl.get("body","").format(
+        sign_themes=sign_themes,
+        sign_risks=sign_risks,
+        sign_markets=sign_markets,
+        planet_role=planet_role,
+        planet_triggers=planet_trig,
+    ).strip()
+    advice = tpl.get("advice","Совет: наблюдать маркеры и синхронизировать план.").format(
+        sign_advice=s.get("advice","Наблюдать маркеры и синхронизировать план.")
+    ).strip()
     return header, "\n".join([body, advice]).strip()
 
 def enrich(in_path:Path, out_path:Path, pack_path:Path):
@@ -90,8 +109,8 @@ def enrich(in_path:Path, out_path:Path, pack_path:Path):
         # пометим маркеры
         priv = e.setdefault("extendedProperties", {}).setdefault("private", {})
         priv.setdefault("src","geodac")
-        priv["pack"] = "mundane_ingress_v1"
-        priv["text_ver"] = "1"
+        priv["pack"] = "mundane_ingress_v2"
+        priv["text_ver"] = "2"
         # стабилизируем gd_id если его нет
         if "gd_id" not in priv:
             basis = f"ingress|{e.get('summary','')}|{e.get('start','')}"
