@@ -16,7 +16,7 @@ exec > >(tee -a "$LOG") 2>&1
 
 FROM="$(date -d '-14 days' +%F)"
 TO="$(date -d '+14 days' +%F)"
-CAL="Astro — Lunar Natal (Managed)"
+CAL="${CAL:-Astro — Lunar Natal (Managed)}"
 RAW="$CDIR/lunar_natal.json"
 FIX="$CDIR/lunar_natal_for_ics.json"
 MERGED="${MERGED:-$CDIR/lunar_natal_merged.json}"
@@ -71,9 +71,17 @@ if [[ -f "$CDIR/lunar_angles_rehouse.py" ]]; then
 else
   echo "[warn] lunar_angles_rehouse.py not found; skipping"
 fi
-
-# Push
-"$PY" "$CDIR/push_gcal.py" --json "$MERGED" --tz "$TZ" --calendar "$CAL" --replace
+"$PY" "$CDIR/tools/lunar_dedup.py" "$CDIR/lunar_natal_merged.json" "$CDIR/lunar_natal_forpush.json"
+# Push (guard + forpush.json)
+if [[ "${PUSH:-0}" != "1" ]]; then
+  echo "[gcal] skip push (PUSH=${PUSH:-0})"
+  date +%s > "$ST/lunar.last_ok"
+  echo "[$(date '+%F %T')] lunar done"
+  exit 0
+fi
+"$PY" "$CDIR/push_gcal.py" \
+  --json "$CDIR/lunar_natal_forpush.json" \
+  --tz "$TZ" --calendar "$CAL" --replace
 
 date +%s > "$ST/lunar.last_ok"
 echo "[$(date '+%F %T')] lunar done"
