@@ -38,3 +38,4 @@ overlay_houses_forpush*.json
 mundane_forpush*.json
 *bak_*.json
 *.bak_*
+*_bak_*.json
