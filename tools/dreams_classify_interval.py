@@ -3,6 +3,38 @@ from pathlib import Path
 import json, argparse, datetime as dt, re
 
 def load_lunar():
+
+def _load_json(path):
+    import json
+    try:
+        return json.loads(Path(path).read_text(encoding="utf-8")).get("events",[])
+    except Exception:
+        return []
+def load_medium():
+    home = Path.home()/ "astro"
+    for name in ("transits_medium_for_ics.json","transits_medium.json"):
+        p = home/name
+        if p.exists(): return _load_json(p)
+    return []
+def load_long():
+    home = Path.home()/ "astro"
+    for name in ("transits_long_for_ics.json","transits_long.json"):
+        p = home/name
+        if p.exists(): return _load_json(p)
+    return []
+def _to_dt(s):
+    import datetime as dt
+    if not s: return None
+    s = s.replace("T"," ").replace("Z","")
+    return dt.datetime.fromisoformat(s[:16])
+def overlaps_ev(e,t0,t1):
+    st = _to_dt(e.get("start") or e.get("peak") or e.get("end"))
+    en = _to_dt(e.get("end") or e.get("start") or e.get("peak"))
+    if not st: return False
+    if en and en<st: en=st
+    if not en: en=st
+    return not (en < t0 or st > t1)
+
     home = Path.home()/ "astro"
     for name in ("lunar_natal_forpush.json","lunar_natal_forpush.dedup.json",
                  "lunar_natal_merged.json","lunar_natal_for_ics.json"):
