@@ -36,3 +36,5 @@ eclipse_triggers_forpush.composed.json
 lunar_natal*.json
 overlay_houses_forpush*.json
 mundane_forpush*.json
+*bak_*.json
+*.bak_*
