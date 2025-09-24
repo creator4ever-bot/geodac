@@ -39,3 +39,4 @@ mundane_forpush*.json
 *bak_*.json
 *.bak_*
 *_bak_*.json
+tools/dreams_classifier.py
