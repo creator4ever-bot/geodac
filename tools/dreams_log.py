@@ -16,6 +16,8 @@ CATS_RU = {
     "lucid": "Осознанные",
 }
 
+FLAG_ICON = {"insight": "⚡", "nightmare": "⚠", "recall_high": "⭐"}
+
 def classify(start: str, end: str):
     """Возвращает (categories:list[str], triggers:list[str], flags:list[str])"""
     p  = Path.home()/ "astro"/ "tools"/ "dreams_classify_interval.py"
@@ -76,6 +78,8 @@ def main():
     cats, tr, fl = classify(args.start, args.end)
     cats_disp = ", ".join(CATS_RU.get(c, c) for c in cats) if cats else "Сон"
     summary = f"Сон — {cats_disp}"
+    if fl:
+        summary += " [" + "".join(FLAG_ICON.get(f, f[:1]) for f in fl) + "]"
 
     # Описание
     body_lines = []
@@ -101,8 +105,7 @@ def main():
 
     # GCal service
     creds = Credentials.from_authorized_user_file(
-        str(Path.home()/".gcal"/"token.json"),
-        ["https://www.googleapis.com/auth/calendar"]
+        str(Path.home()/".gcal"/"token.json")
     )
     svc = build("calendar", "v3", credentials=creds, cache_discovery=False)
 
@@ -151,6 +154,9 @@ def main():
             }
         }
     }
+    # Цвет для «nightmare» (опционально): 11 — красный
+    if "nightmare" in fl:
+        body_ev["colorId"] = "11"
 
     # Upsert
     if existing:
