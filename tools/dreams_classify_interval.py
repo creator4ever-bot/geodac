@@ -27,13 +27,15 @@ def _parse_dt(s):
         return None
 
 def ev_start(e):
-    if isinstance(e.get("start"), dict):
-        return _parse_dt(e["start"].get("dateTime") or e["start"].get("date"))
+    sd = e.get("start")
+    if isinstance(sd, dict):
+        return _parse_dt(sd.get("dateTime") or sd.get("date"))
     return _parse_dt(e.get("start") or e.get("peak") or e.get("end"))
 
 def ev_end(e):
-    if isinstance(e.get("end"), dict):
-        return _parse_dt(e["end"].get("dateTime") or e["end"].get("date"))
+    ed = e.get("end")
+    if isinstance(ed, dict):
+        return _parse_dt(ed.get("dateTime") or ed.get("date"))
     return _parse_dt(e.get("end") or e.get("peak") or e.get("start"))
 
 def overlaps(e, t0, t1):
@@ -74,40 +76,78 @@ def load_long():
     return []
 
 # -------- classifier --------
-FAST = {"Sun","Mercury","Venus","Mars","Солнце","Меркурий","Венера","Марс"}
-OUTER= {"Uranus","Neptune","Pluto","Уран","Нептун","Плутон"}
-LIGHTS={"Sun","Moon","Солнце","Луна","Asc","ASC","Асц","MC"}
+FAST  = {"Sun","Mercury","Venus","Mars","Солнце","Меркурий","Венера","Марс"}
+OUTER = {"Uranus","Neptune","Pluto","Уран","Нептун","Плутон"}
+LIGHT = {"Sun","Moon","Солнце","Луна","Asc","ASC","Асц","MC"}
+
 RX_OUTER = re.compile(r"(Uranus|Neptune|Pluto|Уран|Нептун|Плутон)", re.I)
+
+def is_hard_aspect(e):
+    deg = e.get("aspect_deg")
+    if isinstance(deg,(int,float)) and int(round(deg)) in (90,180):
+        return True
+    s = (e.get("summary") or "")
+    return ("□" in s) or ("☍" in s)
+
+def is_soft_aspect(e):
+    deg = e.get("aspect_deg")
+    if isinstance(deg,(int,float)) and int(round(deg)) in (60,120):
+        return True
+    s = (e.get("summary") or "")
+    return ("△" in s) or ("✶" in s)
+
+def is_conj(e):
+    deg = e.get("aspect_deg")
+    if isinstance(deg,(int,float)) and int(round(deg)) == 0:
+        return True
+    s = (e.get("summary") or "")
+    return ("☌" in s)
 
 def classify_interval(t0, t1):
     evs_l = [e for e in load_lunar()  if overlaps(e, t0, t1)]
     evs_m = [e for e in load_medium() if overlaps(e, t0, t1)]
     evs_g = [e for e in load_long()   if overlaps(e, t0, t1)]
 
-    cats = []
-    triggers = []
+    cats, triggers, flags = [], [], []
 
     if not (evs_l or evs_m or evs_g):
-        return [("garbage", 0.6)], triggers
+        return [("garbage", 0.6)], triggers, flags
 
-    # из medium/long по полям
+    # signals (medium/long по полям + lunar по summary)
     fast_to_inner = any((e.get("transit") in FAST) for e in evs_m)
     fast_to_outer = any((e.get("transit") in FAST) and (e.get("target") in OUTER) for e in evs_m)
-    outer_to_lights = any((e.get("transit") in OUTER) and (e.get("target") in LIGHTS) for e in (evs_m+evs_g))
+    outer_to_lights = any((e.get("transit") in OUTER) and (e.get("target") in LIGHT) for e in (evs_m+evs_g))
 
-    # из lunar по summary (подстраховка)
     s_l = [ (e.get("summary") or "") for e in evs_l ]
     if any(RX_OUTER.search(s) for s in s_l):
         outer_to_lights = True
 
+    # эвристические флаги
+    # кошмар: жёсткие (□/☍) к Mars/Saturn/Neptune/Pluto либо много жёстких в окне
+    hard_targets = {"Mars","Saturn","Neptune","Pluto","Марс","Сатурн","Нептун","Плутон"}
+    hard_hits = any(is_hard_aspect(e) and any(w==e.get("target") or w in (e.get("summary") or "") for w in hard_targets) for e in evs_m) \
+                or sum(1 for e in evs_l if is_hard_aspect(e)) >= 2
+    if hard_hits:
+        flags.append("nightmare")
+
+    # инсайт: мягкие (△/✶) к Uranus/Neptune/Mercury или конъюнкция с ними
+    soft_hits = any(is_soft_aspect(e) and (e.get("target") in {"Uranus","Neptune","Mercury","Уран","Нептун","Меркурий"}) for e in evs_m) \
+                or any((("△" in s or "✶" in s or "☌" in s) and any(k in s for k in ("Uranus","Neptune","Mercury","Уран","Нептун","Меркурий"))) for s in s_l)
+    if soft_hits:
+        flags.append("insight")
+
+    # запоминаемость: множественность или конъюнкция с ME/UR/NE/outer_to_lights
+    if (len(evs_l)+len(evs_m)+len(evs_g) >= 3) or outer_to_lights or \
+       any(is_conj(e) and (e.get("target") in {"Mercury","Uranus","Neptune","Меркурий","Уран","Нептун"}) for e in evs_m):
+        flags.append("recall_high")
+
+    # категории (как раньше)
     if outer_to_lights or fast_to_outer:
         cats.append(("archetypal", 0.7 if outer_to_lights else 0.65))
         triggers.append("outer→lights" if outer_to_lights else "fast→outer")
-
     if fast_to_inner or any(any(w in s for w in FAST) for s in s_l):
         cats.append(("repressed", 0.6))
         triggers.append("fast→inner")
-
     if not cats:
         cats.append(("garbage", 0.5))
         triggers.append("no strong trig")
@@ -115,18 +155,18 @@ def classify_interval(t0, t1):
     if len(evs_l)+len(evs_m)+len(evs_g) >= 2:
         triggers.append(f"multiplicity:{len(evs_l)+len(evs_m)+len(evs_g)}")
 
-    return cats, triggers
+    return cats, triggers, flags
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--start", required=True)   # "YYYY-MM-DD HH:MM"
+    ap.add_argument("--start", required=True)
     ap.add_argument("--end",   required=True)
     args = ap.parse_args()
     t0 = dt.datetime.fromisoformat(args.start)
     t1 = dt.datetime.fromisoformat(args.end)
-    cats, trg = classify_interval(t0, t1)
+    cats, trg, flags = classify_interval(t0, t1)
     print(json.dumps({"start": args.start, "end": args.end,
-                      "categories": cats, "triggers": trg},
+                      "categories": cats, "triggers": trg, "flags": flags},
                      ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":
