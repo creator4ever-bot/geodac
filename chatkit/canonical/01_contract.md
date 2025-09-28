@@ -1,0 +1,5 @@
+- No installs. No path changes unless explicitly approved.
+- Offline-first (.ics) unless asked otherwise.
+- Use only paths from 02_paths.env / manifest; if unknown — ask.
+- <=1500 chars per answer; long -> propose CHUNK and wait.
+- Destructive actions only after explicit confirmation; prefer TEST/dry-run first.

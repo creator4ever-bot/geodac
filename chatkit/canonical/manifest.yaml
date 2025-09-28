@@ -1,0 +1,24 @@
+chatkit:
+  canonical:
+    contract: chatkit/canonical/01_contract.md
+    paths_env: chatkit/canonical/02_paths.env
+    runbook: chatkit/canonical/03_runbook.md
+    passport: chatkit/canonical/04_passport.md
+    seed: chatkit/canonical/05_seed_mini.txt
+  attic: chatkit/attic/
+paths:
+  astro_home: /home/DAC/astro
+  venv_python: /home/DAC/astroenv/bin/python
+  logs: /home/DAC/astro/logs
+  tools: /home/DAC/astro/tools
+  zet_index: /home/DAC/astro/.state/zet_index.json
+  natal_db: /home/DAC/astro/.state/charts.db
+  gcal_token: ""
+  gcal_creds: ""
+calendars:
+  medium: ""
+policy:
+  no_installs: true
+  offline_first: true
+
+readme: chatkit/canonical/00_README_QUICKSTART.md

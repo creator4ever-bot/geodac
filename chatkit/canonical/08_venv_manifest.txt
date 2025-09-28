@@ -1,0 +1,12 @@
+ENV MANIFEST
+exe: /home/DAC/astroenv/bin/python
+py: 3.11.2
+googleapiclient: OK /home/DAC/astroenv/lib/python3.11/site-packages/googleapiclient/__init__.py
+google: no 
+google.oauth2: OK /home/DAC/astroenv/lib/python3.11/site-packages/google/oauth2/__init__.py
+google_auth_oauthlib: OK /home/DAC/astroenv/lib/python3.11/site-packages/google_auth_oauthlib/__init__.py
+google_auth_httplib2: OK /home/DAC/astroenv/lib/python3.11/site-packages/google_auth_httplib2.py
+swisseph: OK /home/DAC/astroenv/lib/python3.11/site-packages/swisseph.cpython-311-x86_64-linux-gnu.so
+pyswisseph: no 
+skyfield: no 
+jplephem: no 
