@@ -67,3 +67,15 @@ Dreams
 - В чате «вечный generating» — не реанимируем тред, создаем новый по seed
 
 VENV: используем $HOME/astroenv (см. 02_paths.env). Если недоступен — фоллбек на системный python3.
+
+Кондуит: chatkit/canonical/10_natal_transits_spec.md
+
+STOP @ 2025-09-30T05:05:16+03:00
+- Medium: пуш ведём по ID (см. 02_paths.env). Имя в UI переименовано через override/summary, но в описаниях событий виден хвост с ID — исправление отложено.
+- Дубли «(из H… к H…)» устранены на уровне формат-апгрейдера (v2).
+- Старый календарь удалён вручную; рабочий — по ID.
+- Следующий шаг: стабилизировать генераторы (Medium/Long/Lunar), затем «лакировка» формата и переход к персонифицированным календарям (натал).
+
+STATUS — Lunar (newstyle+QA) @ 2025-10-04T07:22:43+03:00
+- Generated offline (Topo), QA PASS (angle coverage), pushed replace to PROD by ID.
+- Guard end>start in place; simple pusher works; cron is paused (ID-only + QA wrappers to be enabled later).

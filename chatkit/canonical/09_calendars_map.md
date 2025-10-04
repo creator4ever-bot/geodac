@@ -36,3 +36,5 @@
 - Astro — Medium (Managed) | 6e608405f60aa0c4cde0075283cc2e523cd520b3cf61aab2720411d898dbb35f@group.calendar.google.com
 - Astro — Lunar Natal (Managed) | f9d6e5b61717f4a0d40986947f93422671a93c9896f44aa0ca90da857869e7de@group.calendar.google.com
 - Astro — Long (Managed) | 7b659f2eefc16e9f73d2dd763a3102bfaeaab7b5e1a1393f9fa1528c06fe9388@group.calendar.google.com
+- Medium PROD -> 6e608405f60aa0c4cde0075283cc2e523cd520b3cf61aab2720411d898dbb35f@group.calendar.google.com
+- Lunar PROD -> f9d6e5b61717f4a0d40986947f93422671a93c9896f44aa0ca90da857869e7de@group.calendar.google.com
