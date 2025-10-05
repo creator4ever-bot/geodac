@@ -1,0 +1,8 @@
+GeoDAC SAFE-BOOT mini
+Rules: no installs; no path edits; offline-first; use manifest/paths; <=1500 chars.
+Protocol: (1) ACK GeoDAC (2) ONLY >>> COPY START..END (3) ask 2 Qs.
+>>> COPY START
+Links: 01_contract.md, 02_paths.env, 03_runbook.md, 04_passport.md, 06_session_cheatsheet.md
+Next: Overlay TEST dry-run; Calendar ops offline .ics if needed
+Questions: AUTH now? (Y/N); PIPELINE: TEST or PROD?
+>>> COPY END

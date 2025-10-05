@@ -1,0 +1,43 @@
+# Secrets
+.gcal/
+
+# Runtime state
+.state/
+
+# Logs and backups
+logs/
+backups/
+chatlog/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Generated artifacts (JSON)
+lunar_*.json
+transits_*.json
+overlay_*.json
+overlay_ingresses.json
+overlay_spans.json
+overlay_houses_forpush.json
+eclipse_triggers_window.json
+eclipse_triggers_forpush.json
+eclipse_triggers_forpush.composed.json
+
+# Ad-hoc backups and previews
+*.bak.*
+*.preview.json
+/.gcal/
+/.state/
+/logs/
+/backups/
+lunar_natal*.json
+overlay_houses_forpush*.json
+mundane_forpush*.json
+*bak_*.json
+*.bak_*
+*_bak_*.json
+tools/dreams_classifier.py
+.gcal

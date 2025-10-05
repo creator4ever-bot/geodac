@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# lock to prevent concurrency
+exec 9>/tmp/geodac_overlay.lock; flock -n 9 || { echo "[overlay] locked, skip"; exit 0; }
+
+# activate env
+source "$HOME/astroenv/bin/activate" 2>/dev/null || true
+PY="$HOME/astroenv/bin/python"
+CDIR="$HOME/astro"
+LOG="$CDIR/logs/overlay_houses.log"; mkdir -p "$CDIR/logs" "$CDIR/.state"
+
+# tee to log if bash
+if [[ -n ${BASH_VERSION:-} ]]; then
+  exec > >(tee -a "$LOG") 2>&1
+else
+  exec >> "$LOG" 2>&1
+fi
+
+TZ="${TZ:-Europe/Moscow}"
+CAL="${CAL:-GeoDAC Overlay Houses}"
+
+# env snapshot
+env
+
+echo "[$(date +%F

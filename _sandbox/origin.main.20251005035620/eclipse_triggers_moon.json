@@ -1,0 +1,454 @@
+{
+  "events": [
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2027-02-06 15:55 (λ☉=317.627°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-09-05 20:00",
+      "gd_id": "ecl|SOL|317.627|2025-09-05 20:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2026-02-17 12:01 (λ☉=328.829°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-09-06 15:30",
+      "gd_id": "ecl|SOL|328.829|2025-09-06 15:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2026-03-03 11:37 (λ☉=342.898°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-09-07 15:30",
+      "gd_id": "ecl|LUN|342.898|2025-09-07 15:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2025-03-14 06:54 (λ☉=353.942°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-09-08 10:00",
+      "gd_id": "ecl|LUN|353.942|2025-09-08 10:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2025-03-29 10:57 (λ☉=9.001°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-09-09 11:00",
+      "gd_id": "ecl|SOL|9.001|2025-09-09 11:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2024-04-08 18:21 (λ☉=19.401°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-09-10 04:00",
+      "gd_id": "ecl|SOL|19.401|2025-09-10 04:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2026-08-12 17:37 (λ☉=140.033°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-09-18 19:00",
+      "gd_id": "ecl|SOL|140.033|2025-09-18 19:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2026-08-28 04:18 (λ☉=154.902°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-09-19 23:00",
+      "gd_id": "ecl|LUN|154.902|2025-09-19 23:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2025-09-07 18:08 (λ☉=165.375°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-09-20 19:00",
+      "gd_id": "ecl|LUN|165.375|2025-09-20 19:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2025-09-21 19:53 (λ☉=179.086°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-09-21 21:00",
+      "gd_id": "ecl|SOL|179.086|2025-09-21 21:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2024-10-02 18:49 (λ☉=190.063°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-09-22 18:30",
+      "gd_id": "ecl|SOL|190.063|2025-09-22 18:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2027-02-06 15:55 (λ☉=317.627°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-03 05:30",
+      "gd_id": "ecl|SOL|317.627|2025-10-03 05:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2026-02-17 12:01 (λ☉=328.829°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-04 01:30",
+      "gd_id": "ecl|SOL|328.829|2025-10-04 01:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2026-03-03 11:37 (λ☉=342.898°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-05 02:00",
+      "gd_id": "ecl|LUN|342.898|2025-10-05 02:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2025-03-14 06:54 (λ☉=353.942°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-05 20:30",
+      "gd_id": "ecl|LUN|353.942|2025-10-05 20:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2025-03-29 10:57 (λ☉=9.001°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-06 21:00",
+      "gd_id": "ecl|SOL|9.001|2025-10-06 21:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2024-04-08 18:21 (λ☉=19.401°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-07 14:00",
+      "gd_id": "ecl|SOL|19.401|2025-10-07 14:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2026-08-12 17:37 (λ☉=140.033°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-16 01:00",
+      "gd_id": "ecl|SOL|140.033|2025-10-16 01:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2026-08-28 04:18 (λ☉=154.902°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-17 04:30",
+      "gd_id": "ecl|LUN|154.902|2025-10-17 04:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2025-09-07 18:08 (λ☉=165.375°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-18 01:00",
+      "gd_id": "ecl|LUN|165.375|2025-10-18 01:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2025-09-21 19:53 (λ☉=179.086°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-19 03:30",
+      "gd_id": "ecl|SOL|179.086|2025-10-19 03:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2024-10-02 18:49 (λ☉=190.063°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-20 01:00",
+      "gd_id": "ecl|SOL|190.063|2025-10-20 01:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2027-02-06 15:55 (λ☉=317.627°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-30 14:30",
+      "gd_id": "ecl|SOL|317.627|2025-10-30 14:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2026-02-17 12:01 (λ☉=328.829°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-10-31 11:00",
+      "gd_id": "ecl|SOL|328.829|2025-10-31 11:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2026-03-03 11:37 (λ☉=342.898°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-01 12:00",
+      "gd_id": "ecl|LUN|342.898|2025-11-01 12:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2025-03-14 06:54 (λ☉=353.942°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-02 07:00",
+      "gd_id": "ecl|LUN|353.942|2025-11-02 07:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2025-03-29 10:57 (λ☉=9.001°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-03 08:00",
+      "gd_id": "ecl|SOL|9.001|2025-11-03 08:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2024-04-08 18:21 (λ☉=19.401°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-04 01:00",
+      "gd_id": "ecl|SOL|19.401|2025-11-04 01:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2026-08-12 17:37 (λ☉=140.033°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-12 07:00",
+      "gd_id": "ecl|SOL|140.033|2025-11-12 07:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2026-08-28 04:18 (λ☉=154.902°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-13 10:30",
+      "gd_id": "ecl|LUN|154.902|2025-11-13 10:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2025-09-07 18:08 (λ☉=165.375°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-14 06:30",
+      "gd_id": "ecl|LUN|165.375|2025-11-14 06:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2025-09-21 19:53 (λ☉=179.086°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-15 09:00",
+      "gd_id": "ecl|SOL|179.086|2025-11-15 09:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2024-10-02 18:49 (λ☉=190.063°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-16 07:00",
+      "gd_id": "ecl|SOL|190.063|2025-11-16 07:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2027-02-06 15:55 (λ☉=317.627°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-26 21:30",
+      "gd_id": "ecl|SOL|317.627|2025-11-26 21:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2026-02-17 12:01 (λ☉=328.829°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-27 18:30",
+      "gd_id": "ecl|SOL|328.829|2025-11-27 18:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2026-03-03 11:37 (λ☉=342.898°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-28 20:30",
+      "gd_id": "ecl|LUN|342.898|2025-11-28 20:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2025-03-14 06:54 (λ☉=353.942°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-29 16:00",
+      "gd_id": "ecl|LUN|353.942|2025-11-29 16:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2025-03-29 10:57 (λ☉=9.001°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-11-30 18:00",
+      "gd_id": "ecl|SOL|9.001|2025-11-30 18:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2024-04-08 18:21 (λ☉=19.401°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-01 11:30",
+      "gd_id": "ecl|SOL|19.401|2025-12-01 11:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2026-08-12 17:37 (λ☉=140.033°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-09 15:00",
+      "gd_id": "ecl|SOL|140.033|2025-12-09 15:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2026-08-28 04:18 (λ☉=154.902°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-10 17:30",
+      "gd_id": "ecl|LUN|154.902|2025-12-10 17:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2025-09-07 18:08 (λ☉=165.375°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-11 13:30",
+      "gd_id": "ecl|LUN|165.375|2025-12-11 13:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2025-09-21 19:53 (λ☉=179.086°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-12 15:30",
+      "gd_id": "ecl|SOL|179.086|2025-12-12 15:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2024-10-02 18:49 (λ☉=190.063°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-13 13:00",
+      "gd_id": "ecl|SOL|190.063|2025-12-13 13:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2027-02-06 15:55 (λ☉=317.627°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-24 03:00",
+      "gd_id": "ecl|SOL|317.627|2025-12-24 03:00|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2026-02-17 12:01 (λ☉=328.829°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-25 00:30",
+      "gd_id": "ecl|SOL|328.829|2025-12-25 00:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2026-03-03 11:37 (λ☉=342.898°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-26 02:30",
+      "gd_id": "ecl|LUN|342.898|2025-12-26 02:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (лунн.)",
+      "description": "Точка от 2025-03-14 06:54 (λ☉=353.942°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-26 22:30",
+      "gd_id": "ecl|LUN|353.942|2025-12-26 22:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2025-03-29 10:57 (λ☉=9.001°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-28 01:30",
+      "gd_id": "ecl|SOL|9.001|2025-12-28 01:30|MOON"
+    },
+    {
+      "type": "ECL_TRIGGER",
+      "summary": "Луна активирует точку затмения (солнечн.)",
+      "description": "Точка от 2024-04-08 18:21 (λ☉=19.401°), орб=1.0°.",
+      "category": "Mundane,Eclipse",
+      "alarm": "",
+      "peak": "2025-12-28 19:30",
+      "gd_id": "ecl|SOL|19.401|2025-12-28 19:30|MOON"
+    }
+  ]
+}
