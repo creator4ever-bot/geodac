@@ -1,0 +1,8 @@
+moon:
+  conj: 0.40   # ☌
+  opp:  0.40   # ☍
+  square: 0.40 # □
+  trine: 0.30  # △
+  sextile:0.25 # ✶
+  min_minutes: 45
+  max_minutes: 150
