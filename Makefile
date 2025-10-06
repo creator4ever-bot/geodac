@@ -53,3 +53,18 @@ wipe-lunar-prod-hard:
 	@[ "$(ALLOW)" = "1" ] || (echo "BLOCKED: set ALLOW=1"; exit 1)
 	@cal=$${CAL_LUNAR_PROD_ID:-"Astro - Lunar Natal (PROD)"}; \
 	$(PY) $(HOME)/astro/tools/gc_wipe_all.py --cal "$$cal" --do
+
+# Lunar: PA (Sun..Pluto + ASC/MC/DSC/IC) по умолчанию
+lunar-ics:
+	@$(HOME)/astro/tools/mk_lunar_ics_pa.sh
+
+lunar-ics-planets:
+	@$(HOME)/astro/tools/mk_lunar_ics_planets.sh
+
+CAL_LUNAR_PROD?=Astro - Lunar Natal (PROD)
+push-lunar-ics-prod:
+	@[ "$(ALLOW)" = "1" ] || (echo "BLOCKED: set ALLOW=1"; exit 1)
+	@ics=$$(ls -1t $(HOME)/astro/logs/lunar_14d.pa.*.ics $(HOME)/astro/logs/lunar_14d.planets.*.ics 2>/dev/null | head -n1); \
+	test -n "$$ics" || (echo "no lunar .ics found"; exit 2); \
+	$(HOME)/astro/tools/ics_to_events_json.py < "$$ics" > $(HOME)/astro/logs/lunar_planets.events.json; \
+	gc-push --cal "$(CAL_LUNAR_PROD)" --json $(HOME)/astro/logs/lunar_planets.events.json --tz Europe/Moscow --replace
